@@ -18,10 +18,16 @@ public class Player : MonoBehaviour
     public KeyCode[] leftKey;
 
     bool canMove;
+
+    public int cp;
+
+    TMPro.TextMeshProUGUI mPro;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        mPro = FindObjectOfType<TMPro.TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -73,10 +79,28 @@ public class Player : MonoBehaviour
         {
             GetComponentInChildren<Camera>().fieldOfView -= 0.1f;
         }
+
+        if(cp == 5)
+        {
+            Time.timeScale = 0;
+
+            mPro.text = "Player " + (playerNo + 1) + " wins!!!";
+        }
     }
 
     public void move()
     {
         canMove = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Checkpoint")
+        {
+            if(other.GetComponent<Checkpoint>().no == cp+1)
+            {
+                cp += 1;
+            }
+        }
     }
 }

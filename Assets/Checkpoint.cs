@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manager : MonoBehaviour
+public class Checkpoint : MonoBehaviour
 {
-    public Player[] players;
+    public int no;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +15,5 @@ public class Manager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void canMove()
-    {
-        foreach (Player p in players)
-        {
-            p.move();
-        }
     }
 }
