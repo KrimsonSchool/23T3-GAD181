@@ -62,6 +62,17 @@ public class Player : MonoBehaviour
         {
             rightwardV = 0;
         }
+
+        
+        if(GetComponentInChildren<Camera>().fieldOfView < 90)
+        {
+            GetComponentInChildren<Camera>().fieldOfView += rb.velocity.magnitude / 250;
+        }
+
+        if(GetComponentInChildren<Camera>().fieldOfView > 60)
+        {
+            GetComponentInChildren<Camera>().fieldOfView -= 0.1f;
+        }
     }
 
     public void move()
