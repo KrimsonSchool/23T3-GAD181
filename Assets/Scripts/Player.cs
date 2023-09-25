@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public KeyCode[] backwardKey;
     public KeyCode[] rightKey;
     public KeyCode[] leftKey;
+
+    bool canMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         //transform.position += transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        rb.AddForce(transform.forward * forwardV * speed * Time.deltaTime);
+       if(canMove)
+        {
+            rb.AddForce(transform.forward * forwardV * speed * Time.deltaTime);
 
-        transform.Rotate(transform.up, rightwardV * rotSpeed * Time.deltaTime);
+            transform.Rotate(transform.up, rightwardV * rotSpeed * Time.deltaTime);
+        }
 
 
 
@@ -57,5 +62,10 @@ public class Player : MonoBehaviour
         {
             rightwardV = 0;
         }
+    }
+
+    public void move()
+    {
+        canMove = true;
     }
 }
