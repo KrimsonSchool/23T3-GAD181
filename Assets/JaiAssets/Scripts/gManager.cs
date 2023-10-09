@@ -15,6 +15,8 @@ public class gManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        noOfPlayers = PlayerPrefs.GetInt("Players");
+
         for (int i = 0; i < noOfPlayers; i++)
         {
             players[i].gameObject.SetActive(true);

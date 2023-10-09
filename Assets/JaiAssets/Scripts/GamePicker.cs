@@ -36,6 +36,5 @@ public class GamePicker : MonoBehaviour
     public void Game4()
     {
         SceneManager.LoadScene(games[3]);
-
     }
 }
