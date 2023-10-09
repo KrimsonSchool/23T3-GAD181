@@ -99,7 +99,11 @@ public class Player : MonoBehaviour
 
 
         forwardV = Input.GetAxis("Vertical " + playerNo);
-        rightwardV = Input.GetAxis("Horizontal " + playerNo);
+        rightwardV += Input.GetAxis("Horizontal " + playerNo);
+
+        Mathf.Clamp(rightwardV, -1, 1);
+
+        rightwardV = Mathf.Lerp(rightwardV, 0, Time.deltaTime * 7.5f);
         
         if(GetComponentInChildren<Camera>().fieldOfView < 90)
         {
