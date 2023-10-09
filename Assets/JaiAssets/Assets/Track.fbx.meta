@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Road
+    second: {fileID: 2100000, guid: ccad06102ea5e3a4ea9ea624e0ba83b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Wall
-    second: {fileID: 2100000, guid: 3b28a73123fb81c4faff2d608c53c218, type: 2}
+    second: {fileID: 2100000, guid: 4e8be334422876946af5347eccf64d24, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
