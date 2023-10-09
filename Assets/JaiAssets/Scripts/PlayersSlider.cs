@@ -10,12 +10,17 @@ public class PlayersSlider : MonoBehaviour
     void Start()
     {
         //HAVE TO WORK ON JOYSTICK INPUT - REQUIRE JOYSTICK TESTS AT HOME
+
+        GetComponent<Slider>().Select();
     }
 
     // Update is called once per frame
     void Update()
     {
+        GetComponent<Slider>().value += Input.GetAxis("Horizontal 0") * 0.1f;
+
         players.text = "Players: " + GetComponent<Slider>().value;
+
     }
 
     public void savePlayersNo()
