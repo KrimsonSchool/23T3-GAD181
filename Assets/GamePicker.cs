@@ -9,7 +9,8 @@ public class GamePicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //ADD YOUR GAME TO THE games ARRAY
+        //ENSURE YOUR GAME HAS BEEN ADDED TO BUILD SETTING SCENES
     }
 
     // Update is called once per frame
