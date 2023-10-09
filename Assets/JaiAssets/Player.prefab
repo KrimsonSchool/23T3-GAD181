@@ -336,6 +336,7 @@ MonoBehaviour:
   rightKey: 6400000013010000
   leftKey: 6100000014010000
   cp: 0
+  cam: {fileID: 6542737489513613235}
 --- !u!54 &6045452945965526954
 Rigidbody:
   m_ObjectHideFlags: 0
