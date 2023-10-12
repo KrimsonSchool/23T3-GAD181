@@ -21,14 +21,16 @@ public class Playercontroller : MonoBehaviour
 
     void PickUpButton()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (foodAccess.FoodAmount >= 1 && foodAccess.FoodAmount <= 10)
+            
+            if (foodAccess.FoodAmountOne >= 1 && foodAccess.FoodAmountOne <= 10)
             {
-                foodAccess.FoodAmount -= 1;
+                foodAccess.FoodAmountOne -= 1;
                 Debug.Log("KEEP EATING!!!");
             }
-            else if (foodAccess.FoodAmount == 0)
+            
+            else if (foodAccess.FoodAmountOne == 0)
             {
                 Debug.Log("All food is eaten");
             }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class BrainsScript : MonoBehaviour
 {
-    public GameObject playerFood;
-    public int FoodAmount = 10;
+    public GameObject playerOneFood;
+    public GameObject playerTwoFood;
+    public GameObject playerThreeFood;
+    public GameObject playerFourFood;
+    public int FoodAmountOne = 10;
     public bool isFoodEaten = false;
 
 
@@ -19,13 +22,13 @@ public class BrainsScript : MonoBehaviour
     void Update()
     {
         
-        if(FoodAmount == 0 && isFoodEaten)
+        if(FoodAmountOne == 0 && isFoodEaten)
         {
             
-            playerFood.SetActive(false);
+            playerOneFood.SetActive(false);
             Debug.Log("Food transfer");
-            FoodAmount += 10;
-            playerFood.SetActive(true);
+            FoodAmountOne += 10;
+            playerOneFood.SetActive(true);
             Debug.Log("Food Delivered");
             isFoodEaten = true;
         }
