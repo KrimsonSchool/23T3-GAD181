@@ -26,9 +26,14 @@ public class Player : MonoBehaviour
     public Camera cam;
 
     gManager manager;
+
+    bool spinout;
+    float spinTimer;
     // Start is called before the first frame update
     void Start()
     {
+        
+
         rb = GetComponent<Rigidbody>();
 
         mPro = FindObjectOfType<TMPro.TextMeshProUGUI>();
@@ -89,8 +94,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (spinout)
+        {
+            spinTimer += Time.deltaTime;
+
+            transform.Rotate(transform.up, -360 * Time.deltaTime, 0);
+
+            if (spinTimer >= 3)
+            {
+                spinout = false;
+                canMove = true;
+                spinTimer = 0;
+            }
+        }
+
         //transform.position += transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
-       if(canMove)
+        if (canMove)
         {
             rb.AddForce(transform.forward * forwardV * speed * Time.deltaTime);
 
@@ -132,6 +151,13 @@ public class Player : MonoBehaviour
             {
                 cp += 1;
             }
+        }
+
+        if(other.tag == "Enemy")
+        {
+            print("spinout");
+            canMove = false;
+            spinout = true;
         }
     }
 }
