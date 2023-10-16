@@ -2,26 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour
+public class LifeTimer : MonoBehaviour
 {
-    public ParticleSystem ParticleSystem;
-    public int no;
+    public float life;
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (ParticleSystem != null)
+        if(timer > life)
         {
-            ParticleSystem.Play();
+            gameObject.SetActive(false);
         }
     }
 }

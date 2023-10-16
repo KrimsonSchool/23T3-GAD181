@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Player : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class Player : MonoBehaviour
 
     bool spinout;
     float spinTimer;
+
+    public GameObject portalFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -150,6 +153,9 @@ public class Player : MonoBehaviour
             if(other.GetComponent<Checkpoint>().no == cp+1)
             {
                 cp += 1;
+
+                portalFX.SetActive(true);
+                portalFX.gameObject.GetComponent<LifeTimer>().timer = 0;
             }
         }
 
