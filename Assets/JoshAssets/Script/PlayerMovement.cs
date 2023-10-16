@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementThreeD : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
     // INSTRUCTIONS
@@ -14,7 +14,7 @@ public class PlayerMovementThreeD : MonoBehaviour
     // The mouse will let you turn the object, and therefore, the camera.
 
     // These variables (visible in the inspector) are for you to set up to match the right feel
-    public float speed = 14f;
+    public float speed = 12f;
     public float speedH = 2.0f;
     public float speedV = 2.0f;
     public float yaw = 0.0f;
