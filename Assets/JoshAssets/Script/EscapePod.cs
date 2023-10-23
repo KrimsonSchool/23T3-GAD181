@@ -14,7 +14,7 @@ public class EscapePod : MonoBehaviour
     private void OnTriggerEnter(Collider Player)
     {
         // show player 1 won the game
-        Debug.Log("Player?Wins");
+        Debug.Log("PlayerOneWins");
         // disable movement of all characters
         playerMovement.enabled = false;
     }
