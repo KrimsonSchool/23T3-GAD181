@@ -8,10 +8,12 @@ public class BrainsScript : MonoBehaviour
     public GameObject playerTwoFood; // This is a reference to the gameObject in the scene of playerTwosfood
     public GameObject playerThreeFood; // This is a reference to the gameObject in the scene of playerThreesfood
     public GameObject playerFourFood; // This is a reference to the gameObject in the scene of playerFoursfood
+
     public int FoodAmountOne = 10; // This holds the amount of food left to eat in 1 brain.
     public int FoodAmountTwo = 10; // This holds the amount of food left to eat in 1 brain.
     public int FoodAmountThree = 10; // This holds the amount of food left to eat in 1 brain.
     public int FoodAmountFour = 10; // This holds the amount of food left to eat in 1 brain.
+
     public bool isPoneFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
     public bool isPtwoFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
     public bool isPthreeFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
