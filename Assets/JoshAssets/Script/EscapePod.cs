@@ -13,8 +13,26 @@ public class EscapePod : MonoBehaviour
     }
     private void OnTriggerEnter(Collider Player)
     {
-        // show player 1 won the game
-        Debug.Log("PlayerOneWins");
+       // check to see which player has won       
+        if (Player.tag == "PlayerOne")
+        {
+            Debug.Log("Player One Wins");
+        }
+
+        if (Player.tag == "PlayerTwo")
+        {
+            Debug.Log("Player Two Wins");
+        }
+
+        if (Player.tag == "PlayerThree")
+        {
+            Debug.Log("Player Three Wins");
+        }
+
+        if (Player.tag == "PlayerFour")
+        {
+            Debug.Log("Player Four Wins");
+        }
         // disable movement of all characters
         playerMovement.enabled = false;
     }

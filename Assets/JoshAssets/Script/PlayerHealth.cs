@@ -20,10 +20,32 @@ public class PlayerHealth : MonoBehaviour
         if (health == 0 || health <= 0)
         {                
             playerMovement.enabled = false;
+            gameObject.SetActive(false);
         }
     }
-   
-    
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Checkpoint")
+        {
+            if (other.tag == "PlayerOne")
+            {
+                Debug.Log("Player One Wins");
+            }
+
+            if (other.tag == "PlayerTwo")
+            {
+                Debug.Log("Player Two Wins");
+            }
+            if (other.tag == "PlayerThree")
+            {
+                Debug.Log("Player Three Wins");
+            }
+            if (other.tag == "PlayerFour")
+            {
+                Debug.Log("Player Four Wins");
+            }
+        }
+    }
+
 }

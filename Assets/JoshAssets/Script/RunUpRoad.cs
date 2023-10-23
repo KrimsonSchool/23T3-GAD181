@@ -13,13 +13,20 @@ public class RunUpRoad : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 8;
+        StartCoroutine(WaitToMove());
     }
 
-   
 
+
+
+    public IEnumerator WaitToMove()
+    {
+        yield return new WaitForSeconds(3f);
+        agent.destination = new Vector3(transform.position.x + 270, transform.position.y, transform.position.z);
+    }
     // Update is called once per frame
     void Update()
-    {
-        agent.destination=new Vector3(transform.position.x+10,transform.position.y,transform.position.z);
+    {   
+
     }
 }
