@@ -39,13 +39,14 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         // If the variable "controller" is empty...
+        
         if (controller == null)
         {
             // ...then this searches the components on the gameobject and gets a reference to the CharacterController class
             controller = GetComponent<CharacterController>();
+            
         }
-    }
-
+    }    
     private void Update()
     {
 
