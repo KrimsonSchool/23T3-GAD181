@@ -24,7 +24,11 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("NoOfRounds", noOfRounds);
+        PlayerPrefs.SetInt("NoOfRounds", noOfRounds+1);
+        PlayerPrefs.SetInt("player1Score", 0);
+        PlayerPrefs.SetInt("player2Score", 0);
+        PlayerPrefs.SetInt("player3Score", 0);
+        PlayerPrefs.SetInt("player4Score", 0);
         SceneManager.LoadScene(1);
     }
 
