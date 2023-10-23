@@ -66,6 +66,6 @@ public class GlobalScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "· Player 1: " + player1Score + "\n\n· Player 2: " + player2Score + "\n\n· Player 3:" + player3Score + "\n\n· Player 4:" + player4Score + "\n\n";
+        scoreText.text = "· Player 1: " + player1Score + "\n\n· Player 2: " + player2Score + "\n\n· Player 3: " + player3Score + "\n\n· Player 4: " + player4Score + "\n\n";
     }
 }

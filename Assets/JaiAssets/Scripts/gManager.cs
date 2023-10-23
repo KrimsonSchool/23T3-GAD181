@@ -74,8 +74,9 @@ public class gManager : MonoBehaviour
         }
     }
 
-    public void win()
+    public void win(int winnerNo)
     {
+        PlayerPrefs.SetInt("player" + winnerNo + "Score", PlayerPrefs.GetInt("player" + winnerNo + "Score") + 50);
         winner = true;
     }
 }

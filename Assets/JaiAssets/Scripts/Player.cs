@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int playerNo;
     public float speed;
     public float rotSpeed;
-    [HideInInspector] public Rigidbody rb;
+    public Rigidbody rb;
 
     float forwardV;
     float rightwardV;
@@ -139,10 +139,8 @@ public class Player : MonoBehaviour
 
             mPro.text = "Player " + (playerNo + 1) + " wins!!!";
 
-
-            PlayerPrefs.SetInt("player"+playerNo+1+"Score", PlayerPrefs.GetInt("player" + playerNo + 1 + "Score") + 50);
-
-            manager.win();
+            cp = 0;
+            manager.win(playerNo+1);
         }
     }
 

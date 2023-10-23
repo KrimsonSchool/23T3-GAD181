@@ -333,6 +333,8 @@ MonoBehaviour:
   playerNo: 0
   speed: 1000000
   rotSpeed: 250
+  rb: {fileID: 6045452945965526954}
+  canMove: 0
   cp: 0
   cam: {fileID: 6542737489513613235}
   portalFX: {fileID: 6100428848805702134}
