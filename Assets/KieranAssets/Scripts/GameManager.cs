@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerThreesScore; //This is a text reference to player three score text.
     public TextMeshProUGUI playerFoursScore; //This is a text reference to player fours score text.
     public BrainsScript foodCounter; // This is a script reference to brainscript.
+    public TimerManager timer;
+    public Playercontroller Playercontroller;
 
     // Create some Ints to hold the score
     // This should be for each player.
@@ -25,8 +27,7 @@ public class GameManager : MonoBehaviour
     public int threeScore = 0; // This is a placeholder for player threes points to update the text.
     public int fourScore = 0; // This is a placeholder for player four4s points to update the text.
 
-    //public bool isGamePlaying = false;
-    //public float timeToStartGame;
+    public bool isGameReady = false;
 
     #endregion
 
@@ -42,19 +43,19 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    IEnumerator waitForGameReady()
+    {
+        yield return new WaitForSeconds(5f);
+
+    }
+
     #region Update function
     // Update is called once per frame
     void Update()
     {
         updateScoreText(); // This call the function to update the scores.
-
-        //if (isGamePlaying )
-       // {
-           // if ( timeToStartGame > 0)
-            //{
-                
-            //}
-        //}
+        GameWinDecider(); 
+       
 
     }
     #endregion
@@ -89,15 +90,33 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-   
-
+    #region Winning
     public void GameWinDecider()
     {
-
+        if(timer.remainingTime == 0)
+        {
+            if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore)
+            {
+                Debug.Log("Winner is player ONE!");
+            }
+            else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore)
+            {
+                Debug.Log("Winner is player TWO!");
+            }
+            else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore)
+            {
+                Debug.Log("Winner is player Three!");
+            }
+            else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore)
+            {
+                Debug.Log("Winner is player Four!");
+            }
+        }
+        
 
 
 
     }
-
+    #endregion
 
 }
