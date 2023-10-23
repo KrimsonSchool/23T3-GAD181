@@ -10,6 +10,7 @@ public class GlobalScore : MonoBehaviour
     public int player4Score;
 
     public TMPro.TextMeshProUGUI scoreText;
+    public TMPro.TextMeshProUGUI roundsText;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,8 @@ public class GlobalScore : MonoBehaviour
         player4Score = PlayerPrefs.GetInt("player4Score");
 
         PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
+
+        roundsText.text = ""+PlayerPrefs.GetInt("NoOfRounds");
     }
 
     // Update is called once per frame
