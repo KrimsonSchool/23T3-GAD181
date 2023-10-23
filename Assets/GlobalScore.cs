@@ -21,7 +21,13 @@ public class GlobalScore : MonoBehaviour
 
         PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
 
+        PlayerPrefs.SetInt("NoOfRounds", PlayerPrefs.GetInt("NoOfRounds") - 1);
         roundsText.text = ""+PlayerPrefs.GetInt("NoOfRounds");
+
+        if(PlayerPrefs.GetInt("NoOfRounds") <= 0)
+        {
+            print("Game Over!");
+        }
     }
 
     // Update is called once per frame

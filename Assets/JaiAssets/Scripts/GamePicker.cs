@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GamePicker : MonoBehaviour
 {
     public string[] games;
+    public GameObject controlMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +37,10 @@ public class GamePicker : MonoBehaviour
     public void Game4()
     {
         SceneManager.LoadScene(games[3]);
+    }
+
+    public void Controls()
+    {
+        controlMenu.SetActive(true);
     }
 }
