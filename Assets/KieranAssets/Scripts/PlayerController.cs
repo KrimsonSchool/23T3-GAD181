@@ -5,6 +5,8 @@ using UnityEngine;
 public class Playercontroller : MonoBehaviour
 {
     public BrainsScript foodAccess;
+    public bool canPlayerMove = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,10 @@ public class Playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PickUpButton();
+        if (canPlayerMove == true)
+        {
+            PickUpButton();
+        }
 
 
     }

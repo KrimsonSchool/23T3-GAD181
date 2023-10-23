@@ -15,9 +15,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerTwosScore; //This is a text reference to player twos score text.
     public TextMeshProUGUI playerThreesScore; //This is a text reference to player three score text.
     public TextMeshProUGUI playerFoursScore; //This is a text reference to player fours score text.
-    public BrainsScript foodCounter; // This is a script reference to brainscript.
+    public BrainsScript foodCounterOne; // This is a script reference to brainscript.
+    public BrainsScript foodCounterTwo; // This is a script reference to brainscript.
+    public BrainsScript foodCounterThree; // This is a script reference to brainscript.
+    public BrainsScript foodCounterFour; // This is a script reference to brainscript.
     public TimerManager timer;
-    public Playercontroller Playercontroller;
+    public Playercontroller playerControllerOne;
+    public Playercontroller playerControllerTwo;
+    public Playercontroller playerControllerThree;
+    public Playercontroller playerControllerFour;
 
     // Create some Ints to hold the score
     // This should be for each player.
@@ -40,20 +46,26 @@ public class GameManager : MonoBehaviour
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
         playerFoursScore.text = fourScore.ToString(); // This sets the players scores to 0
 
+        StartCoroutine(WaitForGameReady());
+
     }
     #endregion
 
-    IEnumerator waitForGameReady()
+    IEnumerator WaitForGameReady()
     {
         yield return new WaitForSeconds(5f);
-
+        playerControllerOne.canPlayerMove = true;
+        playerControllerTwo.canPlayerMove = true;
+        playerControllerThree.canPlayerMove = true;
+        playerControllerFour.canPlayerMove = true;
+        timer.isTimerOn = true;
     }
 
     #region Update function
     // Update is called once per frame
     void Update()
     {
-        updateScoreText(); // This call the function to update the scores.
+        UpdateScoreText(); // This call the function to update the scores.
         GameWinDecider(); 
        
 
@@ -64,25 +76,25 @@ public class GameManager : MonoBehaviour
     // Creater a function to update player scores when they have eaten their item.
     // This should increase by 1 point.
     // It will be based on the food health value and if it has reacehd 0.
-    public void updateScoreText() // This is a function to add scores to a player everytime an item is eaten.
+    public void UpdateScoreText() // This is a function to add scores to a player everytime an item is eaten.
     {
-        if(foodCounter.FoodAmountOne == 0) // This is an if statement for player one.
+        if(foodCounterOne.FoodAmountOne == 0) // This is an if statement for player one.
         {
             oneScore += 1;
             playerOnesScore.text = oneScore.ToString();
         }
-        else if(foodCounter.FoodAmountTwo == 0) // This is an if statement for player two. 
+        else if(foodCounterTwo.FoodAmountTwo == 0) // This is an if statement for player two. 
         {
             twoScore += 1;
             playerTwosScore.text = twoScore.ToString();
         }
-        else if (foodCounter.FoodAmountThree == 0) // This is an if statement for player three. 
+        else if (foodCounterThree.FoodAmountThree == 0) // This is an if statement for player three. 
         { 
             threeScore += 1;
             playerThreesScore.text = threeScore.ToString();
 
         }
-        else if (foodCounter.FoodAmountFour == 0) // This is an if statement for player four.
+        else if (foodCounterFour.FoodAmountFour == 0) // This is an if statement for player four.
         {
             fourScore += 1;
             playerFoursScore.text = fourScore.ToString();
