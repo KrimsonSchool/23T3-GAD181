@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     //public KeyCode[] rightKey;
     //public KeyCode[] leftKey;
 
-    bool canMove;
+    public bool canMove;
 
     public int cp;
 
@@ -135,9 +135,14 @@ public class Player : MonoBehaviour
 
         if(cp == 5)
         {
-            Time.timeScale = 0;
+            manager.noMove();
 
             mPro.text = "Player " + (playerNo + 1) + " wins!!!";
+
+
+            PlayerPrefs.SetInt("player"+playerNo+1+"Score", PlayerPrefs.GetInt("player" + playerNo + 1 + "Score") + 50);
+
+            manager.win();
         }
     }
 

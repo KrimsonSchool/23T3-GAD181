@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class gManager : MonoBehaviour
     public int noOfPlayers;
 
     public Camera cam;
+
+    float winTimer;
+    bool winner;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +46,15 @@ public class gManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (winner)
+        {
+            winTimer += Time.deltaTime;
 
+            if (winTimer >= 3)
+            {
+                SceneManager.LoadScene("GamePick");
+            }
+        }
     }
 
     public void canMove()
@@ -53,7 +65,16 @@ public class gManager : MonoBehaviour
         }
     }
 
+    public void noMove()
+    {
+        foreach (Player p in players)
+        {
+            p.canMove = false;
+        }
+    }
+
     public void win()
     {
+        winner = true;
     }
 }
