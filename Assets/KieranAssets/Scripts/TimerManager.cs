@@ -34,13 +34,12 @@ public class TimerManager : MonoBehaviour
                 remainingTime = 0;
                 isTimerOn = false;
 
-
             }
         }
 
     }
 
-    public void UpdateGameTimer(float currentTime)
+    public void UpdateGameTimer(float remainingTime)
     {
         
         timerText.text = Mathf.RoundToInt(remainingTime).ToString();
