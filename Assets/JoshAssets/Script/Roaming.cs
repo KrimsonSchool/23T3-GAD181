@@ -11,7 +11,7 @@ public class Roaming : MonoBehaviour
     {
         agent.destination = new Vector3(transform.position.x + Random.Range(-5, 5), transform.position.y, transform.position.z + Random.Range(-5, 5));
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = 8;
+        agent.speed = 10;
     }
 
     // Update is called once per frame

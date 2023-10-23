@@ -17,19 +17,19 @@ public class CameraMovement : MonoBehaviour
         // make camera be in the position average of all players 
         if (PlayerPrefs.GetInt("Players") == 1)
         {
-            transform.position = ((Players[0].transform.position)) + new Vector3(0, 17, -25);
+            transform.position = ((Players[0].transform.position)) + new Vector3(5, 17, -25);
         }
         else if (PlayerPrefs.GetInt("Players") == 2)
         {
-            transform.position = ((Players[0].transform.position + Players[1].transform.position) / 2) + new Vector3(0, 17, -25);
+            transform.position = ((Players[0].transform.position + Players[1].transform.position) / 2) + new Vector3(5, 17, -25);
         }
         else if (PlayerPrefs.GetInt("Players") == 3)
         {
-            transform.position = ((Players[0].transform.position + Players[1].transform.position + Players[2].transform.position) / 3) + new Vector3(0, 17, -25);
+            transform.position = ((Players[0].transform.position + Players[1].transform.position + Players[2].transform.position) / 3) + new Vector3(5, 17, -25);
         }
         else
         {
-            transform.position = ((Players[0].transform.position + Players[1].transform.position + Players[2].transform.position + Players[3].transform.position) / 4) + new Vector3(0, 17, -25);
+            transform.position = ((Players[0].transform.position + Players[1].transform.position + Players[2].transform.position + Players[3].transform.position) / 4) + new Vector3(5, 17, -25);
         }
         
     }
