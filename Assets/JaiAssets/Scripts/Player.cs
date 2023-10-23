@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int playerNo;
     public float speed;
     public float rotSpeed;
-    Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
 
     float forwardV;
     float rightwardV;

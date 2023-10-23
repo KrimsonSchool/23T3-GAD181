@@ -70,6 +70,7 @@ public class gManager : MonoBehaviour
         foreach (Player p in players)
         {
             p.canMove = false;
+            p.rb.velocity = Vector3.zero;
         }
     }
 
