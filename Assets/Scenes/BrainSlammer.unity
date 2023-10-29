@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodAccess: {fileID: 2101349900}
-  canPlayerMove: 0
+  gameManager: {fileID: 1961910829}
 --- !u!4 &265327774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6652092484791250563, guid: 118956de658f1974ea0bc817b66f76bf, type: 3}
@@ -2412,7 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodAccess: {fileID: 1915833005}
-  canPlayerMove: 0
+  gameManager: {fileID: 1961910829}
 --- !u!4 &355198967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6652092484791250563, guid: 118956de658f1974ea0bc817b66f76bf, type: 3}
@@ -8174,7 +8174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodAccess: {fileID: 1821065084}
-  canPlayerMove: 0
+  gameManager: {fileID: 1961910829}
 --- !u!4 &1233071446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6652092484791250563, guid: 118956de658f1974ea0bc817b66f76bf, type: 3}
@@ -10876,18 +10876,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb89b11d0905ab488b447b4efc45cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOneFood: {fileID: 1593113876}
-  playerTwoFood: {fileID: 2101349899}
-  playerThreeFood: {fileID: 1821065083}
-  playerFourFood: {fileID: 1915833004}
+  gameManager: {fileID: 1961910829}
   FoodAmountOne: 10
   FoodAmountTwo: 10
   FoodAmountThree: 10
   FoodAmountFour: 10
-  isPoneFoodEaten: 0
-  isPtwoFoodEaten: 0
-  isPthreeFoodEaten: 0
-  isPfourFoodEaten: 0
 --- !u!65 &1593113878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12674,18 +12667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb89b11d0905ab488b447b4efc45cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOneFood: {fileID: 1593113876}
-  playerTwoFood: {fileID: 2101349899}
-  playerThreeFood: {fileID: 1821065083}
-  playerFourFood: {fileID: 1915833004}
+  gameManager: {fileID: 1961910829}
   FoodAmountOne: 10
   FoodAmountTwo: 10
   FoodAmountThree: 10
   FoodAmountFour: 10
-  isPoneFoodEaten: 0
-  isPtwoFoodEaten: 0
-  isPthreeFoodEaten: 0
-  isPfourFoodEaten: 0
 --- !u!65 &1821065085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13446,7 +13432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodAccess: {fileID: 1593113877}
-  canPlayerMove: 0
+  gameManager: {fileID: 1961910829}
 --- !u!4 &1895783768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6652092484791250563, guid: 118956de658f1974ea0bc817b66f76bf, type: 3}
@@ -13546,18 +13532,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb89b11d0905ab488b447b4efc45cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOneFood: {fileID: 1593113876}
-  playerTwoFood: {fileID: 2101349899}
-  playerThreeFood: {fileID: 1821065083}
-  playerFourFood: {fileID: 1915833004}
+  gameManager: {fileID: 1961910829}
   FoodAmountOne: 10
   FoodAmountTwo: 10
   FoodAmountThree: 10
   FoodAmountFour: 10
-  isPoneFoodEaten: 0
-  isPtwoFoodEaten: 0
-  isPthreeFoodEaten: 0
-  isPfourFoodEaten: 0
 --- !u!65 &1915833006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13903,20 +13882,22 @@ MonoBehaviour:
   playerTwosScore: {fileID: 1021852195}
   playerThreesScore: {fileID: 1305061477}
   playerFoursScore: {fileID: 402360061}
-  foodCounterOne: {fileID: 1593113877}
-  foodCounterTwo: {fileID: 2101349900}
-  foodCounterThree: {fileID: 1821065084}
-  foodCounterFour: {fileID: 1915833005}
+  playerOneFood: {fileID: 1895783761}
+  playerTwoFood: {fileID: 265327767}
+  playerThreeFood: {fileID: 1233071439}
+  playerFourFood: {fileID: 355198960}
+  foodUpdate01: {fileID: 1593113877}
+  foodUpdate02: {fileID: 2101349900}
+  foodUpdate03: {fileID: 1821065084}
+  foodUpdate04: {fileID: 1915833005}
   timer: {fileID: 689757363}
-  playerControllerOne: {fileID: 1895783765}
-  playerControllerTwo: {fileID: 265327771}
-  playerControllerThree: {fileID: 1233071443}
-  playerControllerFour: {fileID: 355198964}
   oneScore: 0
   twoScore: 0
   threeScore: 0
   fourScore: 0
   isGameReady: 0
+  canPlayerMove: 0
+  isFoodEaten: 0
 --- !u!4 &1961910830
 Transform:
   m_ObjectHideFlags: 0
@@ -14866,18 +14847,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb89b11d0905ab488b447b4efc45cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOneFood: {fileID: 1593113876}
-  playerTwoFood: {fileID: 2101349899}
-  playerThreeFood: {fileID: 1821065083}
-  playerFourFood: {fileID: 1915833004}
+  gameManager: {fileID: 1961910829}
   FoodAmountOne: 10
   FoodAmountTwo: 10
   FoodAmountThree: 10
   FoodAmountFour: 10
-  isPoneFoodEaten: 0
-  isPtwoFoodEaten: 0
-  isPthreeFoodEaten: 0
-  isPfourFoodEaten: 0
 --- !u!65 &2101349901
 BoxCollider:
   m_ObjectHideFlags: 0

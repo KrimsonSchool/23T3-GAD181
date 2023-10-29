@@ -15,15 +15,22 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerTwosScore; //This is a text reference to player twos score text.
     public TextMeshProUGUI playerThreesScore; //This is a text reference to player three score text.
     public TextMeshProUGUI playerFoursScore; //This is a text reference to player fours score text.
-    public BrainsScript foodCounterOne; // This is a script reference to brainscript.
-    public BrainsScript foodCounterTwo; // This is a script reference to brainscript.
+    
+
+    /*public BrainsScript foodCounterTwo; // This is a script reference to brainscript.
     public BrainsScript foodCounterThree; // This is a script reference to brainscript.
-    public BrainsScript foodCounterFour; // This is a script reference to brainscript.
+    public BrainsScript foodCounterFour; // This is a script reference to brainscript.*/
+
+    public GameObject playerOneFood; // This is a reference to the gameObject in the scene of playerOnesfood
+    public GameObject playerTwoFood; // This is a reference to the gameObject in the scene of playerTwosfood
+    public GameObject playerThreeFood; // This is a reference to the gameObject in the scene of playerThreesfood
+    public GameObject playerFourFood; // This is a reference to the gameObject in the scene of playerFoursfood
+    [SerializeField] private BrainsScript foodUpdate01;
+    [SerializeField] private BrainsScript foodUpdate02;
+    [SerializeField] private BrainsScript foodUpdate03;
+    [SerializeField] private BrainsScript foodUpdate04;
     public TimerManager timer;
-    public Playercontroller playerControllerOne;
-    public Playercontroller playerControllerTwo;
-    public Playercontroller playerControllerThree;
-    public Playercontroller playerControllerFour;
+    
 
     // Create some Ints to hold the score
     // This should be for each player.
@@ -34,6 +41,8 @@ public class GameManager : MonoBehaviour
     public int fourScore = 0; // This is a placeholder for player four4s points to update the text.
 
     public bool isGameReady = false;
+    public bool canPlayerMove = false;
+    public bool isFoodEaten = false;
 
     #endregion
 
@@ -41,6 +50,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
@@ -54,20 +64,19 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitForGameReady()
     {
         yield return new WaitForSeconds(5f);
-        playerControllerOne.canPlayerMove = true;
-        playerControllerTwo.canPlayerMove = true;
-        playerControllerThree.canPlayerMove = true;
-        playerControllerFour.canPlayerMove = true;
+        canPlayerMove = true;
         timer.isTimerOn = true;
     }
+
+    
 
     #region Update function
     // Update is called once per frame
     void Update()
     {
-        UpdateScoreText(); // This call the function to update the scores.
-        GameWinDecider(); 
-       
+        
+       GameWinDecider(); 
+       UpdateScoreText();
 
     }
     #endregion
@@ -78,27 +87,27 @@ public class GameManager : MonoBehaviour
     // It will be based on the food health value and if it has reacehd 0.
     public void UpdateScoreText() // This is a function to add scores to a player everytime an item is eaten.
     {
-        if(foodCounterOne.FoodAmountOne == 0) // This is an if statement for player one.
+        if (foodUpdate01.FoodAmountOne == 0) // This is an if statement for player one.
         {
             oneScore += 1;
             playerOnesScore.text = oneScore.ToString();
         }
-        else if(foodCounterTwo.FoodAmountTwo == 0) // This is an if statement for player two. 
+        else if (foodUpdate02.FoodAmountTwo == 0) // This is an if statement for player two. 
         {
             twoScore += 1;
             playerTwosScore.text = twoScore.ToString();
         }
-        else if (foodCounterThree.FoodAmountThree == 0) // This is an if statement for player three. 
-        { 
+        else if (foodUpdate03.FoodAmountThree == 0) // This is an if statement for player three. 
+        {
             threeScore += 1;
             playerThreesScore.text = threeScore.ToString();
 
         }
-        else if (foodCounterFour.FoodAmountFour == 0) // This is an if statement for player four.
+        else if (foodUpdate04.FoodAmountFour == 0) // This is an if statement for player four.
         {
             fourScore += 1;
             playerFoursScore.text = fourScore.ToString();
-        }    
+        }
     }
     #endregion
 

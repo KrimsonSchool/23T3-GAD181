@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class BrainsScript : MonoBehaviour
 {
-    public GameObject playerOneFood; // This is a reference to the gameObject in the scene of playerOnesfood
-    public GameObject playerTwoFood; // This is a reference to the gameObject in the scene of playerTwosfood
-    public GameObject playerThreeFood; // This is a reference to the gameObject in the scene of playerThreesfood
-    public GameObject playerFourFood; // This is a reference to the gameObject in the scene of playerFoursfood
+    public GameManager gameManager;
 
     public int FoodAmountOne = 10; // This holds the amount of food left to eat in 1 brain.
     public int FoodAmountTwo = 10; // This holds the amount of food left to eat in 1 brain.
     public int FoodAmountThree = 10; // This holds the amount of food left to eat in 1 brain.
     public int FoodAmountFour = 10; // This holds the amount of food left to eat in 1 brain.
-
-    public bool isPoneFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
-    public bool isPtwoFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
-    public bool isPthreeFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
-    public bool isPfourFoodEaten = false; // This checks is the food has been eaten and it initalise is set to false
 
 
     // Start is called before the first frame update
@@ -34,64 +26,64 @@ public class BrainsScript : MonoBehaviour
     }
     void PlayersEating()
     {
-        if (FoodAmountOne == 0 && isPoneFoodEaten == false)
+        if (FoodAmountOne == 0 && gameManager.isFoodEaten == false)
         {
 
-            playerOneFood.SetActive(false);
+            gameManager.playerOneFood.SetActive(false);
             Debug.Log("Food transfer");
             FoodAmountOne += 10;
-            playerOneFood.SetActive(true);
+            gameManager.playerOneFood.SetActive(true);
             Debug.Log("Food Delivered");
-            isPoneFoodEaten = true;
+            gameManager.isFoodEaten = true;
         }
-        else if (isPoneFoodEaten == true)
+        else if (gameManager.isFoodEaten == true)
         {
-            isPoneFoodEaten = false;
+            gameManager.isFoodEaten = false;
 
         }
 
-        if (FoodAmountTwo == 0 && isPtwoFoodEaten == false)
+        if (FoodAmountTwo == 0 && gameManager.isFoodEaten == false)
         {
-            playerTwoFood.SetActive(false);
+            gameManager.playerTwoFood.SetActive(false);
             Debug.Log("Food transfer");
             FoodAmountTwo += 10;
-            playerTwoFood.SetActive(true);
+            gameManager.playerTwoFood.SetActive(true);
             Debug.Log("Food Delivered");
-            isPtwoFoodEaten = true;
+            gameManager.isFoodEaten = true;
         }
-        else if (isPtwoFoodEaten == true)
+        else if (gameManager.isFoodEaten == true)
         {
-            isPtwoFoodEaten = false;
+            gameManager.isFoodEaten = false;
         }
 
-        if (FoodAmountThree == 0 && isPthreeFoodEaten == false)
+        if (FoodAmountThree == 0 && gameManager.isFoodEaten == false)
         {
-            playerThreeFood.SetActive(false);
+            gameManager.playerThreeFood.SetActive(false);
             Debug.Log("Food transfer");
             FoodAmountThree += 10;
-            playerThreeFood.SetActive(true);
+            gameManager.playerThreeFood.SetActive(true);
             Debug.Log("Food Delivered");
-            isPthreeFoodEaten = true;
+            gameManager.isFoodEaten = true;
         }
-        else if (isPthreeFoodEaten == true)
+        else if (gameManager.isFoodEaten == true)
         {
-            isPthreeFoodEaten = false;
+            gameManager.isFoodEaten = false;
         }
 
-        if (FoodAmountFour == 0 && isPfourFoodEaten == false)
+        if (FoodAmountFour == 0 && gameManager.isFoodEaten == false)
         {
-            playerFourFood.SetActive(false);
+            gameManager.playerFourFood.SetActive(false);
             Debug.Log("Food transfer");
             FoodAmountFour += 10;
-            playerFourFood.SetActive(true);
+            gameManager.playerFourFood.SetActive(true);
             Debug.Log("Food Delivered");
-            isPfourFoodEaten = true;
+            gameManager.isFoodEaten = true;
         }
-        else if (isPfourFoodEaten == true)
+        else if (gameManager.isFoodEaten == true)
         {
-            isPfourFoodEaten = false;
+            gameManager.isFoodEaten = false;
         }
     }
-    
+
 
 }
