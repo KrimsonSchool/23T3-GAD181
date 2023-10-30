@@ -118,21 +118,27 @@ public class GameManager : MonoBehaviour
         {
             if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore)
             {
+                PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
                 Debug.Log("Winner is player ONE!");
             }
             else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore)
             {
+                PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
                 Debug.Log("Winner is player TWO!");
             }
             else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore)
             {
+                PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
                 Debug.Log("Winner is player Three!");
             }
             else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore)
             {
+                PlayerPrefs.SetInt("playe41Score", PlayerPrefs.GetInt("player4Score") + 50);
                 Debug.Log("Winner is player Four!");
             }
         }
+        // Split points for equal score
+
         
 
 
