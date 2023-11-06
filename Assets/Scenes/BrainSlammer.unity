@@ -3656,12 +3656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
-  FoodAmountOne: 10
-  FoodAmountTwo: 10
-  FoodAmountThree: 10
-  FoodAmountFour: 10
-  FoodAmount: 10
-  BrainID: 4
+  foodAmount: 10
+  brainID: 4
 --- !u!1 &551358906
 GameObject:
   m_ObjectHideFlags: 0
@@ -5821,12 +5817,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
-  FoodAmountOne: 10
-  FoodAmountTwo: 10
-  FoodAmountThree: 10
-  FoodAmountFour: 10
-  FoodAmount: 10
-  BrainID: 3
+  foodAmount: 10
+  brainID: 3
 --- !u!1 &833554840
 GameObject:
   m_ObjectHideFlags: 0
@@ -7811,12 +7803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
-  FoodAmountOne: 10
-  FoodAmountTwo: 10
-  FoodAmountThree: 10
-  FoodAmountFour: 10
-  FoodAmount: 10
-  BrainID: 2
+  foodAmount: 10
+  brainID: 2
 --- !u!1001 &1115258492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14669,12 +14657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
-  FoodAmountOne: 10
-  FoodAmountTwo: 10
-  FoodAmountThree: 10
-  FoodAmountFour: 10
-  FoodAmount: 10
-  BrainID: 1
+  foodAmount: 10
+  brainID: 1
 --- !u!1 &2049071722
 GameObject:
   m_ObjectHideFlags: 0

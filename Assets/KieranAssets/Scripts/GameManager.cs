@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
             }
             canPlayerMove = false;
             timer.isTimerOn = false;
-            StartCoroutine(WaitToFinishGame());
+           StartCoroutine(WaitToFinishGame());
         }
         // Split points for equal score
 
