@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
 
             transform.Rotate(transform.up, -360 * Time.deltaTime, 0);
 
-            if (spinTimer >= 3)
+            if (spinTimer >= 2)
             {
                 spinout = false;
                 canMove = true;

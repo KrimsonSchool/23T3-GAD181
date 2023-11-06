@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 262.18533, g: 324.8582, b: 429.96686, a: 1}
+  m_IndirectSpecularColor: {r: 2707.0164, g: 3952.0825, b: 6187.3784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12122,12 +12122,12 @@ GameObject:
   - component: {fileID: 588031761}
   - component: {fileID: 588031760}
   m_Layer: 0
-  m_Name: SONG
+  m_Name: SONG -- FIND NON COPYRIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &588031760
 AudioSource:
   m_ObjectHideFlags: 0
