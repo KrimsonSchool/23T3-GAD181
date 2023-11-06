@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerThreesScore; //This is a text reference to player three score text.
     public TextMeshProUGUI playerFoursScore; //This is a text reference to player fours score text.
     public TextMeshProUGUI Winner;
+    public Image controlsUI;
+    public TextMeshProUGUI goalText;
+    public TextMeshProUGUI timerText;
+    
     
 
     /*public BrainsScript foodCounterTwo; // This is a script reference to brainscript.
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        controlsUI.enabled = true;
         Winner.enabled = false;
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
@@ -66,9 +71,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitForGameReady()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         canPlayerMove = true;
         timer.isTimerOn = true;
+        controlsUI.enabled = false;
+        goalText.enabled = false;
+        timerText.enabled = false;
     }
 
     IEnumerator WaitToFinishGame()
