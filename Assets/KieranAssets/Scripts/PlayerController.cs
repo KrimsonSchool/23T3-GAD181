@@ -6,6 +6,8 @@ public class Playercontroller : MonoBehaviour
 {
     public BrainsScript foodAccess;
     public GameManager gameManager;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,9 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
+            
+            
+
         }
         if (foodAccess.brainID == 2 && Input.GetKeyDown(KeyCode.LeftAlt))
         {
@@ -50,6 +55,8 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
+            
+            
         }
         if (foodAccess.brainID == 3 && Input.GetKeyDown(KeyCode.RightAlt))
         {
@@ -62,6 +69,8 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
+           
+            
         }
         if (foodAccess.brainID == 4 && Input.GetKeyDown(KeyCode.RightControl))
         {
@@ -74,6 +83,8 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
+            
+            
         }
 
     }
