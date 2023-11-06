@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerTwosScore; //This is a text reference to player twos score text.
     public TextMeshProUGUI playerThreesScore; //This is a text reference to player three score text.
     public TextMeshProUGUI playerFoursScore; //This is a text reference to player fours score text.
+    public TextMeshProUGUI Winner;
     
 
     /*public BrainsScript foodCounterTwo; // This is a script reference to brainscript.
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Winner.enabled = false;
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
@@ -120,22 +121,33 @@ public class GameManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
                 Debug.Log("Winner is player ONE!");
+                Winner.enabled = true;
+                Winner.text = oneScore.ToString("Player 1 Wins!");
+                
             }
             else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore)
             {
                 PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
                 Debug.Log("Winner is player TWO!");
+                Winner.enabled = true;
+                Winner.text = twoScore.ToString("Player 2 Wins!");
             }
             else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore)
             {
                 PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
                 Debug.Log("Winner is player Three!");
+                Winner.enabled = true;
+                Winner.text = threeScore.ToString("Player 1 Wins!");
             }
             else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore)
             {
                 PlayerPrefs.SetInt("playe41Score", PlayerPrefs.GetInt("player4Score") + 50);
                 Debug.Log("Winner is player Four!");
+                Winner.enabled = true;
+                Winner.text = fourScore.ToString("Player 1 Wins!");
             }
+            canPlayerMove = false;
+            timer.isTimerOn = false;
         }
         // Split points for equal score
 

@@ -10,6 +10,7 @@ public class TimerManager : MonoBehaviour
     public bool isTimerOn = false;
     public TextMeshProUGUI timerText;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class TimerManager : MonoBehaviour
                 Debug.Log("The game is finished!!");
                 remainingTime = 0;
                 isTimerOn = false;
+                timerText.enabled = false;
 
             }
         }
