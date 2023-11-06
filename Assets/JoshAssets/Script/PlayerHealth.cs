@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
-    public GameObject Player;
+    public GameObject player;
     public PlayerMovement playerMovement;
     public bool isDead;
     // Start is called before the first frame update

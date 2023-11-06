@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float timeRemaining;
     public bool isTimerRunning = true;
-    public TextMeshProUGUI Countdown;
+    public TextMeshProUGUI countdown;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Countdown.enabled = false;
+                countdown.enabled = false;
                 Debug.Log("The game is over!");
                 timeRemaining = 0;
                 isTimerRunning = false;
@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
     public void UpdateTimer(float remainingTime)
     {
 
-        Countdown.text = Mathf.RoundToInt(remainingTime).ToString();
+        countdown.text = Mathf.RoundToInt(remainingTime).ToString();
     }
 
 }
