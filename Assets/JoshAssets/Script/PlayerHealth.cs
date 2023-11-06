@@ -7,11 +7,12 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public GameObject Player;
     public PlayerMovement playerMovement;
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
-
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health == 0 || health <= 0)
         {                
+            isDead = true;
             playerMovement.enabled = false;
             gameObject.SetActive(false);
         }

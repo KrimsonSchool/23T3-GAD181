@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ZombieStat : MonoBehaviour
@@ -10,6 +11,7 @@ public class ZombieStat : MonoBehaviour
         
     }
 
+    // when a zombie enters a trigger of something with the player health component then remove 100 health from it.
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerHealth>())

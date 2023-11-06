@@ -1,36 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CameraMovement : MonoBehaviour
 {
     public GameObject[] Players;
+    public int[] dead;
+    public int playersAlive;
+    Vector3 playerspos;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playersAlive = PlayerPrefs.GetInt("Players");
+        dead = new int[playersAlive];
     }
-
     // Update is called once per frame
     void Update()
     {
-        // make camera be in the position average of all players 
-        if (PlayerPrefs.GetInt("Players") == 1)
+        for (int i = 0; i < dead.Length; i++)
         {
-            transform.position = ((Players[0].transform.position)) + new Vector3(5, 17, -25);
+            if (Players[i].GetComponent<PlayerHealth>().health <= 0 && dead[i] != 1)
+            {
+                dead[i] = 1;
+                playersAlive--;
+            }
+            if (dead[i] != 1)
+            {
+                playerspos += Players[i].transform.position;
+            }
         }
-        else if (PlayerPrefs.GetInt("Players") == 2)
-        {
-            transform.position = ((Players[0].transform.position + Players[1].transform.position) / 2) + new Vector3(5, 17, -25);
-        }
-        else if (PlayerPrefs.GetInt("Players") == 3)
-        {
-            transform.position = ((Players[0].transform.position + Players[1].transform.position + Players[2].transform.position) / 3) + new Vector3(5, 17, -25);
-        }
-        else
-        {
-            transform.position = ((Players[0].transform.position + Players[1].transform.position + Players[2].transform.position + Players[3].transform.position) / 4) + new Vector3(5, 17, -25);
-        }
-        
+        transform.position = (playerspos / playersAlive) + new Vector3(5, 17, -25);
+        playerspos = Vector3.zero;
     }
 }
+
+
+
+
+
+
+
