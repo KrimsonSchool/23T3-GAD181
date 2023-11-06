@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
+                Countdown.enabled = false;
                 Debug.Log("The game is over!");
                 timeRemaining = 0;
                 isTimerRunning = false;
