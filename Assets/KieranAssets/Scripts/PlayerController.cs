@@ -26,51 +26,51 @@ public class Playercontroller : MonoBehaviour
 
     void PickUpButton()
     {
-        if(foodAccess.BrainID == 1 && Input.GetKeyDown(KeyCode.LeftControl))
+        if(foodAccess.brainID == 1 && Input.GetKeyDown(KeyCode.LeftControl))
         {
             
-            if (foodAccess.FoodAmount >= 1 && foodAccess.FoodAmount <= 10)
+            if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10)
             {
-                foodAccess.FoodAmount -= 1;
+                foodAccess.foodAmount -= 1;
                 Debug.Log("KEEP EATING!!!");
             }
-            else if (foodAccess.FoodAmount == 0)
+            else if (foodAccess.foodAmount == 0)
             {
                 Debug.Log("All food is eaten");
             }
         }
-        if (foodAccess.BrainID == 2 && Input.GetKeyDown(KeyCode.LeftAlt))
+        if (foodAccess.brainID == 2 && Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            if (foodAccess.FoodAmount >= 1 && foodAccess.FoodAmount <= 10)
+            if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10)
             {
-                foodAccess.FoodAmount -= 1;
+                foodAccess.foodAmount -= 1;
                 Debug.Log("KEEP EATING!!!");
             }
-            else if (foodAccess.FoodAmount == 0)
+            else if (foodAccess.foodAmount == 0)
             {
                 Debug.Log("All food is eaten");
             }
         }
-        if (foodAccess.BrainID == 3 && Input.GetKeyDown(KeyCode.RightAlt))
+        if (foodAccess.brainID == 3 && Input.GetKeyDown(KeyCode.RightAlt))
         {
-            if (foodAccess.FoodAmount >= 1 && foodAccess.FoodAmount <= 10)
+            if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10)
             {
-                foodAccess.FoodAmount -= 1;
+                foodAccess.foodAmount -= 1;
                 Debug.Log("KEEP EATING!!!");
             }
-            else if (foodAccess.FoodAmount == 0)
+            else if (foodAccess.foodAmount == 0)
             {
                 Debug.Log("All food is eaten");
             }
         }
-        if (foodAccess.BrainID == 4 && Input.GetKeyDown(KeyCode.RightControl))
+        if (foodAccess.brainID == 4 && Input.GetKeyDown(KeyCode.RightControl))
         {
-            if (foodAccess.FoodAmount >= 1 && foodAccess.FoodAmount <= 10)
+            if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10)
             {
-                foodAccess.FoodAmount -= 1;
+                foodAccess.foodAmount -= 1;
                 Debug.Log("KEEP EATING!!!");
             }
-            else if (foodAccess.FoodAmount == 0)
+            else if (foodAccess.foodAmount == 0)
             {
                 Debug.Log("All food is eaten");
             }

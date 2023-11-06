@@ -35,10 +35,13 @@ public class TimerManager : MonoBehaviour
                 isTimerOn = false;
                 timerText.enabled = false;
 
+
             }
         }
 
     }
+
+
 
     public void UpdateGameTimer(float remainingTime)
     {

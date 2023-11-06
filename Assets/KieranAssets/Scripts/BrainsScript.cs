@@ -6,12 +6,9 @@ public class BrainsScript : MonoBehaviour
 {
     public GameManager gameManager;
 
-    public int FoodAmountOne = 10; // This holds the amount of food left to eat in 1 brain.
-    public int FoodAmountTwo = 10; // This holds the amount of food left to eat in 1 brain.
-    public int FoodAmountThree = 10; // This holds the amount of food left to eat in 1 brain.
-    public int FoodAmountFour = 10; // This holds the amount of food left to eat in 1 brain.
-    public int FoodAmount = 10;
-    public int BrainID = 0;
+   
+    public int foodAmount = 10;
+    public int brainID = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +24,10 @@ public class BrainsScript : MonoBehaviour
     }
     void PlayersEating()
     {
-        if (FoodAmount == 0/* && gameManager.isFoodEaten == false*/)
+        if (foodAmount == 0/* && gameManager.isFoodEaten == false*/)
         {
-            FoodAmount += 10;
-            switch (BrainID)
+            foodAmount += 10;
+            switch (brainID)
             {
                 case 1:
                     gameManager.playerOneFood.SetActive(false);
@@ -64,12 +61,12 @@ public class BrainsScript : MonoBehaviour
             }
             gameManager.isFoodEaten = true;
         }
-        //if (FoodAmountOne == 0 && gameManager.isFoodEaten == false)
+        //if (foodAmountOne == 0 && gameManager.isFoodEaten == false)
         //{
 
         //    gameManager.playerOneFood.SetActive(false);
         //    Debug.Log("Food transfer");
-        //    FoodAmountOne += 10;
+        //    foodAmountOne += 10;
         //    gameManager.playerOneFood.SetActive(true);
         //    Debug.Log("Food Delivered");
         //    gameManager.isFoodEaten = true;
@@ -80,11 +77,11 @@ public class BrainsScript : MonoBehaviour
 
         //}
 
-        //if (FoodAmountTwo == 0 && gameManager.isFoodEaten == false)
+        //if (foodAmountTwo == 0 && gameManager.isFoodEaten == false)
         //{
         //    gameManager.playerTwoFood.SetActive(false);
         //    Debug.Log("Food transfer");
-        //    FoodAmountTwo += 10;
+        //    foodAmountTwo += 10;
         //    gameManager.playerTwoFood.SetActive(true);
         //    Debug.Log("Food Delivered");
         //    gameManager.isFoodEaten = true;
@@ -94,11 +91,11 @@ public class BrainsScript : MonoBehaviour
         //    gameManager.isFoodEaten = false;
         //}
 
-        //if (FoodAmountThree == 0 && gameManager.isFoodEaten == false)
+        //if (foodAmountThree == 0 && gameManager.isFoodEaten == false)
         //{
         //    gameManager.playerThreeFood.SetActive(false);
         //    Debug.Log("Food transfer");
-        //    FoodAmountThree += 10;
+        //    foodAmountThree += 10;
         //    gameManager.playerThreeFood.SetActive(true);
         //    Debug.Log("Food Delivered");
         //    gameManager.isFoodEaten = true;
@@ -109,11 +106,11 @@ public class BrainsScript : MonoBehaviour
         //    gameManager.isFoodEaten = false;
         //}
 
-        //if (FoodAmountFour == 0 && gameManager.isFoodEaten == false)
+        //if (foodAmountFour == 0 && gameManager.isFoodEaten == false)
         //{
         //    gameManager.playerFourFood.SetActive(false);
         //    Debug.Log("Food transfer");
-        //    FoodAmountFour += 10;
+        //    foodAmountFour += 10;
         //    gameManager.playerFourFood.SetActive(true);
         //    Debug.Log("Food Delivered");
         //    gameManager.isFoodEaten = true;

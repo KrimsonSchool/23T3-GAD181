@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -69,14 +71,20 @@ public class GameManager : MonoBehaviour
         timer.isTimerOn = true;
     }
 
-    
+    IEnumerator WaitToFinishGame()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("GamePick");
+    }
+
 
     #region Update function
     // Update is called once per frame
     void Update()
     {
        // UpdateScoreText();
-        GameWinDecider(); 
+        GameWinDecider();
+        
        
 
     }
@@ -168,11 +176,12 @@ public class GameManager : MonoBehaviour
             }
             canPlayerMove = false;
             timer.isTimerOn = false;
+            StartCoroutine(WaitToFinishGame());
         }
         // Split points for equal score
 
         
-
+        
 
 
     }
