@@ -56,8 +56,8 @@ public class GameManager : MonoBehaviour
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
         playerFoursScore.text = fourScore.ToString(); // This sets the players scores to 0
-
         StartCoroutine(WaitForGameReady());
+        PlayerPrefs.GetInt("Players");
 
     }
     #endregion
@@ -75,9 +75,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       GameWinDecider(); 
-       UpdateScoreText();
+       // UpdateScoreText();
+        GameWinDecider(); 
+       
 
     }
     #endregion
@@ -86,30 +86,50 @@ public class GameManager : MonoBehaviour
     // Creater a function to update player scores when they have eaten their item.
     // This should increase by 1 point.
     // It will be based on the food health value and if it has reacehd 0.
-    public void UpdateScoreText() // This is a function to add scores to a player everytime an item is eaten.
+    public void UpdateScoreTextOne()
     {
-        if (foodUpdate01.FoodAmountOne == 0) // This is an if statement for player one.
-        {
-            oneScore += 1;
-            playerOnesScore.text = oneScore.ToString();
-        }
-        else if (foodUpdate02.FoodAmountTwo == 0) // This is an if statement for player two. 
-        {
-            twoScore += 1;
-            playerTwosScore.text = twoScore.ToString();
-        }
-        else if (foodUpdate03.FoodAmountThree == 0) // This is an if statement for player three. 
-        {
-            threeScore += 1;
-            playerThreesScore.text = threeScore.ToString();
-
-        }
-        else if (foodUpdate04.FoodAmountFour == 0) // This is an if statement for player four.
-        {
-            fourScore += 1;
-            playerFoursScore.text = fourScore.ToString();
-        }
+        oneScore += 1;
+        playerOnesScore.text = oneScore.ToString();
     }
+    public void UpdateScoreTextTwo()
+    {
+        twoScore += 1;
+        playerTwosScore.text = twoScore.ToString();
+    }
+    public void UpdateScoreTextThree()
+    {
+        threeScore += 1;
+        playerThreesScore.text = threeScore.ToString();
+    }
+    public void UpdateScoreTextFour()
+    {
+        fourScore += 1;
+        playerFoursScore.text = fourScore.ToString();
+    }
+    //public void UpdateScoreText() // This is a function to add scores to a player everytime an item is eaten.
+    //{
+    //    if (foodUpdate01.FoodAmountOne == 0) // This is an if statement for player one.
+    //    {
+    //        oneScore += 1;
+    //        playerOnesScore.text = oneScore.ToString();
+    //    }
+    //    if (foodUpdate02.FoodAmountTwo == 0) // This is an if statement for player two. 
+    //    {
+    //        twoScore += 1;
+    //        playerTwosScore.text = twoScore.ToString();
+    //    }
+    //    // if (foodUpdate03.FoodAmountThree == 0) // This is an if statement for player three. 
+    //    //{
+    //    //    threeScore += 1;
+    //    //    playerThreesScore.text = threeScore.ToString();
+
+    //    //}
+    //    if (foodUpdate04.FoodAmountFour == 0) // This is an if statement for player four.
+    //    {
+    //        fourScore += 1;
+    //        playerFoursScore.text = fourScore.ToString();
+    //    }
+    //}
     #endregion
 
     #region Winning
@@ -137,14 +157,14 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
                 Debug.Log("Winner is player Three!");
                 Winner.enabled = true;
-                Winner.text = threeScore.ToString("Player 1 Wins!");
+                Winner.text = threeScore.ToString("Player 3 Wins!");
             }
             else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore)
             {
-                PlayerPrefs.SetInt("playe41Score", PlayerPrefs.GetInt("player4Score") + 50);
+                PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50);
                 Debug.Log("Winner is player Four!");
                 Winner.enabled = true;
-                Winner.text = fourScore.ToString("Player 1 Wins!");
+                Winner.text = fourScore.ToString("Player 4 Wins!");
             }
             canPlayerMove = false;
             timer.isTimerOn = false;
