@@ -7487,7 +7487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 5
   isTimerRunning: 1
-  Countdown: {fileID: 1652553503}
+  countdown: {fileID: 1652553503}
 --- !u!1001 &1668077255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8889,14 +8889,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa60f5fb61c3a34983099e16471e6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Players:
+  players:
   - {fileID: 1779653251}
   - {fileID: 843929190}
   - {fileID: 1201601711}
   - {fileID: 1714826275}
-  dead: 
+  dead: 00000000000000000000000000000000
   playersAlive: 4
-  GameOverPrompt: {fileID: 321412883}
+  gameOverPrompt: {fileID: 321412883}
 --- !u!1001 &1884967148
 PrefabInstance:
   m_ObjectHideFlags: 0
