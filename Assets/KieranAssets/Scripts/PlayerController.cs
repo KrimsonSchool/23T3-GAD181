@@ -6,13 +6,12 @@ public class Playercontroller : MonoBehaviour
 {
     public BrainsScript foodAccess;
     public GameManager gameManager;
-    
-    
+    public Animation animToPlay;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animToPlay = GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -22,7 +21,7 @@ public class Playercontroller : MonoBehaviour
         {
             PickUpButton();
         }
-
+        
 
     }
 
@@ -40,7 +39,7 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
-            
+            animToPlay.Play("EatingZombie");
             
 
         }
@@ -55,8 +54,8 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
-            
-            
+            animToPlay.Play("EatingZombie");
+
         }
         if (foodAccess.brainID == 3 && Input.GetKeyDown(KeyCode.RightAlt))
         {
@@ -69,8 +68,8 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
-           
-            
+            animToPlay.Play("EatingZombie");
+
         }
         if (foodAccess.brainID == 4 && Input.GetKeyDown(KeyCode.RightControl))
         {
@@ -83,8 +82,8 @@ public class Playercontroller : MonoBehaviour
             {
                 Debug.Log("All food is eaten");
             }
-            
-            
+            animToPlay.Play("EatingZombie");
+
         }
 
     }
