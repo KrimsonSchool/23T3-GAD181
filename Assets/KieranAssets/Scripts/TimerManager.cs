@@ -9,7 +9,8 @@ public class TimerManager : MonoBehaviour
     public float remainingTime;
     public bool isTimerOn = false;
     public TextMeshProUGUI timerText;
-
+    public AudioSource startGameSound;
+    public AudioSource spaceShipSound;
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +28,17 @@ public class TimerManager : MonoBehaviour
             {
                 remainingTime -= Time.deltaTime;
                 UpdateGameTimer(remainingTime);
+                spaceShipSound.Play();
             }
             else
             {
                 Debug.Log("The game is finished!!");
                 remainingTime = 0;
                 isTimerOn = false;
+                startGameSound.Play();
+
                 timerText.enabled = false;
+                
 
 
             }

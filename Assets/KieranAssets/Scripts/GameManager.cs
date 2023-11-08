@@ -37,7 +37,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BrainsScript foodUpdate03;
     [SerializeField] private BrainsScript foodUpdate04;
     public TimerManager timer;
-    
+    public AudioManager audioManager;
+    public AudioSource spaceShipAlarm;
+
 
     // Create some Ints to hold the score
     // This should be for each player.
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spaceShipAlarm.Play();
         controlsUI.enabled = true;
         Winner.enabled = false;
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
@@ -72,17 +75,22 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitForGameReady()
     {
         yield return new WaitForSeconds(10f);
+        
         canPlayerMove = true;
         timer.isTimerOn = true;
         controlsUI.enabled = false;
         goalText.enabled = false;
         timerText.enabled = false;
+        
+        
     }
 
     IEnumerator WaitToFinishGame()
     {
         yield return new WaitForSeconds(2f);
+        
         SceneManager.LoadScene("GamePick");
+
     }
 
 
