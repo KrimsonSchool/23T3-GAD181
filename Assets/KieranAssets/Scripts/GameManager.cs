@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
     public bool canPlayerMove = false;
     public bool isFoodEaten = false;
 
+    public bool playerOneWin = false;
+    public bool playerTwoWin = false;
+    public bool playerThreeWin = false;
+    public bool playerFourWin = false;
+
     #endregion
 
     #region Start Function
@@ -87,8 +92,23 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitToFinishGame()
     {
-        yield return new WaitForSeconds(2f);
-        
+        yield return new WaitForSeconds(1f);
+        if(playerOneWin == true)
+        {
+            PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
+        }
+        else if(playerTwoWin == true) 
+        {
+            PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
+        }
+        else if(playerThreeWin == true) 
+        {
+            PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
+        }
+        else if(playerFourWin == true)
+        {
+            PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50);
+        }
         SceneManager.LoadScene("GamePick");
 
     }
@@ -163,36 +183,36 @@ public class GameManager : MonoBehaviour
         {
             if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore)
             {
-                PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
+                playerOneWin = true;
                 Debug.Log("Winner is player ONE!");
                 Winner.enabled = true;
                 Winner.text = oneScore.ToString("Player 1 Wins!");
-                
             }
             else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore)
             {
-                PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
+                playerTwoWin = true;
                 Debug.Log("Winner is player TWO!");
                 Winner.enabled = true;
                 Winner.text = twoScore.ToString("Player 2 Wins!");
             }
             else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore)
             {
-                PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
+                playerThreeWin = true;
                 Debug.Log("Winner is player Three!");
                 Winner.enabled = true;
                 Winner.text = threeScore.ToString("Player 3 Wins!");
             }
             else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore)
             {
-                PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50);
+                playerFourWin = true;
                 Debug.Log("Winner is player Four!");
                 Winner.enabled = true;
                 Winner.text = fourScore.ToString("Player 4 Wins!");
             }
             canPlayerMove = false;
             timer.isTimerOn = false;
-           StartCoroutine(WaitToFinishGame());
+            StartCoroutine(WaitToFinishGame());
+
         }
         // Split points for equal score
 
