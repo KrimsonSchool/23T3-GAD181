@@ -3743,7 +3743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 4
+  burgerID: 4
 --- !u!1 &551358906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,7 +6122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 3
+  burgerID: 3
 --- !u!1 &833554840
 GameObject:
   m_ObjectHideFlags: 0
@@ -8276,7 +8276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 2
+  burgerID: 2
 --- !u!1001 &1115258492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15007,7 +15007,6 @@ MonoBehaviour:
   foodUpdate03: {fileID: 825309032}
   foodUpdate04: {fileID: 551264119}
   timer: {fileID: 689757363}
-  audioManager: {fileID: 0}
   spaceShipAlarm: {fileID: 1961910831}
   oneScore: 0
   twoScore: 0
@@ -15016,6 +15015,10 @@ MonoBehaviour:
   isGameReady: 0
   canPlayerMove: 0
   isFoodEaten: 0
+  playerOneWin: 0
+  playerTwoWin: 0
+  playerThreeWin: 0
+  playerFourWin: 0
 --- !u!4 &1961910830
 Transform:
   m_ObjectHideFlags: 0
@@ -15633,7 +15636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 1
+  burgerID: 1
 --- !u!1 &2049071722
 GameObject:
   m_ObjectHideFlags: 0

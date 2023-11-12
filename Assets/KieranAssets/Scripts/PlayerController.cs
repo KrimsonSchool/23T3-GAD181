@@ -37,7 +37,7 @@ public class Playercontroller : MonoBehaviour
     }
     #endregion
 
-    #region PlayerControls
+    #region PlayerKeyBinds
 
     /*
      * Create a set of key codes to assign each player
@@ -47,7 +47,7 @@ public class Playercontroller : MonoBehaviour
 
     void PickUpButton() // A function to call the players key inputs
     {
-        if(foodAccess.brainID == 1 && Input.GetKeyDown(KeyCode.LeftControl)) // Checking to see if the player has the BrainId 1 and has pressed the left control.
+        if(foodAccess.burgerID == 1 && Input.GetKeyDown(KeyCode.LeftControl)) // Checking to see if the player has the burgerID 1 and has pressed the left control.
         {
             
             if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10) // Checking if the foodamount in the brain script is greater or equal to 1 and less than or equal to 10.
@@ -63,7 +63,7 @@ public class Playercontroller : MonoBehaviour
             eatingSound.Play(); // Plays the assigned eating sound in the inspector.
 
         }
-        if (foodAccess.brainID == 2 && Input.GetKeyDown(KeyCode.LeftAlt)) // Checking to see if the player has the BrainId 2 and has pressed the left alt.
+        if (foodAccess.burgerID == 2 && Input.GetKeyDown(KeyCode.LeftAlt)) // Checking to see if the player has the burgerID 2 and has pressed the left alt.
         {
             if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10) // Checking if the foodamount in the brain script is greater or equal to 1 and less than or equal to 10.
             {
@@ -78,7 +78,7 @@ public class Playercontroller : MonoBehaviour
             eatingSound.Play();// Plays the assigned eating sound in the inspector.
 
         }
-        if (foodAccess.brainID == 3 && Input.GetKeyDown(KeyCode.RightAlt)) // Checking to see if the player has the BrainId 3 and has pressed the right alt.
+        if (foodAccess.burgerID == 3 && Input.GetKeyDown(KeyCode.RightAlt)) // Checking to see if the player has the burgerID 3 and has pressed the right alt.
         {
             if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10) // Checking if the foodamount in the brain script is greater or equal to 1 and less than or equal to 10.
             {
@@ -93,7 +93,7 @@ public class Playercontroller : MonoBehaviour
             eatingSound.Play();// Plays the assigned eating sound in the inspector.
 
         }
-        if (foodAccess.brainID == 4 && Input.GetKeyDown(KeyCode.RightControl)) // Checking to see if the player has the BrainId 4 and has pressed the right control.
+        if (foodAccess.burgerID == 4 && Input.GetKeyDown(KeyCode.RightControl)) // Checking to see if the player has the burgerID 4 and has pressed the right control.
         {
             if (foodAccess.foodAmount >= 1 && foodAccess.foodAmount <= 10) // Checking if the foodamount in the brain script is greater or equal to 1 and less than or equal to 10.
             {

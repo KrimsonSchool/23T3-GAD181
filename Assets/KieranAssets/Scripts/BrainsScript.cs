@@ -4,122 +4,62 @@ using UnityEngine;
 
 public class BrainsScript : MonoBehaviour
 {
-    public GameManager gameManager;
+    #region reference and classes
+    public GameManager gameManager; // This is a reference to the Gamemanager
 
-   
-    public int foodAmount = 10;
-    public int brainID = 0;
+    public int foodAmount = 10; // This holds an int under foodAmount of 10
+    public int burgerID = 0; // This holds an int under burgerID of 0
+    #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    #region Update
     // Update is called once per frame
     void Update()
     {
-        PlayersEating(); // This call the 
-        
+        PlayersEating(); // This call the function PlayersEating()  
     }
-    void PlayersEating()
+    #endregion
+
+    #region PlayerEating Function 
+    void PlayersEating() // This is a function to manage the burgers
     {
-        if (foodAmount == 0/* && gameManager.isFoodEaten == false*/)
+        if (foodAmount == 0) // checks if the foodAmount is 0
         {
-            foodAmount += 10;
-            switch (brainID)
+            foodAmount += 10; // Adds 10 to the foodAmount
+            switch (burgerID) // Creates a variation of conditions assigned to different case
             {
-                case 1:
-                    gameManager.playerOneFood.SetActive(false);
-                    Debug.Log("Food transfer");
-                    gameManager.playerOneFood.SetActive(true);
-                    gameManager.UpdateScoreTextOne();
-                    Debug.Log("Food Delivered");
-                    break;
+                case 1: // This assigns 1 to this case
+                    gameManager.playerOneFood.SetActive(false); // This sets the gameObject inactive
+                    Debug.Log("Food transfer"); // A debug log
+                    gameManager.playerOneFood.SetActive(true); // This sets the gameObject active
+                    gameManager.UpdateScoreTextOne(); // This calls a function from the gamemanager to update scores
+                    Debug.Log("Food Delivered"); // a Debug log
+                    break; // This breaks out of this varitaion.
                 case 2:
-                    gameManager.playerOneFood.SetActive(false);
-                    Debug.Log("Food transfer");
-                    gameManager.playerOneFood.SetActive(true);
-                    gameManager.UpdateScoreTextTwo();
-                    Debug.Log("Food Delivered");
-                    break;
+                    gameManager.playerOneFood.SetActive(false); // This sets the gameObject inactive
+                    Debug.Log("Food transfer"); // A debug log
+                    gameManager.playerOneFood.SetActive(true); // This sets the gameObject active
+                    gameManager.UpdateScoreTextTwo(); // This calls a function from the gamemanager to update scores
+                    Debug.Log("Food Delivered"); // A debug log
+                    break; // This breaks out of this varitaion.
                 case 3:
-                    gameManager.playerOneFood.SetActive(false);
-                    Debug.Log("Food transfer");
-                    gameManager.playerOneFood.SetActive(true);
-                    gameManager.UpdateScoreTextThree();
-                    Debug.Log("Food Delivered");
-                    break;
+                    gameManager.playerOneFood.SetActive(false); // This sets the gameObject inactive
+                    Debug.Log("Food transfer"); // A debug log
+                    gameManager.playerOneFood.SetActive(true); // This sets the gameObject active
+                    gameManager.UpdateScoreTextThree(); // This calls a function from the gamemanager to update scores
+                    Debug.Log("Food Delivered"); // A debug log
+                    break; // This breaks out of this varitaion.
                 case 4:
-                    gameManager.playerOneFood.SetActive(false);
-                    Debug.Log("Food transfer");
-                    gameManager.playerOneFood.SetActive(true);
-                    gameManager.UpdateScoreTextFour();
-                    Debug.Log("Food Delivered");
-                    break;
+                    gameManager.playerOneFood.SetActive(false); // This sets the gameObject inactive
+                    Debug.Log("Food transfer"); // A debug log
+                    gameManager.playerOneFood.SetActive(true); // This sets the gameObject active
+                    gameManager.UpdateScoreTextFour(); // This calls a function from the gamemanager to update scores
+                    Debug.Log("Food Delivered"); // A debug log
+                    break; // This breaks out of this varitaion.
 
             }
-            gameManager.isFoodEaten = true;
+            
         }
-        //if (foodAmountOne == 0 && gameManager.isFoodEaten == false)
-        //{
-
-        //    gameManager.playerOneFood.SetActive(false);
-        //    Debug.Log("Food transfer");
-        //    foodAmountOne += 10;
-        //    gameManager.playerOneFood.SetActive(true);
-        //    Debug.Log("Food Delivered");
-        //    gameManager.isFoodEaten = true;
-        //}
-        //else if (gameManager.isFoodEaten == true)
-        //{
-        //    gameManager.isFoodEaten = false;
-
-        //}
-
-        //if (foodAmountTwo == 0 && gameManager.isFoodEaten == false)
-        //{
-        //    gameManager.playerTwoFood.SetActive(false);
-        //    Debug.Log("Food transfer");
-        //    foodAmountTwo += 10;
-        //    gameManager.playerTwoFood.SetActive(true);
-        //    Debug.Log("Food Delivered");
-        //    gameManager.isFoodEaten = true;
-        //}
-        //else if (gameManager.isFoodEaten == true)
-        //{
-        //    gameManager.isFoodEaten = false;
-        //}
-
-        //if (foodAmountThree == 0 && gameManager.isFoodEaten == false)
-        //{
-        //    gameManager.playerThreeFood.SetActive(false);
-        //    Debug.Log("Food transfer");
-        //    foodAmountThree += 10;
-        //    gameManager.playerThreeFood.SetActive(true);
-        //    Debug.Log("Food Delivered");
-        //    gameManager.isFoodEaten = true;
-           
-        //}
-        //else if (gameManager.isFoodEaten == true)
-        //{
-        //    gameManager.isFoodEaten = false;
-        //}
-
-        //if (foodAmountFour == 0 && gameManager.isFoodEaten == false)
-        //{
-        //    gameManager.playerFourFood.SetActive(false);
-        //    Debug.Log("Food transfer");
-        //    foodAmountFour += 10;
-        //    gameManager.playerFourFood.SetActive(true);
-        //    Debug.Log("Food Delivered");
-        //    gameManager.isFoodEaten = true;
-        //}
-        //else if (gameManager.isFoodEaten == true)
-        //{
-        //    gameManager.isFoodEaten = false;
-        //}
     }
-
+    #endregion
 
 }

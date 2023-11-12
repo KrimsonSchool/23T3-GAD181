@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public bool isGameReady = false; // sets a bool to false for isGameReady
     public bool canPlayerMove = false; // sets a bool to false for canPlayerMove
-    public bool isFoodEaten = false; // sets a bool to false for isFoodEaten
+    
 
     public bool playerOneWin = false; // sets a bool to false for playerOneWin
     public bool playerTwoWin = false; // sets a bool to false for playerTwoWin
