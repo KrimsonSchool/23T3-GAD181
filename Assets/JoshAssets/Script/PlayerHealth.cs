@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject player;
     public PlayerMovement playerMovement;
     public bool isDead;
+    public AudioSource deathSound;
+    public AudioClip clipToPlay;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,8 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         if (health == 0 || health <= 0)
-        {                
+        {
+            deathSound.Play();
             isDead = true;
             playerMovement.enabled = false;
             gameObject.SetActive(false);
