@@ -22,23 +22,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI goalText;
     public TextMeshProUGUI timerText;
     
-    
-
-    /*public BrainsScript foodCounterTwo; // This is a script reference to brainscript.
-    public BrainsScript foodCounterThree; // This is a script reference to brainscript.
-    public BrainsScript foodCounterFour; // This is a script reference to brainscript.*/
-
     public GameObject playerOneFood; // This is a reference to the gameObject in the scene of playerOnesfood
     public GameObject playerTwoFood; // This is a reference to the gameObject in the scene of playerTwosfood
     public GameObject playerThreeFood; // This is a reference to the gameObject in the scene of playerThreesfood
     public GameObject playerFourFood; // This is a reference to the gameObject in the scene of playerFoursfood
-    [SerializeField] private BrainsScript foodUpdate01;
-    [SerializeField] private BrainsScript foodUpdate02;
-    [SerializeField] private BrainsScript foodUpdate03;
-    [SerializeField] private BrainsScript foodUpdate04;
-    public TimerManager timer;
-    public AudioManager audioManager;
-    public AudioSource spaceShipAlarm;
+    [SerializeField] private BrainsScript foodUpdate01; // A reference to the brainscript that gets the burger 1 attached in the scene
+    [SerializeField] private BrainsScript foodUpdate02; // A reference to the brainscript that gets the burger 2 attached in the scene
+    [SerializeField] private BrainsScript foodUpdate03; // A reference to the brainscript that gets the burger 3 attached in the scene
+    [SerializeField] private BrainsScript foodUpdate04; // A reference to the brainscript that gets the burger 4 attached in the scene
+    public TimerManager timer; // A reference to the TimerManager
+    public AudioSource spaceShipAlarm; // Access to the audioSource assigned in the scene.
 
 
     // Create some Ints to hold the score
@@ -49,14 +42,14 @@ public class GameManager : MonoBehaviour
     public int threeScore = 0; // This is a placeholder for player threes points to update the text.
     public int fourScore = 0; // This is a placeholder for player four4s points to update the text.
 
-    public bool isGameReady = false;
-    public bool canPlayerMove = false;
-    public bool isFoodEaten = false;
+    public bool isGameReady = false; // sets a bool to false for isGameReady
+    public bool canPlayerMove = false; // sets a bool to false for canPlayerMove
+    public bool isFoodEaten = false; // sets a bool to false for isFoodEaten
 
-    public bool playerOneWin = false;
-    public bool playerTwoWin = false;
-    public bool playerThreeWin = false;
-    public bool playerFourWin = false;
+    public bool playerOneWin = false; // sets a bool to false for playerOneWin
+    public bool playerTwoWin = false; // sets a bool to false for playerTwoWin
+    public bool playerThreeWin = false; // sets a bool to false for playerThreeWin
+    public bool playerFourWin = false; // sets a bool to false for playerFourWin
 
     #endregion
 
@@ -64,55 +57,71 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spaceShipAlarm.Play();
-        controlsUI.enabled = true;
-        Winner.enabled = false;
+        spaceShipAlarm.Play(); // playes the audiosource spaceshipalarm on start.
+        controlsUI.enabled = true; // This sets the Image source to true in the scene on start.
+        Winner.enabled = false; // This sets the winner text false on start until called later.
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
         playerFoursScore.text = fourScore.ToString(); // This sets the players scores to 0
-        StartCoroutine(WaitForGameReady());
-        PlayerPrefs.GetInt("Players");
+        StartCoroutine(WaitForGameReady()); // This calls a IEnumator at the start of the scene 
+        PlayerPrefs.GetInt("Players"); // This sets the amount of players in the game.
 
     }
     #endregion
 
-    IEnumerator WaitForGameReady()
-    {
-        yield return new WaitForSeconds(10f);
-        
-        canPlayerMove = true;
-        timer.isTimerOn = true;
-        controlsUI.enabled = false;
-        goalText.enabled = false;
-        timerText.enabled = false;
-        
-        
-    }
+    #region GameReadying Timer
 
-    IEnumerator WaitToFinishGame()
+    /*
+     * Create a timer of 10 seconds
+     * This should pause all interaction with the game
+     * This should enable and disable some images and text
+     */
+    IEnumerator WaitForGameReady() // A unity function to hold time conditions under the name WaitForGameReady
     {
-        yield return new WaitForSeconds(1f);
-        if(playerOneWin == true)
-        {
-            PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
-        }
-        else if(playerTwoWin == true) 
-        {
-            PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
-        }
-        else if(playerThreeWin == true) 
-        {
-            PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
-        }
-        else if(playerFourWin == true)
-        {
-            PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50);
-        }
-        SceneManager.LoadScene("GamePick");
+        yield return new WaitForSeconds(10f); // This will wait for 10 seconds before executing the following code.
+        
+        canPlayerMove = true; // A bool set to true
+        timer.isTimerOn = true; // A bool set to true
+        controlsUI.enabled = false; // A bool set to false
+        goalText.enabled = false; // A bool set to false
+        timerText.enabled = false; // A bool set to false
+
 
     }
+    #endregion
 
+    #region WaitToFinishGame
+
+    /*
+     * Create a Timer for 1 second
+     * This should allow for the player winning screen to display and execute some conditions in another scene
+     */
+
+
+    IEnumerator WaitToFinishGame() // A unity function to hold time conditions under the name WaitToFinishGame
+    {
+        yield return new WaitForSeconds(1f);  // This will wait for 1 seconds before executing the following code.
+        if (playerOneWin == true) // Checks if the playerOneWin bool is set true
+        {
+            PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50); // Increase the players score in the mainmenu by 50
+        }
+        else if(playerTwoWin == true) // Checks if the playerTwoWin bool is set true
+        {
+            PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50); // Increase the players score in the mainmenu by 50
+        }
+        else if(playerThreeWin == true) // Checks if the playerThreeWin bool is set true
+        {
+            PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50); // Increase the players score in the mainmenu by 50
+        }
+        else if(playerFourWin == true) // Checks if the playerFourWin bool is set true
+        {
+            PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50); // Increase the players score in the mainmenu by 50
+        }
+        SceneManager.LoadScene("GamePick"); // Access the scenemanager and loads the game pick scene.
+
+    }
+    #endregion
 
     #region Update function
     // Update is called once per frame
@@ -120,105 +129,83 @@ public class GameManager : MonoBehaviour
     {
        // UpdateScoreText();
         GameWinDecider();
-        
-       
-
     }
     #endregion
 
     #region Player scoring
+
     // Creater a function to update player scores when they have eaten their item.
     // This should increase by 1 point.
     // It will be based on the food health value and if it has reacehd 0.
-    public void UpdateScoreTextOne()
-    {
-        oneScore += 1;
-        playerOnesScore.text = oneScore.ToString();
-    }
-    public void UpdateScoreTextTwo()
-    {
-        twoScore += 1;
-        playerTwosScore.text = twoScore.ToString();
-    }
-    public void UpdateScoreTextThree()
-    {
-        threeScore += 1;
-        playerThreesScore.text = threeScore.ToString();
-    }
-    public void UpdateScoreTextFour()
-    {
-        fourScore += 1;
-        playerFoursScore.text = fourScore.ToString();
-    }
-    //public void UpdateScoreText() // This is a function to add scores to a player everytime an item is eaten.
-    //{
-    //    if (foodUpdate01.FoodAmountOne == 0) // This is an if statement for player one.
-    //    {
-    //        oneScore += 1;
-    //        playerOnesScore.text = oneScore.ToString();
-    //    }
-    //    if (foodUpdate02.FoodAmountTwo == 0) // This is an if statement for player two. 
-    //    {
-    //        twoScore += 1;
-    //        playerTwosScore.text = twoScore.ToString();
-    //    }
-    //    // if (foodUpdate03.FoodAmountThree == 0) // This is an if statement for player three. 
-    //    //{
-    //    //    threeScore += 1;
-    //    //    playerThreesScore.text = threeScore.ToString();
 
-    //    //}
-    //    if (foodUpdate04.FoodAmountFour == 0) // This is an if statement for player four.
-    //    {
-    //        fourScore += 1;
-    //        playerFoursScore.text = fourScore.ToString();
-    //    }
-    //}
+    public void UpdateScoreTextOne() // A function to update player ones score
+    {
+        oneScore += 1; // Increase the player ones score by 1
+        playerOnesScore.text = oneScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+    }
+    public void UpdateScoreTextTwo() // A function to update player twos score
+    {
+        twoScore += 1; // Increase the player twos score by 1
+        playerTwosScore.text = twoScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+    }
+    public void UpdateScoreTextThree() // A function to update player threes score
+    {
+        threeScore += 1; // Increase the player threes score by 1
+        playerThreesScore.text = threeScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+    }
+    public void UpdateScoreTextFour() // A function to update player fours score
+    {
+        fourScore += 1; // Increase the player fours score by 1
+        playerFoursScore.text = fourScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+    }
+    
     #endregion
 
     #region Winning
-    public void GameWinDecider()
+    /*
+     * Create a function to decide teh winner
+     * This should be based of the timer hitting 0 
+     * as well which player has the highest score
+     */
+
+    public void GameWinDecider() // A function to decide the winner
     {
-        if(timer.remainingTime == 0)
+        if(timer.remainingTime == 0) // checking if the timer is equal to 0.
         {
-            if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore)
+            if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore) // checking if player One has a higher score than the rest
             {
-                playerOneWin = true;
+                playerOneWin = true; // Sets the playerOneWin bool to true
                 Debug.Log("Winner is player ONE!");
-                Winner.enabled = true;
-                Winner.text = oneScore.ToString("Player 1 Wins!");
+                Winner.enabled = true; // Sets the UI text to be dsiplayed on the screen
+                Winner.text = oneScore.ToString("Player 1 Wins!"); // CHnages the winner text to Player 1 wins
             }
-            else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore)
+            else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore) // checking if player Two has a higher score than the rest
             {
-                playerTwoWin = true;
+                playerTwoWin = true; // Sets the playerTwoWin bool to true
                 Debug.Log("Winner is player TWO!");
-                Winner.enabled = true;
-                Winner.text = twoScore.ToString("Player 2 Wins!");
+                Winner.enabled = true; //Sets the UI text to be dsiplayed on the screen
+                Winner.text = twoScore.ToString("Player 2 Wins!"); // CHnages the winner text to Player 1 wins
             }
-            else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore)
+            else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore) // checking if player Three has a higher score than the rest
             {
-                playerThreeWin = true;
+                playerThreeWin = true; // Sets the playerThreeWin bool to true
                 Debug.Log("Winner is player Three!");
-                Winner.enabled = true;
-                Winner.text = threeScore.ToString("Player 3 Wins!");
+                Winner.enabled = true;  // Sets the UI text to be dsiplayed on the screen
+                Winner.text = threeScore.ToString("Player 3 Wins!"); // CHnages the winner text to Player 1 wins
             }
-            else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore)
+            else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore) // checking if player Four has a higher score than the rest
             {
-                playerFourWin = true;
+                playerFourWin = true; // Sets the playerFourWin bool to true
                 Debug.Log("Winner is player Four!");
-                Winner.enabled = true;
-                Winner.text = fourScore.ToString("Player 4 Wins!");
+                Winner.enabled = true;  // Sets the UI text to be dsiplayed on the screen
+                Winner.text = fourScore.ToString("Player 4 Wins!"); // CHnages the winner text to Player 1 wins
             }
-            canPlayerMove = false;
-            timer.isTimerOn = false;
-            StartCoroutine(WaitToFinishGame());
+            canPlayerMove = false; // Disables players movements after a player has won.
+            timer.isTimerOn = false; // Disables the timers
+            StartCoroutine(WaitToFinishGame()); // Calls a coroutine of waitToFinishGame to finish the game.
 
         }
-        // Split points for equal score
-
-        
-        
-
+       
 
     }
     #endregion
