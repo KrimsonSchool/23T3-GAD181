@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HungryZombiesManager : MonoBehaviour
@@ -12,15 +14,24 @@ public class HungryZombiesManager : MonoBehaviour
 
     public GameObject Kieran_humanToSpawn;
     public GameObject Kieran_humanToSpawnTwo;
+    public MiniGameTwoPlayerController playerOne;
+    public MiniGameTwoPlayerController playerTwo;
+    public MiniGameTwoPlayerController playerThree;
+    public MiniGameTwoPlayerController playerFour;
     public int oneScore = 0; // This is a placeholder for player ones points to update the text.
     public int twoScore = 0; // This is a placeholder for player twos points to update the text.
     public int threeScore = 0; // This is a placeholder for player threes points to update the text.
     public int fourScore = 0; // This is a placeholder for player four4s points to update the text.
 
+    public bool canHumansSpawn = false;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnHuman", 1, 3);
+        playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
+        playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
+        playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
+        playerFoursScore.text = fourScore.ToString(); // This sets the players scores to 0
     }
 
     private void Update()
@@ -28,13 +39,18 @@ public class HungryZombiesManager : MonoBehaviour
         
     }
 
+    
+
     void SpawnHuman()
     {
-        Vector3 randomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, -4.5f);
-        Vector3 otherRandomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, 10.5f);
+        //if (canHumansSpawn == true)
+       // {
+            Vector3 randomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, -4.5f);
+            Vector3 otherRandomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, 10.5f);
 
-        Instantiate(Kieran_humanToSpawn, randomPosition, Quaternion.identity);
-        Instantiate(Kieran_humanToSpawnTwo, otherRandomPosition, Quaternion.identity);
+            Instantiate(Kieran_humanToSpawn, randomPosition, Quaternion.identity);
+            Instantiate(Kieran_humanToSpawnTwo, otherRandomPosition, Quaternion.identity);
+        //}
     }
 
     #region Player scoring
@@ -43,27 +59,47 @@ public class HungryZombiesManager : MonoBehaviour
     // This should increase by 1 point.
     // It will be based on the food health value and if it has reacehd 0.
 
-    public void UpdateScoreTextOne() // A function to update player ones score
+
+    public void UpdatePlayerOneScore()
     {
-        oneScore += 1; // Increase the player ones score by 1
-        playerOnesScore.text = oneScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
-    }
-    public void UpdateScoreTextTwo() // A function to update player twos score
-    {
-        twoScore += 1; // Increase the player twos score by 1
-        playerTwosScore.text = twoScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
-    }
-    public void UpdateScoreTextThree() // A function to update player threes score
-    {
-        threeScore += 1; // Increase the player threes score by 1
-        playerThreesScore.text = threeScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
-    }
-    public void UpdateScoreTextFour() // A function to update player fours score
-    {
-        fourScore += 1; // Increase the player fours score by 1
-        playerFoursScore.text = fourScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+        if (playerOne.zombieID == 1)
+        {
+            oneScore += 1; // Increase the player ones score by 1
+            playerOnesScore.text = oneScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+            Debug.Log("Player one got a point");
+        }
     }
 
+    public void UpdatePlayerTwoScore()
+    {
+
+        if (playerTwo.zombieID == 2)
+        {
+            twoScore += 1; // Increase the player twos score by 1
+            playerTwosScore.text = twoScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+            Debug.Log("Player Two got a point");
+        }
+    }
+
+    public void UpdatePlayerThreeScore()
+    {
+        if (playerThree.zombieID == 3)
+        {
+            threeScore += 1; // Increase the player threes score by 1
+            playerThreesScore.text = threeScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+            Debug.Log("Player Three got a point");
+        }
+    }
+
+    public void UpdatePlayerFourScore()
+    {
+        if (playerFour.zombieID == 4)
+        {
+            fourScore += 1; // Increase the player fours score by 1
+            playerFoursScore.text = fourScore.ToString(); // Converst the score to a string and updates the UI text to dispaly it.
+            Debug.Log("Player Four got a point");
+        }
+    }
+    
     #endregion
-
 }

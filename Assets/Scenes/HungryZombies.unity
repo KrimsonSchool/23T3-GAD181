@@ -2988,6 +2988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieID: 3
   zombie: {fileID: 496266534}
+  zombieManager: {fileID: 1537179202}
 --- !u!65 &496266538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3816,6 +3817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieID: 1
   zombie: {fileID: 811279145}
+  zombieManager: {fileID: 1537179202}
 --- !u!65 &811279151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5858,6 +5860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieID: 2
   zombie: {fileID: 1346364935}
+  zombieManager: {fileID: 1537179202}
 --- !u!65 &1346364939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6710,16 +6713,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c529bda3e55564cb93963f20d00ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOnesScore: {fileID: 0}
-  playerTwosScore: {fileID: 0}
-  playerThreesScore: {fileID: 0}
-  playerFoursScore: {fileID: 0}
+  playerOnesScore: {fileID: 1174091274}
+  playerTwosScore: {fileID: 438653620}
+  playerThreesScore: {fileID: 2114925268}
+  playerFoursScore: {fileID: 932131760}
   Kieran_humanToSpawn: {fileID: 7540600658237836993, guid: ed1defc3a875ea847b8dec9c2137fde9, type: 3}
   Kieran_humanToSpawnTwo: {fileID: 7540600658237836993, guid: a76b21451979e344f8b83009636194ea, type: 3}
+  playerOne: {fileID: 811279147}
+  playerTwo: {fileID: 1346364937}
+  playerThree: {fileID: 496266536}
+  playerFour: {fileID: 1615683674}
   oneScore: 0
   twoScore: 0
   threeScore: 0
   fourScore: 0
+  canHumansSpawn: 0
 --- !u!4 &1537179203
 Transform:
   m_ObjectHideFlags: 0
@@ -7240,6 +7248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieID: 4
   zombie: {fileID: 1615683672}
+  zombieManager: {fileID: 1537179202}
 --- !u!65 &1615683676
 BoxCollider:
   m_ObjectHideFlags: 0

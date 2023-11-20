@@ -10,6 +10,7 @@ TagManager:
   - PlayerTwo
   - PlayerThree
   - PlayerFour
+  - Item
   layers:
   - Default
   - TransparentFX
