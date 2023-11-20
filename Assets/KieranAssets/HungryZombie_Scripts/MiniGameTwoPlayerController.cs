@@ -12,7 +12,8 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     */
     public int zombieID = 0; // This holds an int to be assigned a number 1-4.
     public GameObject zombie; // This is reference to the assigned GameObject.
-    
+    public HungryZombiesManager zombieManager;
+   
 
     #endregion
 
@@ -25,10 +26,29 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Kieran_PlayerMovement();
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (zombieID == 1)
+        {
+            zombieManager.UpdatePlayerOneScore();
+        }
+        if (zombieID == 2)
+        {
+            zombieManager.UpdatePlayerTwoScore();
+        }
+        if(zombieID == 3)
+        {
+            zombieManager.UpdatePlayerThreeScore();
+        }
+        if( zombieID == 4)
+        {
+            zombieManager.UpdatePlayerFourScore();
+        }
+    }
 
     #region PlayerMovement
     /*
@@ -96,4 +116,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
         }
     }
     #endregion
+
+   
+
 }
