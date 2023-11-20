@@ -14,13 +14,6 @@ public class HungryZombiesManager : MonoBehaviour
         InvokeRepeating("SpawnHuman", 1, 5);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
-
     
     void SpawnHuman()
     {

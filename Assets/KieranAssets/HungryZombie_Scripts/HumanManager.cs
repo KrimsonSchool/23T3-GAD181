@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,10 @@ public class HumanManager : MonoBehaviour
 {
     public HungryZombiesManager zombiesManager;
     public int humanID = 0;
+
+    [SerializeField] private GameObject humanToDestroy;
+    [SerializeField] private GameObject humanTwoToDestroy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,4 +36,18 @@ public class HumanManager : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if(humanID == 1 && other.CompareTag("Player"))
+        //{
+            humanToDestroy.SetActive(false);
+        //}
+       // if (humanID == 2 && other.CompareTag("Player"))
+        //{
+            humanTwoToDestroy.SetActive(false);
+        //}
+        
+    }
+
 }
