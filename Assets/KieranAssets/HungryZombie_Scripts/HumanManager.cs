@@ -11,7 +11,7 @@ public class HumanManager : MonoBehaviour
     [SerializeField] private GameObject humanToDestroy;
     [SerializeField] private GameObject humanTwoToDestroy;
 
-    public MiniGameTwoPlayerController playerAccess;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,10 @@ public class HumanManager : MonoBehaviour
         humanTwoToDestroy.SetActive(true);
 
         humanToDestroy.GetComponent<HungryZombiesManager>();
-        humanToDestroy.GetComponent <MiniGameTwoPlayerController>();
+        humanTwoToDestroy.GetComponent<HungryZombiesManager>();
 
-        humanTwoToDestroy.GetComponent <HungryZombiesManager>();
-        humanTwoToDestroy.GetComponent <MiniGameTwoPlayerController>();
+
+
 
 
     }
@@ -54,42 +54,12 @@ public class HumanManager : MonoBehaviour
         if(humanID == 1 && other.CompareTag("Player"))
         {
             humanToDestroy.SetActive(false);
-            if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextOne();
-            }
-            else if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextTwo();
-            }
-            else if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextThree();
-            }
-            else if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextFour();
-            }
+            
         }
        if (humanID == 2 && other.CompareTag("Player"))
         {
             humanTwoToDestroy.SetActive(false);
-            if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextOne();
-            }
-            else if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextTwo();
-            }
-            else if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextThree();
-            }
-            else if (playerAccess.zombie)
-            {
-                zombiesManager.UpdateScoreTextFour();
-            }
+            
         }
         
     }
