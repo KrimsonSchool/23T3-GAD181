@@ -11,10 +11,13 @@ public class HumanManager : MonoBehaviour
     [SerializeField] private GameObject humanToDestroy;
     [SerializeField] private GameObject humanTwoToDestroy;
 
+    public HungryZombiesManager hungryZombiesManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        humanToDestroy.SetActive(true);
+        humanTwoToDestroy.SetActive(true);
     }
 
     // Update is called once per frame
@@ -39,14 +42,14 @@ public class HumanManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if(humanID == 1 && other.CompareTag("Player"))
-        //{
+        if(humanID == 1 && other.CompareTag("Player"))
+        {
             humanToDestroy.SetActive(false);
-        //}
-       // if (humanID == 2 && other.CompareTag("Player"))
-        //{
+        }
+       if (humanID == 2 && other.CompareTag("Player"))
+        {
             humanTwoToDestroy.SetActive(false);
-        //}
+        }
         
     }
 

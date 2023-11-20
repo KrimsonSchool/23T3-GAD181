@@ -28,38 +28,6 @@ public class MiniGameTwoPlayerController : MonoBehaviour
         Kieran_PlayerMovement();
     }
 
-    
-
-    #region Return to position
-
-    /*
-     * Create a function to return the Zombie GameObject to its original position.
-     * This will be called after 0.5 seconds to allow for a small delay.
-     */
-
-    IEnumerator ReturnToPosition() 
-    {
-        yield return new WaitForSeconds(2f); // This returns a value of 0.5 in the form of seconds.
-        if (zombieID == 1) // This checks the zoombieID for the number 1
-        {
-            transform.position = new Vector3(-4, 0, 2); // This changes the position of the GameObject to a new vector(Player one)
-        }
-        else if (zombieID == 2) // This checks the zoombieID for the number 2
-        {
-            transform.position = new Vector3(-4, 0, 4); // This changes the position of the GameObject to a new vector(Player Two)
-        }
-        else if (zombieID == 3) // This checks the zoombieID for the number 3
-        {
-            transform.position = new Vector3(4, 0, 2); // This changes the position of the GameObject to a new vector(Player Three)
-        }
-        else if (zombieID == 4) // This checks the zoombieID for the number 4
-        {
-            transform.position = new Vector3(4, 0, 4); // This changes the position of the GameObject to a new vector(Player Four)
-        }
-    }
-    #endregion
-
-    
 
     #region PlayerMovement
     /*
@@ -77,7 +45,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                     
                     transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)
-                    StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                     
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftControl))
@@ -91,7 +59,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 if (zombieID == 2 && Input.GetKey(KeyCode.LeftAlt)) // checks to see if 2 has been assigned to zombieID and the Left Alt has been pressed.
                 {
                     transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Two)
-                    StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                 }
                 else if (Input.GetKeyUp(KeyCode.LeftAlt))
                 {
@@ -104,7 +72,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 if (zombieID == 3 && Input.GetKey(KeyCode.RightAlt)) // checks to see if 3 has been assigned to zombieID and the Rigth Alt has been pressed.
                 {
                     transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Three)
-                    StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                 }
                 else if (Input.GetKeyUp(KeyCode.RightAlt))
                 {
@@ -116,7 +84,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 if (zombieID == 4 && Input.GetKey(KeyCode.RightControl)) // checks to see if 4 has been assigned to zombieID and the Right control has been pressed.
                 {
                     transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Four)
-                    StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                 }
                 else if (Input.GetKeyUp(KeyCode.RightControl))
                 {
