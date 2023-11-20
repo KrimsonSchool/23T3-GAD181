@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Try to gain points by eating burgers
+  m_text: Try to gain points by eating humans
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2742,7 +2742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37d92cb75feecd47a14637f8d8ffba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingTime: 30
+  remainingTime: 60
   isTimerOn: 0
   timerText: {fileID: 486505971}
   startGameSound: {fileID: 486505969}
@@ -2989,6 +2989,7 @@ MonoBehaviour:
   zombieID: 3
   zombie: {fileID: 496266534}
   zombieManager: {fileID: 1537179202}
+  canPlayerMove: 0
 --- !u!65 &496266538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3818,6 +3819,7 @@ MonoBehaviour:
   zombieID: 1
   zombie: {fileID: 811279145}
   zombieManager: {fileID: 1537179202}
+  canPlayerMove: 0
 --- !u!65 &811279151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5297,7 +5299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You only get 30 Seconds
+  m_text: You only get 1 minute
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5861,6 +5863,7 @@ MonoBehaviour:
   zombieID: 2
   zombie: {fileID: 1346364935}
   zombieManager: {fileID: 1537179202}
+  canPlayerMove: 0
 --- !u!65 &1346364939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6723,6 +6726,10 @@ MonoBehaviour:
   playerTwo: {fileID: 1346364937}
   playerThree: {fileID: 496266536}
   playerFour: {fileID: 1615683674}
+  timer: {fileID: 486505970}
+  goalText: {fileID: 294430021}
+  timerText: {fileID: 1218636779}
+  controlsUI: {fileID: 1084082307}
   oneScore: 0
   twoScore: 0
   threeScore: 0
@@ -7249,6 +7256,7 @@ MonoBehaviour:
   zombieID: 4
   zombie: {fileID: 1615683672}
   zombieManager: {fileID: 1537179202}
+  canPlayerMove: 0
 --- !u!65 &1615683676
 BoxCollider:
   m_ObjectHideFlags: 0
