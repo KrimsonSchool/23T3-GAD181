@@ -12,6 +12,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     */
     public int zombieID = 0; // This holds an int to be assigned a number 1-4.
     public GameObject zombie; // This is reference to the assigned GameObject.
+    
 
     #endregion
 
@@ -52,6 +53,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                 transform.position = new Vector3(-4, 0, 2); // This changes the position of the GameObject to a new vector(Player one)
                 }
+
 
                 break; // This breaks out of this current case.
 
