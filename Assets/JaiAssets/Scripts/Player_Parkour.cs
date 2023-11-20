@@ -65,6 +65,10 @@ public class Player_Parkour : MonoBehaviour
             GetComponentInChildren<Camera>().fieldOfView = 120;
             won = true;
         }
+        else if(other.tag == "Enemy")
+        {
+            other.GetComponent<AnimateMat>().alt = true;
+        }
         else
         {
             canJump = true;
