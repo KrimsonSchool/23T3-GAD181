@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HungryZombiesManager : MonoBehaviour
 {
@@ -18,20 +19,26 @@ public class HungryZombiesManager : MonoBehaviour
     public MiniGameTwoPlayerController playerTwo;
     public MiniGameTwoPlayerController playerThree;
     public MiniGameTwoPlayerController playerFour;
+    public TimerManager timer;
+    public TextMeshProUGUI goalText;
+    public TextMeshProUGUI timerText;
+    public Image controlsUI;
     public int oneScore = 0; // This is a placeholder for player ones points to update the text.
     public int twoScore = 0; // This is a placeholder for player twos points to update the text.
     public int threeScore = 0; // This is a placeholder for player threes points to update the text.
     public int fourScore = 0; // This is a placeholder for player four4s points to update the text.
 
     public bool canHumansSpawn = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnHuman", 1, 3);
+        StartCoroutine(WaitForGameReady());
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
         playerFoursScore.text = fourScore.ToString(); // This sets the players scores to 0
+        InvokeRepeating("SpawnHuman", 1, 3);
     }
 
     private void Update()
@@ -39,18 +46,33 @@ public class HungryZombiesManager : MonoBehaviour
         
     }
 
-    
+    IEnumerator WaitForGameReady() // A unity function to hold time conditions under the name WaitForGameReady
+    {
+        yield return new WaitForSeconds(10f); // This will wait for 10 seconds before executing the following code.
+
+        playerOne.canPlayerMove = true; // A bool set to true
+        playerTwo.canPlayerMove = true;
+        playerThree.canPlayerMove = true;
+        playerFour.canPlayerMove = true;
+        canHumansSpawn = true;
+        timer.isTimerOn = true; // A bool set to true
+        controlsUI.enabled = false; // A bool set to false
+        goalText.enabled = false; // A bool set to false
+        timerText.enabled = false; // A bool set to false
+
+
+    }
 
     void SpawnHuman()
     {
-        //if (canHumansSpawn == true)
-       // {
-            Vector3 randomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, -4.5f);
-            Vector3 otherRandomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, 10.5f);
+        if (canHumansSpawn == true)
+        {
+           Vector3 randomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, -4.5f);
+           Vector3 otherRandomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 1.2f, 10.5f);
 
             Instantiate(Kieran_humanToSpawn, randomPosition, Quaternion.identity);
             Instantiate(Kieran_humanToSpawnTwo, otherRandomPosition, Quaternion.identity);
-        //}
+        }
     }
 
     #region Player scoring

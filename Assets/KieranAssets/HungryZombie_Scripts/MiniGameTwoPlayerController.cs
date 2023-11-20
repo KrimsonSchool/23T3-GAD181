@@ -13,7 +13,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public int zombieID = 0; // This holds an int to be assigned a number 1-4.
     public GameObject zombie; // This is reference to the assigned GameObject.
     public HungryZombiesManager zombieManager;
-   
+   public bool canPlayerMove = false;
 
     #endregion
 
@@ -59,61 +59,76 @@ public class MiniGameTwoPlayerController : MonoBehaviour
 
     void Kieran_PlayerMovement() // A function to hold some code
     {
-        switch (zombieID) // A if statement that holds mutliple variations of the same code under the variable of zombieID
-        {
-            case 1: // This is the first if statment assigned a case number of 1
-                if(zombieID == 1 && Input.GetKey(KeyCode.LeftControl)) // checks to see if 1 has been assigned to zombieID and the Left control has been pressed.
-                {
-                    
-                    transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)
-                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
-                    
-                }
-                else if (Input.GetKeyUp(KeyCode.LeftControl))
-                {
-                transform.position = new Vector3(-4, 0, 2); // This changes the position of the GameObject to a new vector(Player one)
-                }
+        
 
 
-                break; // This breaks out of this current case.
+            switch (zombieID) // A if statement that holds mutliple variations of the same code under the variable of zombieID
+            {
+                case 1: // This is the first if statment assigned a case number of 1
+                if (canPlayerMove)
+                {
+                    if (zombieID == 1 && Input.GetKey(KeyCode.LeftControl)) // checks to see if 1 has been assigned to zombieID and the Left control has been pressed.
+                    {
 
-            case 2: // This is the first if statment assigned a case number of 2
-                if (zombieID == 2 && Input.GetKey(KeyCode.LeftAlt)) // checks to see if 2 has been assigned to zombieID and the Left Alt has been pressed.
-                {
-                    transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Two)
-                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)
+                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+
+                    }
+                    else if (Input.GetKeyUp(KeyCode.LeftControl))
+                    {
+                        transform.position = new Vector3(-4, 0, 2); // This changes the position of the GameObject to a new vector(Player one)
+                    }
                 }
-                else if (Input.GetKeyUp(KeyCode.LeftAlt))
+                    break; // This breaks out of this current case.
+                
+
+                case 2: // This is the first if statment assigned a case number of 2
+                if (canPlayerMove)
                 {
-                    transform.position = new Vector3(-4, 0, 4); // This changes the position of the GameObject to a new vector(Player Two)
+                    if (zombieID == 2 && Input.GetKey(KeyCode.LeftAlt)) // checks to see if 2 has been assigned to zombieID and the Left Alt has been pressed.
+                    {
+                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Two)
+                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    }
+                    else if (Input.GetKeyUp(KeyCode.LeftAlt))
+                    {
+                        transform.position = new Vector3(-4, 0, 4); // This changes the position of the GameObject to a new vector(Player Two)
+                    }
                 }
-                break; // This breaks out of this current case.
+                    break; // This breaks out of this current case.
 
 
-            case 3: // This is the first if statment assigned a case number of 3
-                if (zombieID == 3 && Input.GetKey(KeyCode.RightAlt)) // checks to see if 3 has been assigned to zombieID and the Rigth Alt has been pressed.
+                case 3: // This is the first if statment assigned a case number of 3
+                if (canPlayerMove)
                 {
-                    transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Three)
-                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    if (zombieID == 3 && Input.GetKey(KeyCode.RightAlt)) // checks to see if 3 has been assigned to zombieID and the Rigth Alt has been pressed.
+                    {
+                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Three)
+                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    }
+                    else if (Input.GetKeyUp(KeyCode.RightAlt))
+                    {
+                        transform.position = new Vector3(4, 0, 2); // This changes the position of the GameObject to a new vector(Player Three)
+                    }
                 }
-                else if (Input.GetKeyUp(KeyCode.RightAlt))
-                {
-                    transform.position = new Vector3(4, 0, 2); // This changes the position of the GameObject to a new vector(Player Three)
-                }
-                break; // This breaks out of this current case.
+                    break; // This breaks out of this current case.
 
-            case 4: // This is the first if statment assigned a case number of 4
-                if (zombieID == 4 && Input.GetKey(KeyCode.RightControl)) // checks to see if 4 has been assigned to zombieID and the Right control has been pressed.
+                case 4: // This is the first if statment assigned a case number of 4
+                if (canPlayerMove)
                 {
-                    transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Four)
-                    //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    if (zombieID == 4 && Input.GetKey(KeyCode.RightControl)) // checks to see if 4 has been assigned to zombieID and the Right control has been pressed.
+                    {
+                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Four)
+                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                    }
+                    else if (Input.GetKeyUp(KeyCode.RightControl))
+                    {
+                        transform.position = new Vector3(4, 0, 4); // This changes the position of the GameObject to a new vector(Player Four)
+                    }
                 }
-                else if (Input.GetKeyUp(KeyCode.RightControl))
-                {
-                    transform.position = new Vector3(4, 0, 4); // This changes the position of the GameObject to a new vector(Player Four)
-                }
-                break; // This breaks out of this current case.
-        }
+                    break; // This breaks out of this current case.
+            }
+        
     }
     #endregion
 
