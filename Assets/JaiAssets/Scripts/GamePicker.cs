@@ -38,6 +38,22 @@ public class GamePicker : MonoBehaviour
     {
         SceneManager.LoadScene(games[3]);
     }
+    public void Game5()
+    {
+        SceneManager.LoadScene(games[4]);
+    }
+    public void Game6()
+    {
+        SceneManager.LoadScene(games[5]);
+    }
+    public void Game7()
+    {
+        SceneManager.LoadScene(games[6]);
+    }
+    public void Game8()
+    {
+        SceneManager.LoadScene(games[7]);
+    }
 
     public void Controls()
     {

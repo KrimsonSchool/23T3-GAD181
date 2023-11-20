@@ -123,6 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiesManager: {fileID: 0}
   humanID: 1
+  humanToDestroy: {fileID: 7540600658237836993}
+  humanTwoToDestroy: {fileID: 7540600658237836993, guid: a76b21451979e344f8b83009636194ea, type: 3}
 --- !u!54 &1265955064475527949
 Rigidbody:
   m_ObjectHideFlags: 0
