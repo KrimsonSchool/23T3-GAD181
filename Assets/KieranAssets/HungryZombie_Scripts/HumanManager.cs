@@ -40,7 +40,7 @@ public class HumanManager : MonoBehaviour
                 break;
 
             case 2:
-                transform.Translate(0, 0, -5f * Time.deltaTime);
+                transform.Translate(0, 0, 5f * Time.deltaTime);
 
 
                 break;

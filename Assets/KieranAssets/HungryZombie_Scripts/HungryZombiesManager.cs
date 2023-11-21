@@ -69,9 +69,10 @@ public class HungryZombiesManager : MonoBehaviour
         {
            Vector3 randomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 0.1f, -4.5f);
            Vector3 otherRandomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 0.1f, 10.5f);
+           
 
             Instantiate(Kieran_humanToSpawn, randomPosition, Quaternion.identity);
-            Instantiate(Kieran_humanToSpawnTwo, otherRandomPosition, Quaternion.identity);
+            Instantiate(Kieran_humanToSpawnTwo, otherRandomPosition, Quaternion.LookRotation(Vector3.back));
         }
     }
 

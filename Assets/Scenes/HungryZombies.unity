@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 368.25003, g: 368.25003, b: 368.25003, a: 1}
+  m_IndirectSpecularColor: {r: 689.89435, g: 563.4204, b: 615.9881, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1667,9 +1667,10 @@ GameObject:
   - component: {fileID: 395821249}
   - component: {fileID: 395821248}
   - component: {fileID: 395821247}
+  - component: {fileID: 395821250}
   m_Layer: 0
-  m_Name: Spawner (1)
-  m_TagString: Untagged
+  m_Name: Spawner/ Despawner
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1733,12 +1734,33 @@ Transform:
   m_GameObject: {fileID: 395821245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.855, z: 10.5}
+  m_LocalPosition: {x: -0, y: 0.855, z: 11.77}
   m_LocalScale: {x: 1, y: 1.6470882, z: 5.976212}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &395821250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395821245}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 0.99999994, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &402576881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1812351907817274, guid: eaa53a2a9b810e74e8fb39ad045f0b1a, type: 3}
@@ -2190,13 +2212,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448755166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.68161994, y: -0, z: -0, w: 0.73170644}
+  m_LocalRotation: {x: 0.6819983, y: 0, z: 0, w: 0.7313538}
   m_LocalPosition: {x: 0, y: 5.4, z: 2.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 85.941, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 86, y: 0, z: 0}
 --- !u!114 &448755170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3946,6 +3968,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23363055007245080, guid: eaa53a2a9b810e74e8fb39ad045f0b1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07f5fd249de41b444a37be55b0722262, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6778,7 +6804,7 @@ MonoBehaviour:
   playerThreesScore: {fileID: 2114925268}
   playerFoursScore: {fileID: 932131760}
   Kieran_humanToSpawn: {fileID: 7540600658237836993, guid: ed1defc3a875ea847b8dec9c2137fde9, type: 3}
-  Kieran_humanToSpawnTwo: {fileID: 7540600658237836993, guid: a76b21451979e344f8b83009636194ea, type: 3}
+  Kieran_humanToSpawnTwo: {fileID: 251871140310807637, guid: 6debc3b333749b043a39146cea152bd1, type: 3}
   playerOne: {fileID: 811279147}
   playerTwo: {fileID: 1346364937}
   playerThree: {fileID: 496266536}
@@ -7545,9 +7571,10 @@ GameObject:
   - component: {fileID: 1713255408}
   - component: {fileID: 1713255407}
   - component: {fileID: 1713255406}
+  - component: {fileID: 1713255409}
   m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
+  m_Name: Spawner/ Despawner
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7611,12 +7638,33 @@ Transform:
   m_GameObject: {fileID: 1713255404}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.855, z: -4.5}
+  m_LocalPosition: {x: 0, y: 0.855, z: -5.87}
   m_LocalScale: {x: 1, y: 1.6470882, z: 5.976212}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &1713255409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713255404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 0.99999994, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1721987714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7692302231503162295, guid: 5bbce2fc8b3da8a4daaa8e2f1bd1514f, type: 3}
@@ -8760,6 +8808,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23363055007245080, guid: eaa53a2a9b810e74e8fb39ad045f0b1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc01a10ee75add7498c60dbfb1322de1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8877,6 +8929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23363055007245080, guid: eaa53a2a9b810e74e8fb39ad045f0b1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d07c21237fd4d745a7a864e88b1ea27, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9312,6 +9368,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23363055007245080, guid: eaa53a2a9b810e74e8fb39ad045f0b1a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d6d8a6d8bc1ad4498108eb86fb1035c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
