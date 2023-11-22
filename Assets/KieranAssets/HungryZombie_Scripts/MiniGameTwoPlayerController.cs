@@ -13,20 +13,20 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public int zombieID = 0; // This holds an int to be assigned a number 1-4.
     public GameObject zombie; // This is reference to the assigned GameObject.
     public HungryZombiesManager zombieManager;
-   public bool canPlayerMove = false;
+    public bool canPlayerMove = false;
 
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //StartCoroutine(ReturnZombiesToReadyPosiiton());
         Kieran_PlayerMovement();
     }
 
@@ -40,15 +40,44 @@ public class MiniGameTwoPlayerController : MonoBehaviour
         {
             zombieManager.UpdatePlayerTwoScore();
         }
-        if(zombieID == 3)
+        if (zombieID == 3)
         {
             zombieManager.UpdatePlayerThreeScore();
         }
-        if( zombieID == 4)
+        if (zombieID == 4)
         {
             zombieManager.UpdatePlayerFourScore();
         }
     }
+
+    public void ReturnZombiesToReadyPosiiton()
+    {
+       
+        Vector3 xyz = new Vector3(0, 90, 0);
+        Vector3 reversexyz = new Vector3(0, -90, 0);
+
+        if(zombieID == 1)
+        {
+            transform.position = new Vector3(26, 0.1f, -20.5f);
+            transform.rotation = Quaternion.Euler(xyz);
+        }
+        if (zombieID == 2)
+        {
+            transform.position = new Vector3(26, 0.1f, -18.5f);
+            transform.rotation = Quaternion.Euler(xyz);
+        }
+        if (zombieID == 3)
+        {
+            transform.position = new Vector3(33.5f, 0.1f, -20.5f);
+            transform.rotation = Quaternion.Euler(reversexyz);
+        }
+        if (zombieID == 4)
+        {
+            transform.position = new Vector3(33.5f, 0.1f, -18.5f);
+            transform.rotation = Quaternion.Euler(reversexyz);
+        }
+    }
+
 
     #region PlayerMovement
     /*
@@ -59,9 +88,6 @@ public class MiniGameTwoPlayerController : MonoBehaviour
 
     void Kieran_PlayerMovement() // A function to hold some code
     {
-        
-
-
             switch (zombieID) // A if statement that holds mutliple variations of the same code under the variable of zombieID
             {
                 case 1: // This is the first if statment assigned a case number of 1
@@ -76,7 +102,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
                     {
-                        transform.position = new Vector3(-4, 0, 2); // This changes the position of the GameObject to a new vector(Player one)
+                        transform.position = new Vector3(26, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player one)
                     }
                 }
                     break; // This breaks out of this current case.
@@ -92,7 +118,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftAlt))
                     {
-                        transform.position = new Vector3(-4, 0, 4); // This changes the position of the GameObject to a new vector(Player Two)
+                        transform.position = new Vector3(26, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Two)
                     }
                 }
                     break; // This breaks out of this current case.
@@ -108,7 +134,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.RightAlt))
                     {
-                        transform.position = new Vector3(4, 0, 2); // This changes the position of the GameObject to a new vector(Player Three)
+                        transform.position = new Vector3(33.5f, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player Three)
                     }
                 }
                     break; // This breaks out of this current case.
@@ -123,7 +149,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
                     {
-                        transform.position = new Vector3(4, 0, 4); // This changes the position of the GameObject to a new vector(Player Four)
+                        transform.position = new Vector3(33.5f, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Four)
                     }
                 }
                     break; // This breaks out of this current case.

@@ -15,6 +15,9 @@ public class HungryZombiesManager : MonoBehaviour
 
     public GameObject Kieran_humanToSpawn;
     public GameObject Kieran_humanToSpawnTwo;
+    public GameObject Kieran_startingMarine;
+    public GameObject introCamera;
+    public GameObject mainCamera;
     public MiniGameTwoPlayerController playerOne;
     public MiniGameTwoPlayerController playerTwo;
     public MiniGameTwoPlayerController playerThree;
@@ -33,7 +36,8 @@ public class HungryZombiesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(WaitForGameReady());
+        
+        StartCoroutine(WaitForCameraMovement());
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
         playerThreesScore.text = threeScore.ToString(); // This sets the players scores to 0
@@ -44,6 +48,22 @@ public class HungryZombiesManager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    IEnumerator WaitForCameraMovement()
+    {
+        yield return new WaitForSeconds(10f);
+        Kieran_startingMarine.SetActive(false);
+        introCamera.SetActive(false);
+        mainCamera.SetActive(true);
+        controlsUI.enabled = true;
+        goalText.enabled = true; // A bool set to false
+        timerText.enabled = true;
+        playerOne.ReturnZombiesToReadyPosiiton();
+        playerTwo.ReturnZombiesToReadyPosiiton();
+        playerThree.ReturnZombiesToReadyPosiiton();
+        playerFour.ReturnZombiesToReadyPosiiton();
+        StartCoroutine(WaitForGameReady());
     }
 
     IEnumerator WaitForGameReady() // A unity function to hold time conditions under the name WaitForGameReady
@@ -60,15 +80,15 @@ public class HungryZombiesManager : MonoBehaviour
         goalText.enabled = false; // A bool set to false
         timerText.enabled = false; // A bool set to false
 
-
     }
+
 
     void SpawnHuman()
     {
         if (canHumansSpawn == true)
         {
-           Vector3 randomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 0.1f, -4.5f);
-           Vector3 otherRandomPosition = new Vector3(Random.Range(-1.54f, 1.794f), 0.1f, 10.5f);
+           Vector3 randomPosition = new Vector3(Random.Range(27f, 32f), 0.1f, -26.5f);
+           Vector3 otherRandomPosition = new Vector3(Random.Range(27f, 32f), 0.1f, -12f);
            
 
             Instantiate(Kieran_humanToSpawn, randomPosition, Quaternion.identity);

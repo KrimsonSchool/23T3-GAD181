@@ -16,6 +16,7 @@ public class HumanManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         humanToDestroy.SetActive(true);
         humanTwoToDestroy.SetActive(true);
 
