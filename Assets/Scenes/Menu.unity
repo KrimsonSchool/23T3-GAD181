@@ -2375,7 +2375,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 996970136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 342168662}
+        m_TargetAssemblyTypeName: EmmersonsUIStolenFromJaiDeleteThisLater, Assembly-CSharp
+        m_MethodName: ThreePlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &996970136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3650,7 +3662,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1543658770}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 342168662}
+        m_TargetAssemblyTypeName: EmmersonsUIStolenFromJaiDeleteThisLater, Assembly-CSharp
+        m_MethodName: FourPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1543658770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,7 +3917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1745249407}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 342168662}
+        m_TargetAssemblyTypeName: EmmersonsUIStolenFromJaiDeleteThisLater, Assembly-CSharp
+        m_MethodName: TwoPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1745249407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4014,7 +4050,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1750490015}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 342168662}
+        m_TargetAssemblyTypeName: EmmersonsUIStolenFromJaiDeleteThisLater, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1750490015
 MonoBehaviour:
   m_ObjectHideFlags: 0
