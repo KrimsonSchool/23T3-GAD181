@@ -26,6 +26,9 @@ public class HungryZombiesManager : MonoBehaviour
     public TextMeshProUGUI goalText;
     public TextMeshProUGUI timerText;
     public Image controlsUI;
+    public AudioSource introSound;
+    public AudioSource alarmSonar; // This is a reference to a AudioSource
+
     public int oneScore = 0; // This is a placeholder for player ones points to update the text.
     public int twoScore = 0; // This is a placeholder for player twos points to update the text.
     public int threeScore = 0; // This is a placeholder for player threes points to update the text.
@@ -36,7 +39,7 @@ public class HungryZombiesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        introSound.Play();
         StartCoroutine(WaitForCameraMovement());
         playerOnesScore.text = oneScore.ToString(); // This sets the players scores to 0
         playerTwosScore.text = twoScore.ToString(); // This sets the players scores to 0
@@ -79,6 +82,8 @@ public class HungryZombiesManager : MonoBehaviour
         controlsUI.enabled = false; // A bool set to false
         goalText.enabled = false; // A bool set to false
         timerText.enabled = false; // A bool set to false
+        introSound.Stop();
+        alarmSonar.Play();
 
     }
 

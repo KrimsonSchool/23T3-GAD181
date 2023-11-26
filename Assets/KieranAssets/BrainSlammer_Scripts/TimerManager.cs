@@ -12,6 +12,7 @@ public class TimerManager : MonoBehaviour
     public TextMeshProUGUI timerText; // This is reference to textMeshPro
     public AudioSource startGameSound; // This is a reference to a AudioSource
     public AudioSource spaceShipSound; // This is a reference to a AudioSource
+    
     #endregion
 
     #region Update
@@ -25,6 +26,7 @@ public class TimerManager : MonoBehaviour
                 remainingTime -= Time.deltaTime; // This takesaway from the remainingTime by 1 second in realtime
                 UpdateGameTimer(remainingTime); // This calls the updateGameTimer with the value of reaminingTime
                 spaceShipSound.Play(); // This plays the background spaceship sound
+                
             }
             else // This checks if there is anything else other than the previous condition
             {
