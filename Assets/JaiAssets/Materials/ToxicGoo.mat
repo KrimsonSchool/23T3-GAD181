@@ -37,17 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
         m_Texture: {fileID: 0}
-<<<<<<< HEAD
         m_Scale: {x: 1000, y: 1000}
         m_Offset: {x: 0, y: -0.9406455}
-=======
-        m_Scale: {x: 10, y: 10}
-<<<<<<< HEAD
-        m_Offset: {x: 0, y: -0.47943574}
->>>>>>> d48a8d58 (idk what this is)
-=======
-        m_Offset: {x: 0, y: -0.80865777}
->>>>>>> ef93483c (Revert "idk what this is")
     - _BentNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -195,7 +186,7 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
-    - _MetallicRemapMax: 1
+    - _MetallicRemapMax: 0
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1.09
@@ -257,8 +248,8 @@ Material:
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 1009.52124, g: 65536, b: 0, a: 65536}
-    - _EmissiveColorLDR: {r: 0.13039613, g: 1, b: 0, a: 1}
+    - _EmissiveColor: {r: 8545.636, g: 65536, b: 0, a: 65536}
+    - _EmissiveColorLDR: {r: 0.39645314, g: 1, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
@@ -268,7 +259,7 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &3962939363473928234
+--- !u!114 &3614527659337577689
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
