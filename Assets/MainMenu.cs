@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,9 @@ public class MainMenu : MonoBehaviour
 {
     public Slider roundsSlider;
     public TMPro.TextMeshProUGUI sliderText;
+
+    public Button playButt;
+    public TextMeshProUGUI playText;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,9 @@ public class MainMenu : MonoBehaviour
     {
         //sets the amount of players playing to 1
         PlayerPrefs.SetInt("Players", 1);
+
+        playButt.interactable = true;
+        playText.color = Color.white;
     }
 
     //function called when player clicks 2 players
@@ -32,6 +39,9 @@ public class MainMenu : MonoBehaviour
     {
         //sets the amount of players playing to 2
         PlayerPrefs.SetInt("Players", 2);
+
+        playButt.interactable = true;
+        playText.color = Color.white;
     }
     //function called when player clicks 3 players
 
@@ -39,12 +49,18 @@ public class MainMenu : MonoBehaviour
     {   
         //sets the amount of players playing to 3
         PlayerPrefs.SetInt("Players", 3);
+
+        playButt.interactable = true;
+        playText.color = Color.white;
     }
     //function called when player clicks 4 players
     public void FourPlayer()
     {
         //sets the amount of players playing to 4
         PlayerPrefs.SetInt("Players", 4);
+
+        playButt.interactable = true;
+        playText.color = Color.white;
     }
 
     //function called when player clicks the Play button
