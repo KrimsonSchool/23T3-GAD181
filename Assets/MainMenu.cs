@@ -20,6 +20,12 @@ public class MainMenu : MonoBehaviour
         //sets the slider text to show how many rounds has been selected
         sliderText.text = ""+ roundsSlider.value;
     }
+    //function called when player clicks 1 player
+    public void OnePlayer()
+    {
+        //sets the amount of players playing to 1
+        PlayerPrefs.SetInt("Players", 1);
+    }
 
     //function called when player clicks 2 players
     public void TwoPlayer()
