@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 689.89435, g: 563.4204, b: 615.9881, a: 1}
+  m_IndirectSpecularColor: {r: 689.89386, g: 563.4204, b: 615.9893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4090,6 +4090,10 @@ PrefabInstance:
       value: PlayerThree
       objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -5583,6 +5587,10 @@ PrefabInstance:
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Name
       value: PlayerOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_TagString
@@ -7311,6 +7319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c529bda3e55564cb93963f20d00ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players:
+  - {fileID: 811279147}
+  - {fileID: 1346364937}
+  - {fileID: 496266536}
+  - {fileID: 1615683674}
+  noOfPlayers: 0
   playerOnesScore: {fileID: 1174091274}
   playerTwosScore: {fileID: 438653620}
   playerThreesScore: {fileID: 2114925268}
@@ -7324,6 +7338,7 @@ MonoBehaviour:
   playerTwo: {fileID: 1346364937}
   playerThree: {fileID: 496266536}
   playerFour: {fileID: 1615683674}
+  Winner: {fileID: 62541662}
   timer: {fileID: 486505970}
   goalText: {fileID: 294430021}
   timerText: {fileID: 1218636779}
@@ -7335,6 +7350,10 @@ MonoBehaviour:
   threeScore: 0
   fourScore: 0
   canHumansSpawn: 0
+  playerOneWin: 0
+  playerTwoWin: 0
+  playerThreeWin: 0
+  playerFourWin: 0
 --- !u!4 &1537179203
 Transform:
   m_ObjectHideFlags: 0
@@ -9857,6 +9876,10 @@ PrefabInstance:
       value: PlayerTwo
       objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -10079,6 +10102,10 @@ PrefabInstance:
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Name
       value: PlayerFour
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_TagString

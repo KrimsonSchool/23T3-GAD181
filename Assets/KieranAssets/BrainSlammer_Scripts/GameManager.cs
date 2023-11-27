@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     // Create some refernece points.
     // This is for texts UI
     // And a script reference
+    public Playercontroller[] players;
+    public int noOfPlayers;
+
     public TextMeshProUGUI playerOnesScore; //This is a text reference to player ones score text.
     public TextMeshProUGUI playerTwosScore; //This is a text reference to player twos score text.
     public TextMeshProUGUI playerThreesScore; //This is a text reference to player three score text.
@@ -56,6 +59,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        noOfPlayers = PlayerPrefs.GetInt("Players");
+
+        //for every player that were selected,
+        for (int i = 0; i < noOfPlayers; i++)
+        {
+            //enable that players car
+            players[i].gameObject.SetActive(true);
+        }
+
         spaceShipAlarm.Play(); // playes the audiosource spaceshipalarm on start.
         controlsUI.enabled = true; // This sets the Image source to true in the scene on start.
         Winner.enabled = false; // This sets the winner text false on start until called later.
