@@ -3275,7 +3275,6 @@ MonoBehaviour:
   zombie: {fileID: 496266534}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  ZombieAnim: {fileID: 496266542}
 --- !u!65 &496266538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3297,27 +3296,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.2498553, z: 0.3429902}
   m_Center: {x: -1.8984377e-17, y: 0.62492853, z: -0.01013209}
---- !u!95 &496266542
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496266534}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bb07a21ca70c2a14ea6fe90dd79d258c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &500607794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4222,9 +4200,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       insertIndex: -1
       addedObject: {fileID: 496266538}
-    - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 496266542}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1 &689915920 stripped
 GameObject:
@@ -4340,7 +4315,6 @@ MonoBehaviour:
   zombie: {fileID: 811279145}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  ZombieAnim: {fileID: 811279154}
 --- !u!65 &811279151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4362,27 +4336,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.2498553, z: 0.3429902}
   m_Center: {x: -1.8984377e-17, y: 0.62492853, z: -0.01013209}
---- !u!95 &811279154
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811279145}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ecfaf4812b792147bb312cad6baea92, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &832851561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5679,6 +5632,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 7.809
       objectReference: {fileID: 0}
+    - target: {fileID: 3312264254057291506, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3929393
+      objectReference: {fileID: 0}
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Name
       value: PlayerOne
@@ -5758,9 +5715,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       insertIndex: -1
       addedObject: {fileID: 811279151}
-    - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 811279154}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1 &1174091272
 GameObject:
@@ -6575,7 +6529,6 @@ MonoBehaviour:
   zombie: {fileID: 1346364935}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  ZombieAnim: {fileID: 1346364943}
 --- !u!65 &1346364939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6597,27 +6550,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.2498553, z: 0.3429902}
   m_Center: {x: -1.8984377e-17, y: 0.62492853, z: -0.01013209}
---- !u!95 &1346364943
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346364935}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b73c1c50e89a86440bd1ba6ffdb769bf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1398926319
 GameObject:
   m_ObjectHideFlags: 0
@@ -8200,7 +8132,6 @@ MonoBehaviour:
   zombie: {fileID: 1615683672}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  ZombieAnim: {fileID: 1615683680}
 --- !u!65 &1615683676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8222,27 +8153,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.2498553, z: 0.3429902}
   m_Center: {x: -1.8984377e-17, y: 0.62492853, z: -0.01013209}
---- !u!95 &1615683680
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615683672}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5087c06bd31cde4d9dc46329e56b68e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1641634050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10144,9 +10054,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1346364939}
-    - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1346364943}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1001 &2006745901
 PrefabInstance:
@@ -10455,9 +10362,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1615683676}
-    - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1615683680}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1001 &2037565917
 PrefabInstance:
