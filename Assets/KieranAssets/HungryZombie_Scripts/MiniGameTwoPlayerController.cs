@@ -15,6 +15,11 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public HungryZombiesManager zombieManager;
     public bool canPlayerMove = false;
 
+    [SerializeField] private GameObject zombieHappyParticles;
+    [SerializeField] private GameObject zombieParticles;
+    [SerializeField] private AudioSource zombieSound;
+    [SerializeField] private AudioClip zombieEating;
+    
 
     #endregion
 
@@ -35,19 +40,31 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     {
         if (zombieID == 1)
         {   
+            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
+            zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerOneScore();
+            zombieHappyParticles.SetActive(false);
         }
         if (zombieID == 2)
-        {  
+        {
+            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
+            zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerTwoScore();
+            zombieHappyParticles.SetActive(false);
         }
         if (zombieID == 3)
         {
+            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
+            zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerThreeScore();
+            zombieHappyParticles.SetActive(false);
         }
         if (zombieID == 4)
         {
+            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
+            zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerFourScore();
+            zombieHappyParticles.SetActive(false);
         }
     }
 
@@ -96,14 +113,14 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                     if (zombieID == 1 && Input.GetKey(KeyCode.LeftControl)) // checks to see if 1 has been assigned to zombieID and the Left control has been pressed.
                     {
-                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)
-                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
-
+                        
+                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)     
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
-                    {
-                        
+                    {  
+                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(26, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player one)
+                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.
@@ -115,12 +132,13 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 2 && Input.GetKey(KeyCode.LeftAlt)) // checks to see if 2 has been assigned to zombieID and the Left Alt has been pressed.
                     {
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Two)
-                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                                                                        
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftAlt))
                     {
-                        
+                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(26, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Two)
+                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.
@@ -132,12 +150,13 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 3 && Input.GetKey(KeyCode.RightAlt)) // checks to see if 3 has been assigned to zombieID and the Rigth Alt has been pressed.
                     {
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Three)
-                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                                                                        
                     }
                     else if (Input.GetKeyUp(KeyCode.RightAlt))
                     {
-                        
+                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(33.5f, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player Three)
+                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.
@@ -148,12 +167,13 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 4 && Input.GetKey(KeyCode.RightControl)) // checks to see if 4 has been assigned to zombieID and the Right control has been pressed.
                     {
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Four)
-                                                                        //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
+                                                                        
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
                     {
-                        
+                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(33.5f, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Four)
+                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.

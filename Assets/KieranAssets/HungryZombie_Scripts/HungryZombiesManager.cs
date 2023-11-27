@@ -82,6 +82,57 @@ public class HungryZombiesManager : MonoBehaviour
 
     #endregion
 
+    #region Winning
+    /*
+     * Create a function to decide teh winner
+     * This should be based of the timer hitting 0 
+     * as well which player has the highest score
+     */
+    public void GameWinDecider() // A function to decide the winner
+    {
+        if (timer.remainingTime == 0) // checking if the timer is equal to 0.
+        {
+            if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore) // checking if player One has a higher score than the rest
+            {
+                playerOneWin = true; // Sets the playerOneWin bool to true
+                Debug.Log("Winner is player ONE!");
+                Winner.enabled = true; // Sets the UI text to be dsiplayed on the screen
+                Winner.text = oneScore.ToString("Player 1 Wins!"); // CHnages the winner text to Player 1 wins
+            }
+            else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore) // checking if player Two has a higher score than the rest
+            {
+                playerTwoWin = true; // Sets the playerTwoWin bool to true
+                Debug.Log("Winner is player TWO!");
+                Winner.enabled = true; //Sets the UI text to be dsiplayed on the screen
+                Winner.text = twoScore.ToString("Player 2 Wins!"); // CHnages the winner text to Player 1 wins
+            }
+            else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore) // checking if player Three has a higher score than the rest
+            {
+                playerThreeWin = true; // Sets the playerThreeWin bool to true
+                Debug.Log("Winner is player Three!");
+                Winner.enabled = true;  // Sets the UI text to be dsiplayed on the screen
+                Winner.text = threeScore.ToString("Player 3 Wins!"); // CHnages the winner text to Player 1 wins
+            }
+            else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore) // checking if player Four has a higher score than the rest
+            {
+                playerFourWin = true; // Sets the playerFourWin bool to true
+                Debug.Log("Winner is player Four!");
+                Winner.enabled = true;  // Sets the UI text to be dsiplayed on the screen
+                Winner.text = fourScore.ToString("Player 4 Wins!"); // CHnages the winner text to Player 1 wins
+            }
+            playerOne.canPlayerMove = false; // Disables players movements after a player has won.
+            playerTwo.canPlayerMove = false; // Disables players movements after a player has won.
+            playerThree.canPlayerMove = false; // Disables players movements after a player has won.
+            playerFour.canPlayerMove = false; // Disables players movements after a player has won.
+            timer.isTimerOn = false; // Disables the timers
+            StartCoroutine(WaitToFinishGame()); // Calls a coroutine of waitToFinishGame to finish the game.
+
+        }
+
+
+    }
+#endregion
+
     #region Wait for camera to stop
 
     IEnumerator WaitForCameraMovement()
@@ -224,55 +275,7 @@ public class HungryZombiesManager : MonoBehaviour
 
     #endregion
 
-    #region Winning
-    /*
-     * Create a function to decide teh winner
-     * This should be based of the timer hitting 0 
-     * as well which player has the highest score
-     */
+    
 
-    public void GameWinDecider() // A function to decide the winner
-    {
-        if (timer.remainingTime == 0) // checking if the timer is equal to 0.
-        {
-            if (oneScore > twoScore && oneScore > threeScore && oneScore > fourScore) // checking if player One has a higher score than the rest
-            {
-                playerOneWin = true; // Sets the playerOneWin bool to true
-                Debug.Log("Winner is player ONE!");
-                Winner.enabled = true; // Sets the UI text to be dsiplayed on the screen
-                Winner.text = oneScore.ToString("Player 1 Wins!"); // CHnages the winner text to Player 1 wins
-            }
-            else if (twoScore > oneScore && twoScore > threeScore && twoScore > fourScore) // checking if player Two has a higher score than the rest
-            {
-                playerTwoWin = true; // Sets the playerTwoWin bool to true
-                Debug.Log("Winner is player TWO!");
-                Winner.enabled = true; //Sets the UI text to be dsiplayed on the screen
-                Winner.text = twoScore.ToString("Player 2 Wins!"); // CHnages the winner text to Player 1 wins
-            }
-            else if (threeScore > oneScore && threeScore > twoScore && threeScore > fourScore) // checking if player Three has a higher score than the rest
-            {
-                playerThreeWin = true; // Sets the playerThreeWin bool to true
-                Debug.Log("Winner is player Three!");
-                Winner.enabled = true;  // Sets the UI text to be dsiplayed on the screen
-                Winner.text = threeScore.ToString("Player 3 Wins!"); // CHnages the winner text to Player 1 wins
-            }
-            else if (fourScore > oneScore && fourScore > twoScore && fourScore > threeScore) // checking if player Four has a higher score than the rest
-            {
-                playerFourWin = true; // Sets the playerFourWin bool to true
-                Debug.Log("Winner is player Four!");
-                Winner.enabled = true;  // Sets the UI text to be dsiplayed on the screen
-                Winner.text = fourScore.ToString("Player 4 Wins!"); // CHnages the winner text to Player 1 wins
-            }
-            playerOne.canPlayerMove = false; // Disables players movements after a player has won.
-            playerTwo.canPlayerMove = false; // Disables players movements after a player has won.
-            playerThree.canPlayerMove = false; // Disables players movements after a player has won.
-            playerFour.canPlayerMove = false; // Disables players movements after a player has won.
-            timer.isTimerOn = false; // Disables the timers
-            StartCoroutine(WaitToFinishGame()); // Calls a coroutine of waitToFinishGame to finish the game.
-
-        }
-
-
-    }
-    #endregion
+    
 }

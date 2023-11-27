@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Apocaparkour.unity
     guid: d6236ff8d689bbe4a91fa2a68aa22170
+  - enabled: 1
+    path: Assets/Scenes/HungryZombies.unity
+    guid: 969d45235feda3e42b4d05b609d6e483
   m_configObjects: {}

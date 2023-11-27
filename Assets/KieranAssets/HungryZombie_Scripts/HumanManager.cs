@@ -1,6 +1,5 @@
-using JetBrains.Annotations;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HumanManager : MonoBehaviour
@@ -10,7 +9,8 @@ public class HumanManager : MonoBehaviour
 
     [SerializeField] private GameObject humanToDestroy;
     [SerializeField] private GameObject humanTwoToDestroy;
-
+    //[SerializeField] private GameObject humanGoPop;
+    [SerializeField] private ParticleSystem humanGoPop;
     
 
     // Start is called before the first frame update
@@ -54,13 +54,16 @@ public class HumanManager : MonoBehaviour
         
         if(humanID == 1 && other.CompareTag("Player"))
         {
+            Instantiate(humanGoPop, transform.position, Quaternion.identity);
             humanToDestroy.SetActive(false);
-            
+            humanGoPop.Stop(humanGoPop);
+
         }
        if (humanID == 2 && other.CompareTag("Player"))
         {
+            Instantiate(humanGoPop, transform.position, Quaternion.identity);
             humanTwoToDestroy.SetActive(false);
-            
+            humanGoPop.Stop(humanGoPop);
         }
         
     }
