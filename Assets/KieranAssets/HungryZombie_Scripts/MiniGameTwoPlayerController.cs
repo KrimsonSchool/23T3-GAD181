@@ -17,6 +17,8 @@ public class MiniGameTwoPlayerController : MonoBehaviour
 
     [SerializeField] private GameObject zombieHappyParticles;
     [SerializeField] private GameObject zombieParticles;
+
+
     [SerializeField] private AudioSource zombieSound;
     [SerializeField] private AudioClip zombieEating;
     
