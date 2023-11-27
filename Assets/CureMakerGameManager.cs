@@ -19,6 +19,9 @@ public class CureMakerGameManager : MonoBehaviour
     public GameObject uiPlayerFourWinPrompt;
     float timer;
     bool win;
+    public int dead;
+    public int playersAlive;
+    public GameObject gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +31,27 @@ public class CureMakerGameManager : MonoBehaviour
         uiPlayerTwoWinPrompt.SetActive(false);
         uiPlayerThreeWinPrompt.SetActive(false);
         uiPlayerFourWinPrompt.SetActive(false);
+        gameOver.SetActive(false);
+        playersAlive = PlayerPrefs.GetInt("Players");      
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<Health>().id = i;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(dead >= 4)
+        {
+            gameOver.SetActive(true);
+            timer += Time.deltaTime;
+            if (timer > 5)
+            {
+                SceneManager.LoadScene("GamePick");
+            }
+        }
+
         if (noCollected >= 9)
         {
             playerOneMovement.enabled = false;
@@ -51,7 +70,18 @@ public class CureMakerGameManager : MonoBehaviour
                 SceneManager.LoadScene("GamePick");
             }
         }
-        
+        if (playersAlive == 0)
+        {
+            gameOver.SetActive(true);
+            StartCoroutine(GameOver());
+        }
+
+         IEnumerator GameOver()
+         {
+            yield return new WaitForSeconds(3f);
+            gameOver.SetActive(false);
+            SceneManager.LoadScene("GamePick");
+         }
     }
 
     public void CheckWinner()
