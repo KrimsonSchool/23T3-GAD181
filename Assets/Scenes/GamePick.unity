@@ -2569,14 +2569,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0b4c6da889976004d91db33d1ed20b21, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2591,6 +2591,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 129247543}
     m_Modifications:
+    - target: {fileID: 174760275566057685, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: ef743d6b5a7e98a479fa12b2d71e6e01, type: 3}
+    - target: {fileID: 688710073424212200, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688710073424212200, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2676,14 +2688,14 @@ PrefabInstance:
       value: 'Player 1  - L-Ctrl
 
 
-        Player 2 - R-Ctrl
+        Player 2 - L-Alt
 
 
         Player 3 -
-        L-Alt
+        R-Alt
 
 
-        Player 4 - R-Alt'
+        Player 4 - R-Ctrl'
       objectReference: {fileID: 0}
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: gameName
@@ -2692,7 +2704,7 @@ PrefabInstance:
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: staticImg
       value: 
-      objectReference: {fileID: 8400000, guid: b1461822bfc3fcc44a9b730b4a60a49d, type: 2}
+      objectReference: {fileID: 2800000, guid: ef743d6b5a7e98a479fa12b2d71e6e01, type: 3}
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: dynamicImg
       value: 
@@ -2711,7 +2723,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568016492492360307, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023076350848915245, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_text
+      value: Brain Slammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023076350848915245, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_fontSize
+      value: 49.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023076350848915245, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_margin.y
+      value: 133.66422
       objectReference: {fileID: 0}
     - target: {fileID: 6539488303037164209, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_VideoClip
@@ -4342,6 +4366,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 129247543}
     m_Modifications:
+    - target: {fileID: 174760275566057685, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 69761473a605f704d92ced2d2c1d244d, type: 3}
+    - target: {fileID: 688710073424212200, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 688710073424212200, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688710073424212200, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000030517578
+      objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4427,14 +4467,14 @@ PrefabInstance:
       value: 'Player 1  - L-Ctrl
 
 
-        Player 2 - R-Ctrl
+        Player 2 - L-Alt
 
 
         Player 3 -
-        L-Alt
+        R-Alt
 
 
-        Player 4 - R-Alt'
+        Player 4 - R-Ctrl'
       objectReference: {fileID: 0}
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: gameName
@@ -4443,7 +4483,7 @@ PrefabInstance:
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: staticImg
       value: 
-      objectReference: {fileID: 8400000, guid: 85aaae98a13903e4b98b760356285a89, type: 2}
+      objectReference: {fileID: 2800000, guid: 69761473a605f704d92ced2d2c1d244d, type: 3}
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: dynamicImg
       value: 
@@ -4462,7 +4502,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5568016492492360307, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023076350848915245, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_text
+      value: Hungry Zombies
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023076350848915245, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_fontSize
+      value: 45.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023076350848915245, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
+      propertyPath: m_margin.y
+      value: 145.42946
       objectReference: {fileID: 0}
     - target: {fileID: 6539488303037164209, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_VideoClip
@@ -5737,10 +5789,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 745776433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.045576934, y: 0}
   m_AnchorMax: {x: 1, y: 0.901}
-  m_AnchoredPosition: {x: 0.00061035156, y: -0.32202148}
-  m_SizeDelta: {x: -0.75, y: -0.64001465}
+  m_AnchoredPosition: {x: -0.3537979, y: -0.32202148}
+  m_SizeDelta: {x: -0.041000366, y: -0.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643494128
 MonoBehaviour:
@@ -7374,27 +7426,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.2654375
+      value: 0.46456257
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.3407778
+      value: 0.8942592
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.2654375
+      value: 0.30400002
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.3407778
+      value: 0.6992593
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 364.0309
+      value: 55.030884
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 248.6063
+      value: 37.606323
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7426,11 +7478,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 229
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 492
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1669186860634216045, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
