@@ -4478,7 +4478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: gameName
-      value: HungryZombies
+      value: Hungry Zombies
       objectReference: {fileID: 0}
     - target: {fileID: 2792619068780941050, guid: 5bfb4e73063b9e54fabb0ca1ff00bc44, type: 3}
       propertyPath: staticImg
