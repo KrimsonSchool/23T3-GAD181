@@ -15,9 +15,6 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public HungryZombiesManager zombieManager;
     public bool canPlayerMove = false;
 
-    public Animation zombieWalkingAndGrab;
-    
-    
 
     #endregion
 
@@ -37,23 +34,19 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (zombieID == 1)
-        {
-            zombieWalkingAndGrab.Play("GrabingZombie");
+        {   
             zombieManager.UpdatePlayerOneScore();
         }
         if (zombieID == 2)
-        {
-            zombieWalkingAndGrab.Play("GrabingZombie");
+        {  
             zombieManager.UpdatePlayerTwoScore();
         }
         if (zombieID == 3)
         {
-            zombieWalkingAndGrab.Play("GrabingZombie");
             zombieManager.UpdatePlayerThreeScore();
         }
         if (zombieID == 4)
         {
-            zombieWalkingAndGrab.Play("GrabingZombie");
             zombieManager.UpdatePlayerFourScore();
         }
     }
@@ -103,14 +96,13 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                     if (zombieID == 1 && Input.GetKey(KeyCode.LeftControl)) // checks to see if 1 has been assigned to zombieID and the Left control has been pressed.
                     {
-                        zombieWalkingAndGrab.Play("ZombieWalkingAndGrab");
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)
                                                                         //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
 
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
                     {
-                        zombieWalkingAndGrab.Stop("ZombieWalkingAndGrab");
+                        
                         transform.position = new Vector3(26, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player one)
                     }
                 }
@@ -122,13 +114,12 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                     if (zombieID == 2 && Input.GetKey(KeyCode.LeftAlt)) // checks to see if 2 has been assigned to zombieID and the Left Alt has been pressed.
                     {
-                        zombieWalkingAndGrab.Play("ZombieWalkingAndGrab");
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Two)
                                                                         //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftAlt))
                     {
-                        zombieWalkingAndGrab.Stop("ZombieWalkingAndGrab");
+                        
                         transform.position = new Vector3(26, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Two)
                     }
                 }
@@ -140,13 +131,12 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                     if (zombieID == 3 && Input.GetKey(KeyCode.RightAlt)) // checks to see if 3 has been assigned to zombieID and the Rigth Alt has been pressed.
                     {
-                        zombieWalkingAndGrab.Play("ZombieWalkingAndGrab");
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Three)
                                                                         //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                     }
                     else if (Input.GetKeyUp(KeyCode.RightAlt))
                     {
-                        zombieWalkingAndGrab.Stop("ZombieWalkingAndGrab");
+                        
                         transform.position = new Vector3(33.5f, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player Three)
                     }
                 }
@@ -157,13 +147,12 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                 {
                     if (zombieID == 4 && Input.GetKey(KeyCode.RightControl)) // checks to see if 4 has been assigned to zombieID and the Right control has been pressed.
                     {
-                        zombieWalkingAndGrab.Play("ZombieWalkingAndGrab");
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Four)
                                                                         //StartCoroutine(ReturnToPosition()); // This calls the Ienumorator to return the positions of the game objects
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
                     {
-                        zombieWalkingAndGrab.Stop("ZombieWalkingAndGrab");
+                        
                         transform.position = new Vector3(33.5f, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Four)
                     }
                 }
