@@ -5,18 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class Player_Parkour : MonoBehaviour
 {
+    public int playerNo;
     public GameObject playerObj;
     Rigidbody rb;
 
     bool won;
     GameObject heli;
     bool canJump;
+    Camera cam;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        cam = GetComponentInChildren<Camera>();
+
+        if(playerNo == 0)
+        {
+            cam.rect = new Rect(0, 0.5f, 0.5f, 0.5f);
+        }
+        else if(playerNo == 1) 
+        {
+            cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+        }
+        else if(playerNo == 2) {
+            cam.rect = new Rect(0, 0, 0.5f, 0.5f);
+        }
+        else
+        {
+            cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
+        }
     }
 
     // Update is called once per frame
