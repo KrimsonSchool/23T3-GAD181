@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ApocalypseRacerGame.unity
     guid: 3e7db614014e38d4cbca836679d93743
+  - enabled: 1
+    path: Assets/Scenes/Apocaparkour.unity
+    guid: d6236ff8d689bbe4a91fa2a68aa22170
   m_configObjects: {}
