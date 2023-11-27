@@ -85,7 +85,7 @@ public class HungryZombiesManager : MonoBehaviour
 
     IEnumerator WaitForCameraMovement()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
         Kieran_startingMarine.SetActive(false);
         introCamera.SetActive(false);
         mainCamera.SetActive(true);
@@ -105,7 +105,7 @@ public class HungryZombiesManager : MonoBehaviour
 
     IEnumerator WaitForGameReady() // A unity function to hold time conditions under the name WaitForGameReady
     {
-        yield return new WaitForSeconds(10f); // This will wait for 10 seconds before executing the following code.
+        yield return new WaitForSeconds(15f); // This will wait for 10 seconds before executing the following code.
 
         playerOne.canPlayerMove = true; // A bool set to true
         playerTwo.canPlayerMove = true;
