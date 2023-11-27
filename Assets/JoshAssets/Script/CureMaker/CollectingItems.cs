@@ -5,13 +5,13 @@ using UnityEngine;
 public class CollectingItems : MonoBehaviour
 {
     public int itemsCollected;
-    
-    public void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item"))
         {
             itemsCollected += 1;
-            collision.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
     }
 }
