@@ -13,6 +13,7 @@ public class Player_Parkour : MonoBehaviour
     GameObject heli;
     bool canJump;
     Camera cam;
+    ParKon parKon;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,18 +37,16 @@ public class Player_Parkour : MonoBehaviour
         {
             cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
         }
+
+        parKon = FindAnyObjectByType<ParKon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = (transform.forward * Input.GetAxis("Vertical") * 10) + (transform.right * Input.GetAxis("Horizontal")) * 10 + new Vector3(0, rb.velocity.y, 0);
+        rb.velocity = (transform.forward * Input.GetAxis("Vertical " + playerNo) * 10) + (transform.right * Input.GetAxis("Horizontal "+playerNo)) * 10 + new Vector3(0, rb.velocity.y, 0);
 
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        if (Input.GetKeyDown(parKon.jumpInput[playerNo]) && canJump)
         {
             //jump
             rb.velocity += new Vector3(0, 5, 0);
