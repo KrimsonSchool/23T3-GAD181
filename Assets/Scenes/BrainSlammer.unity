@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019042874, g: 0.053205006, b: 0.14667042, a: 1}
+  m_IndirectSpecularColor: {r: 0.21582034, g: 0.21582034, b: 0.21582034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3743,7 +3743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 4
+  burgerID: 4
 --- !u!1 &551358906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,7 +6122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 3
+  burgerID: 3
 --- !u!1 &833554840
 GameObject:
   m_ObjectHideFlags: 0
@@ -8276,7 +8276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 2
+  burgerID: 2
 --- !u!1001 &1115258492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14990,6 +14990,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c080bd37cc7f1804c96d46ae0748ee76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players:
+  - {fileID: 4493914615056991930}
+  - {fileID: 1942322173}
+  - {fileID: 1724646976}
+  - {fileID: 847363261}
+  noOfPlayers: 0
   playerOnesScore: {fileID: 1436265610}
   playerTwosScore: {fileID: 1021852195}
   playerThreesScore: {fileID: 1305061477}
@@ -15007,7 +15013,6 @@ MonoBehaviour:
   foodUpdate03: {fileID: 825309032}
   foodUpdate04: {fileID: 551264119}
   timer: {fileID: 689757363}
-  audioManager: {fileID: 0}
   spaceShipAlarm: {fileID: 1961910831}
   oneScore: 0
   twoScore: 0
@@ -15015,7 +15020,10 @@ MonoBehaviour:
   fourScore: 0
   isGameReady: 0
   canPlayerMove: 0
-  isFoodEaten: 0
+  playerOneWin: 0
+  playerTwoWin: 0
+  playerThreeWin: 0
+  playerFourWin: 0
 --- !u!4 &1961910830
 Transform:
   m_ObjectHideFlags: 0
@@ -15633,7 +15641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1961910829}
   foodAmount: 10
-  brainID: 1
+  burgerID: 1
 --- !u!1 &2049071722
 GameObject:
   m_ObjectHideFlags: 0
