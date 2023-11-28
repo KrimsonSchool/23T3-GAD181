@@ -1855,8 +1855,7 @@ MonoBehaviour:
   humanID: 1
   humanToDestroy: {fileID: 7540600658237836993}
   humanTwoToDestroy: {fileID: 251871140310807637, guid: 6debc3b333749b043a39146cea152bd1, type: 3}
-  humanGoPop: {fileID: 2348739552842734756, guid: 679ec0d370a65a045a4160009acdcc65, type: 3}
-  humanParticles: {fileID: 161882710016528232, guid: 679ec0d370a65a045a4160009acdcc65, type: 3}
+  humanGoPop: {fileID: 161882710016528232, guid: 679ec0d370a65a045a4160009acdcc65, type: 3}
 --- !u!54 &1265955064475527949
 Rigidbody:
   m_ObjectHideFlags: 0
