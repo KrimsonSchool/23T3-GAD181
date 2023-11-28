@@ -26,7 +26,7 @@ public class EscapePod : MonoBehaviour
         uiPlayerFourWinPrompt.SetActive(false);
         StartCoroutine(PlayerCanMove());
     }
-
+    // after 5 seconds allow players to move
     public IEnumerator PlayerCanMove()
     {
         yield return new WaitForSeconds(5f);
