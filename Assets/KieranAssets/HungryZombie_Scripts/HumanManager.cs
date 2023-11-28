@@ -10,6 +10,7 @@ public class HumanManager : MonoBehaviour
     [SerializeField] private GameObject humanToDestroy;
     [SerializeField] private GameObject humanTwoToDestroy;
     [SerializeField] private GameObject humanGoPop;
+    [SerializeField] private ParticleSystem humanParticles;
     
 
     // Start is called before the first frame update
@@ -55,13 +56,13 @@ public class HumanManager : MonoBehaviour
         {
             Instantiate(humanGoPop, transform.position, Quaternion.identity);
             humanToDestroy.SetActive(false);
-            humanGoPop.SetActive(false);
+            humanParticles.Stop(humanParticles);
         }
        if (humanID == 2 && other.CompareTag("Player"))
         {
             Instantiate(humanGoPop, transform.position, Quaternion.identity); 
             humanTwoToDestroy.SetActive(false);
-            humanGoPop.SetActive(false);
+            humanParticles.Stop(humanParticles);
             
         }
         

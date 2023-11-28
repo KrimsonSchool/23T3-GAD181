@@ -15,10 +15,6 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public HungryZombiesManager zombieManager;
     public bool canPlayerMove = false;
 
-    [SerializeField] private GameObject zombieHappyParticles;
-    [SerializeField] private GameObject zombieParticles;
-
-
     [SerializeField] private AudioSource zombieSound;
     [SerializeField] private AudioClip zombieEating;
     
@@ -41,32 +37,27 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (zombieID == 1)
-        {   
-            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
+        {  
             zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerOneScore();
-            zombieHappyParticles.SetActive(false);
+
         }
         if (zombieID == 2)
         {
-            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
             zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerTwoScore();
-            zombieHappyParticles.SetActive(false);
+
         }
         if (zombieID == 3)
         {
-            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
             zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerThreeScore();
-            zombieHappyParticles.SetActive(false);
+
         }
         if (zombieID == 4)
         {
-            Instantiate(zombieHappyParticles, transform.position, Quaternion.identity);
             zombieSound.PlayOneShot(zombieEating);
             zombieManager.UpdatePlayerFourScore();
-            zombieHappyParticles.SetActive(false);
         }
     }
 
@@ -120,9 +111,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
                     {  
-                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(26, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player one)
-                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.
@@ -138,9 +127,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftAlt))
                     {
-                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(26, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Two)
-                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.
@@ -156,9 +143,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.RightAlt))
                     {
-                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(33.5f, 0.1f, -20.5f); // This changes the position of the GameObject to a new vector(Player Three)
-                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.
@@ -173,9 +158,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
                     {
-                        Instantiate(zombieParticles, transform.position, Quaternion.identity);
                         transform.position = new Vector3(33.5f, 0.1f, -18.5f); // This changes the position of the GameObject to a new vector(Player Four)
-                        zombieParticles.SetActive(false);
                     }
                 }
                     break; // This breaks out of this current case.

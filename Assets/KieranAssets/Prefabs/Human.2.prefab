@@ -154,6 +154,7 @@ MonoBehaviour:
   humanToDestroy: {fileID: 7540600658237836993, guid: ed1defc3a875ea847b8dec9c2137fde9, type: 3}
   humanTwoToDestroy: {fileID: 251871140310807637}
   humanGoPop: {fileID: 2348739552842734756, guid: 679ec0d370a65a045a4160009acdcc65, type: 3}
+  humanParticles: {fileID: 161882710016528232, guid: 679ec0d370a65a045a4160009acdcc65, type: 3}
 --- !u!54 &7559770121367856847
 Rigidbody:
   m_ObjectHideFlags: 0
