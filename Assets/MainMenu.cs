@@ -15,7 +15,10 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerPrefs.SetInt("player1Score", 0);
+        PlayerPrefs.SetInt("player2Score", 0);
+        PlayerPrefs.SetInt("player3Score", 0);
+        PlayerPrefs.SetInt("player4Score", 0);
     }
 
     // Update is called once per frame
@@ -67,7 +70,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         //set the number of rounds to be the selected amount
-        PlayerPrefs.SetInt("NoOfRounds", Mathf.RoundToInt(roundsSlider.value) + 1);
+        PlayerPrefs.SetInt("NoOfRounds", Mathf.RoundToInt(roundsSlider.value));
         //loads the game pick menu
         SceneManager.LoadScene("GamePick");
     }

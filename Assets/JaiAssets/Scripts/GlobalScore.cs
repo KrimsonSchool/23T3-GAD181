@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
+using TMPro;
 
 public class GlobalScore : MonoBehaviour
 {
@@ -11,17 +13,19 @@ public class GlobalScore : MonoBehaviour
     public int player3Score;
     public int player4Score;
 
-    public TMPro.TextMeshProUGUI player1ScoreText;
-    public TMPro.TextMeshProUGUI player2ScoreText;
-    public TMPro.TextMeshProUGUI player3ScoreText;
-    public TMPro.TextMeshProUGUI player4ScoreText;
+    public TextMeshProUGUI player1ScoreText;
+    public TextMeshProUGUI player2ScoreText;
+    public TextMeshProUGUI player3ScoreText;
+    public TextMeshProUGUI player4ScoreText;
 
     [Header("Winner")]
-    public TMPro.TextMeshProUGUI roundsText;
+    public TextMeshProUGUI roundsText;
 
     public GameObject winnerMenu;
-    public TMPro.TextMeshProUGUI winNameText;
-    public TMPro.TextMeshProUGUI winScoresText;
+    public TextMeshProUGUI winNameText;
+    public TextMeshProUGUI winScoresText;
+
+    public int currentRound;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +38,12 @@ public class GlobalScore : MonoBehaviour
         int winPlayer;
         Array.Sort(playerScores);
 
+        
+        //PlayerPrefs.SetInt("NoOfRounds", PlayerPrefs.GetInt("NoOfRounds") - 1);
+        currentRound += 1;
+        roundsText.text = currentRound + " / " + PlayerPrefs.GetInt("NoOfRounds");
 
-        PlayerPrefs.SetInt("NoOfRounds", PlayerPrefs.GetInt("NoOfRounds") - 1);
-        roundsText.text = ""+PlayerPrefs.GetInt("NoOfRounds");
-
-        if(PlayerPrefs.GetInt("NoOfRounds") <= 0)
+        if (currentRound > PlayerPrefs.GetInt("NoOfRounds"))
         {
             print("Game Over!");
             winnerMenu.SetActive(true);
@@ -72,9 +77,9 @@ public class GlobalScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player1ScoreText.text = "· Player 1: " + player1Score;
-        player2ScoreText.text = "· Player 2: " + player2Score;
-        player3ScoreText.text = "· Player 3: " + player3Score;
-        player4ScoreText.text = "· Player 4: " + player4Score;
+        player1ScoreText.text = player1Score.ToString();
+        player2ScoreText.text = player2Score.ToString();
+        player3ScoreText.text = player3Score.ToString();
+        player4ScoreText.text = player4Score.ToString();
     }
 }
