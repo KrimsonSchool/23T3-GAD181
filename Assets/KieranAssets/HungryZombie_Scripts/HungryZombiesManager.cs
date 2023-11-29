@@ -29,9 +29,6 @@ public class HungryZombiesManager : MonoBehaviour
     public MiniGameTwoPlayerController playerFour;
     public TextMeshProUGUI Winner;
     public TimerManager timer;
-    public TextMeshProUGUI goalText;
-    public TextMeshProUGUI extraText;
-    public TextMeshProUGUI timerText;
     public Image controlsUI;
     public AudioSource introSound;
     public AudioSource alarmSonar; // This is a reference to a AudioSource
@@ -142,9 +139,6 @@ public class HungryZombiesManager : MonoBehaviour
         introCamera.SetActive(false);
         mainCamera.SetActive(true);
         controlsUI.enabled = true;
-        goalText.enabled = true; // A bool set to false
-        extraText.enabled = true;
-        timerText.enabled = true;
         playerOne.ReturnZombiesToReadyPosiiton();
         playerTwo.ReturnZombiesToReadyPosiiton();
         playerThree.ReturnZombiesToReadyPosiiton();
@@ -167,9 +161,6 @@ public class HungryZombiesManager : MonoBehaviour
         canHumansSpawn = true;
         timer.isTimerOn = true; // A bool set to true
         controlsUI.enabled = false; // A bool set to false
-        goalText.enabled = false; // A bool set to false
-        extraText.enabled = false;
-        timerText.enabled = false; // A bool set to false
         introSound.Stop();
         alarmSonar.Play();
 
