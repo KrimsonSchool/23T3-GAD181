@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class GlobalScore : MonoBehaviour
 {
+    [Header("Score")]
     public int player1Score;
     public int player2Score;
     public int player3Score;
     public int player4Score;
 
-    public TMPro.TextMeshProUGUI scoreText;
+    public TMPro.TextMeshProUGUI player1ScoreText;
+    public TMPro.TextMeshProUGUI player2ScoreText;
+    public TMPro.TextMeshProUGUI player3ScoreText;
+    public TMPro.TextMeshProUGUI player4ScoreText;
+
+    [Header("Winner")]
     public TMPro.TextMeshProUGUI roundsText;
 
     public GameObject winnerMenu;
@@ -66,6 +72,9 @@ public class GlobalScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "· Player 1: " + player1Score + "\n\n· Player 2: " + player2Score + "\n\n· Player 3: " + player3Score + "\n\n· Player 4: " + player4Score + "\n\n";
+        player1ScoreText.text = "· Player 1: " + player1Score;
+        player2ScoreText.text = "· Player 2: " + player2Score;
+        player3ScoreText.text = "· Player 3: " + player3Score;
+        player4ScoreText.text = "· Player 4: " + player4Score;
     }
 }
