@@ -13,6 +13,7 @@ public class PTZ_Zombie : MonoBehaviour
 
     private PTZ_PlayerAmount pa;
 
+    public GameObject zombie;
 
     private PTZ_Timer tim;
 
@@ -48,13 +49,15 @@ public class PTZ_Zombie : MonoBehaviour
         gr.gameBegun = false;
         gr.gameEnded = true;
 
+
+
         gr.Scoring();
 
        // Destroy(gr.hand);
 
         tim.timerText.GetComponent<AudioSource>().Stop();
 
-
+        zombie.GetComponent<Animator>().SetTrigger("zomTrigger");
 
        // restart.SetActive(true);
 

@@ -63,8 +63,9 @@ public class PTZ_PlayerAmount : MonoBehaviour
         Destroy(p3);
         Destroy(p4);
       
-        // panel.GetComponent<HorizontalLayoutGroup>().spacing = -513.6f;
-       // p2.GetComponent<PTZ_Players>().goblin.GetComponent<SpriteRenderer>().flipX = true;
+        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(430f, 102f);
+
+
 
     }
 
@@ -76,7 +77,7 @@ public class PTZ_PlayerAmount : MonoBehaviour
         gr.playerList.Add(nothing);
         Destroy(p4);
 
-       // panel.GetComponent<HorizontalLayoutGroup>().spacing = -150.91f;
+        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(530f, 102f);
     }
 
     public void FourPlayers()
@@ -87,6 +88,6 @@ public class PTZ_PlayerAmount : MonoBehaviour
         gr.playerList.Add(p4);
         gr.playerList.Add(nothing);
 
-       // panel.GetComponent<HorizontalLayoutGroup>().spacing = -16.5f;
+       
     }
 }
