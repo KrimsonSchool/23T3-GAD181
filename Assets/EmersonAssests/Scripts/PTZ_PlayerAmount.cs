@@ -63,9 +63,9 @@ public class PTZ_PlayerAmount : MonoBehaviour
         Destroy(p3);
         Destroy(p4);
       
-        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(430f, 102f);
+        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(430f, 90f);
 
-
+        panel.GetComponent<HorizontalLayoutGroup>().spacing = 40f;
 
     }
 
@@ -77,7 +77,7 @@ public class PTZ_PlayerAmount : MonoBehaviour
         gr.playerList.Add(nothing);
         Destroy(p4);
 
-        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(530f, 102f);
+        panel.GetComponent<RectTransform>().sizeDelta = new Vector2(530f, 90f);
     }
 
     public void FourPlayers()
