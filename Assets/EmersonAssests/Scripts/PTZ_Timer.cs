@@ -43,7 +43,7 @@ public class PTZ_Timer : MonoBehaviour
         if (targetTime <= 0.5f)
         {
             timerText.text = "Time's Up!";
-            timerText.fontSize = 30;
+            timerText.fontSize = 26;
            // gr.hand.transform.position = new UnityEngine.Vector3(-0.88f, 2f, gr.hand.transform.position.z);
            // gr.hand.transform.localScale = new UnityEngine.Vector2(0.64f, gr.hand.transform.localScale.y);
 
@@ -57,17 +57,17 @@ public class PTZ_Timer : MonoBehaviour
         else if (gr.gameEnded)
         {
             timerText.text = gr.winnerText;
-            timerText.fontSize = 30;
+            timerText.fontSize = 26;
         }
         else if (!gr.gameBegun && !gr.gameBegun)
         {
             timerText.text = "Poke!";
-            timerText.fontSize = 30;
+            timerText.fontSize = 26;
         }
         else
         {
             timerText.text = displayTime.ToString();
-            timerText.fontSize = 36;
+            timerText.fontSize = 30;
 
         }
 
