@@ -25,7 +25,8 @@ public class PTZ_GameRun : MonoBehaviour
     public AudioClip[] pokeSound;
     public AudioSource effectAud;
 
-    
+    public GameObject mechArm;
+    public Animator mechAnim;
 
     public string winnerText;
 
@@ -47,7 +48,7 @@ public class PTZ_GameRun : MonoBehaviour
 
         effectAud = this.GetComponent<AudioSource>();
 
-
+        mechAnim = mechArm.GetComponent<Animator>();    
         
 
 
@@ -67,18 +68,17 @@ public class PTZ_GameRun : MonoBehaviour
 
         }
 
-       // if (Input.GetKeyDown(KeyCode.Space) && !gameEnded)
-       // {
-           // hand.transform.position = new UnityEngine.Vector3(-0.88f, 1.27f, hand.transform.position.z); // hand in
-            //hand.transform.localScale = new UnityEngine.Vector2(0.44f, hand.transform.localScale.y);
+        if (Input.GetKeyDown(KeyCode.Space) && !gameEnded)
+        {
+            
+            if (timer.targetTime >= 0.5f)
 
-           // if (timer.targetTime >= 0.5f)
-
-           // {
-           //     effectAud.clip = pokeSound[UnityEngine.Random.Range(0, pokeSound.Length)];
-           //     effectAud.Play();
-           // }
-       // }
+            {
+                mechAnim.SetTrigger("pokein");
+                //effectAud.clip = pokeSound[UnityEngine.Random.Range(0, pokeSound.Length)];
+                // effectAud.Play();
+            }
+       }
 
 
 
@@ -90,8 +90,7 @@ public class PTZ_GameRun : MonoBehaviour
 
             activePlayer.scoreText.text = activePlayer.pokePoints.ToString();
 
-           // hand.transform.position = new UnityEngine.Vector3(-0.88f, 2f, hand.transform.position.z); // hand out
-           // hand.transform.localScale = new UnityEngine.Vector2(0.64f, hand.transform.localScale.y);
+            mechAnim.SetTrigger("pokeout");
 
         }
 

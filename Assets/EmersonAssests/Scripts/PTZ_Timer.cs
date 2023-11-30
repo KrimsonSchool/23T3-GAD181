@@ -9,7 +9,7 @@ public class PTZ_Timer : MonoBehaviour
     public float targetTime = 5.5f;
     private PTZ_GameRun gr;
 
-
+    
 
 
     public TextMeshProUGUI timerText;
@@ -22,6 +22,7 @@ public class PTZ_Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
 
         gr = this.gameObject.GetComponent<PTZ_GameRun>();
         tickAud = timerText.GetComponent<AudioSource>();
@@ -44,12 +45,10 @@ public class PTZ_Timer : MonoBehaviour
         {
             timerText.text = "Time's Up!";
             timerText.fontSize = 26;
-           // gr.hand.transform.position = new UnityEngine.Vector3(-0.88f, 2f, gr.hand.transform.position.z);
-           // gr.hand.transform.localScale = new UnityEngine.Vector2(0.64f, gr.hand.transform.localScale.y);
+           
+            gr.mechAnim.SetTrigger("pokeout");
 
-           // var anim = gr.activePlayer.GetComponent<PTZ_Players>().goblin.GetComponent<Animator>();
-           // string animationName = "p" + gr.activePlayer.GetComponent<PTZ_Players>().playerNo + "_still";
-           // anim.Play(animationName);
+            
 
 
 

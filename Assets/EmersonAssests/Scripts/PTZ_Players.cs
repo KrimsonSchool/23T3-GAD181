@@ -15,7 +15,8 @@ public class PTZ_Players : MonoBehaviour
 
     public TextMeshProUGUI playerLabel;
 
-    
+    public Material playerMechMaterial;
+    public GameObject robot;
 
    // public Sprite mDefault;
    // public Sprite mHighlight;
@@ -49,7 +50,7 @@ public class PTZ_Players : MonoBehaviour
         if (gr._activePlayer == this.gameObject && !gr.gameEnded)
         {
             this.gameObject.GetComponent<RawImage>().texture = playerScoreBox;
-            // gr.hand.GetComponent<SpriteRenderer>().sprite = handColour;
+            robot.GetComponent<Renderer>().material = playerMechMaterial;
 
 
         }
@@ -69,7 +70,7 @@ public class PTZ_Players : MonoBehaviour
     {
 
         this.gameObject.GetComponent<RawImage>().texture = playerScoreBox;
-
+        robot.GetComponent<Renderer>().material = playerMechMaterial;
 
         Debug.Log("The winner is " + this.playerLabel + " with " + pokePoints + " points!");
 

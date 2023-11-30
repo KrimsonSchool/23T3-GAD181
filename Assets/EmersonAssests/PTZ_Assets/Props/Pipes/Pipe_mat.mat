@@ -163,7 +163,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
-    - _CoatMask: 0.598
+    - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -204,8 +204,8 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0.944
-    - _MetallicRemapMax: 0.71692616
-    - _MetallicRemapMin: 0
+    - _MetallicRemapMax: 0.9342817
+    - _MetallicRemapMin: 0.273341
     - _NormalMapSpace: 0
     - _NormalScale: 0
     - _ObjectSpaceUVMapping: 0
@@ -221,7 +221,7 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _Smoothness: 0
-    - _SmoothnessRemapMax: 1
+    - _SmoothnessRemapMax: 0.50601023
     - _SmoothnessRemapMin: 0.06010469
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2

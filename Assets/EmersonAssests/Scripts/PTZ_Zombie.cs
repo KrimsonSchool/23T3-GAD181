@@ -17,7 +17,7 @@ public class PTZ_Zombie : MonoBehaviour
 
     private PTZ_Timer tim;
 
-  //  public GameObject restart;
+    public GameObject exit;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class PTZ_Zombie : MonoBehaviour
 
         zombie.GetComponent<Animator>().SetTrigger("zomTrigger");
 
-       // restart.SetActive(true);
+       exit.SetActive(true);
 
     }
 }
