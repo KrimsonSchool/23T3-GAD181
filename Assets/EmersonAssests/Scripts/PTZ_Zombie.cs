@@ -58,8 +58,9 @@ public class PTZ_Zombie : MonoBehaviour
         //tim.timerText.GetComponent<AudioSource>().Stop();
 
         zombie.GetComponent<Animator>().SetTrigger("zomTrigger");
+        gr.mechAnim.Play("MechArm_idle");
 
-       exit.SetActive(true);
+        exit.SetActive(true);
 
     }
 }

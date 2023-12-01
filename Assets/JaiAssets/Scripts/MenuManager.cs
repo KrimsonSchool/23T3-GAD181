@@ -19,12 +19,12 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         noOfRounds = Mathf.RoundToInt(noOfRoundsSlider.value);
-        noOfRoundsText.text = ""+noOfRounds;
+        noOfRoundsText.text = noOfRounds.ToString();
     }
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("NoOfRounds", noOfRounds+1);
+        PlayerPrefs.SetInt("NoOfRounds", noOfRounds);
         PlayerPrefs.SetInt("player1Score", 0);
         PlayerPrefs.SetInt("player2Score", 0);
         PlayerPrefs.SetInt("player3Score", 0);
@@ -32,8 +32,5 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void Quit()
-    {
-        Application.Quit();
-    }
+
 }

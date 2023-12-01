@@ -26,6 +26,15 @@ public class GlobalScore : MonoBehaviour
     public TextMeshProUGUI winScoresText;
 
     public int currentRound;
+
+    private void Awake()
+    {
+        PlayerPrefs.SetInt("currentRound", PlayerPrefs.GetInt("currentRound") +1);
+        currentRound = PlayerPrefs.GetInt("currentRound");
+        Debug.Log(currentRound);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +49,10 @@ public class GlobalScore : MonoBehaviour
 
         
         //PlayerPrefs.SetInt("NoOfRounds", PlayerPrefs.GetInt("NoOfRounds") - 1);
-        currentRound += 1;
-        roundsText.text = currentRound + " / " + PlayerPrefs.GetInt("NoOfRounds");
+        
+        roundsText.text = PlayerPrefs.GetInt("currentRound") + " / " + PlayerPrefs.GetInt("NoOfRounds");
 
-        if (currentRound > PlayerPrefs.GetInt("NoOfRounds"))
+        if (PlayerPrefs.GetInt("currentRound") > PlayerPrefs.GetInt("NoOfRounds"))
         {
             print("Game Over!");
             winnerMenu.SetActive(true);
@@ -70,7 +79,7 @@ public class GlobalScore : MonoBehaviour
             }
             winNameText.text = "Player " + winPlayer + " wins!!!";
 
-            winScoresText.text = "player 1: " + player1Score + "   player 2: " + player2Score + "   player 3: " + player3Score + "   player 4: " + player4Score;
+            winScoresText.text = "Player 1: " + player1Score + "  |  Player 2: " + player2Score + "  |  Player 3: " + player3Score + "  |  Player 4: " + player4Score;
         }
     }
 

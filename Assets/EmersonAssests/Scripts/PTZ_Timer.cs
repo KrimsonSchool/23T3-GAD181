@@ -45,8 +45,8 @@ public class PTZ_Timer : MonoBehaviour
         {
             timerText.text = "Time's Up!";
             timerText.fontSize = 26;
-           
-            gr.mechAnim.SetTrigger("pokeout");
+
+            gr.mechAnim.Play("MechArm_idle");
 
             
 

@@ -97,7 +97,8 @@ public class PTZ_GameRun : MonoBehaviour
         if (gameEnded && Input.GetKeyUp(KeyCode.Return))
         {
 
-            SceneManager.LoadScene("GamePick"); 
+            SceneManager.LoadScene("GamePick");
+            
 
         }
 

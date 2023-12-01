@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("currentRound", 0);
         PlayerPrefs.SetInt("player1Score", 0);
         PlayerPrefs.SetInt("player2Score", 0);
         PlayerPrefs.SetInt("player3Score", 0);
