@@ -11,6 +11,7 @@ TagManager:
   - PlayerThree
   - PlayerFour
   - Item
+  - RotatingCamera
   layers:
   - Default
   - TransparentFX

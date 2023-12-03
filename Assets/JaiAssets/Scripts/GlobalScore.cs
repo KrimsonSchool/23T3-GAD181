@@ -1,21 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
+using TMPro;
 
 public class GlobalScore : MonoBehaviour
 {
+    [Header("Score")]
     public int player1Score;
     public int player2Score;
     public int player3Score;
     public int player4Score;
 
-    public TMPro.TextMeshProUGUI scoreText;
-    public TMPro.TextMeshProUGUI roundsText;
+    public TextMeshProUGUI player1ScoreText;
+    public TextMeshProUGUI player2ScoreText;
+    public TextMeshProUGUI player3ScoreText;
+    public TextMeshProUGUI player4ScoreText;
+
+    [Header("Winner")]
+    public TextMeshProUGUI roundsText;
 
     public GameObject winnerMenu;
-    public TMPro.TextMeshProUGUI winNameText;
-    public TMPro.TextMeshProUGUI winScoresText;
+    public TextMeshProUGUI winNameText;
+    public TextMeshProUGUI winScoresText;
+
+    public int currentRound;
+
+    private void Awake()
+    {
+        PlayerPrefs.SetInt("currentRound", PlayerPrefs.GetInt("currentRound") +1);
+        currentRound = PlayerPrefs.GetInt("currentRound");
+        Debug.Log(currentRound);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +47,12 @@ public class GlobalScore : MonoBehaviour
         int winPlayer;
         Array.Sort(playerScores);
 
+        
+        //PlayerPrefs.SetInt("NoOfRounds", PlayerPrefs.GetInt("NoOfRounds") - 1);
+        
+        roundsText.text = PlayerPrefs.GetInt("currentRound") + " / " + PlayerPrefs.GetInt("NoOfRounds");
 
-        PlayerPrefs.SetInt("NoOfRounds", PlayerPrefs.GetInt("NoOfRounds") - 1);
-        roundsText.text = ""+PlayerPrefs.GetInt("NoOfRounds");
-
-        if(PlayerPrefs.GetInt("NoOfRounds") <= 0)
+        if (PlayerPrefs.GetInt("currentRound") > PlayerPrefs.GetInt("NoOfRounds"))
         {
             print("Game Over!");
             winnerMenu.SetActive(true);
@@ -59,13 +79,16 @@ public class GlobalScore : MonoBehaviour
             }
             winNameText.text = "Player " + winPlayer + " wins!!!";
 
-            winScoresText.text = "player 1: " + player1Score + "   player 2: " + player2Score + "   player 3: " + player3Score + "   player 4: " + player4Score;
+            winScoresText.text = "Player 1: " + player1Score + "  |  Player 2: " + player2Score + "  |  Player 3: " + player3Score + "  |  Player 4: " + player4Score;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "· Player 1: " + player1Score + "\n\n· Player 2: " + player2Score + "\n\n· Player 3: " + player3Score + "\n\n· Player 4: " + player4Score + "\n\n";
+        player1ScoreText.text = player1Score.ToString();
+        player2ScoreText.text = player2Score.ToString();
+        player3ScoreText.text = player3Score.ToString();
+        player4ScoreText.text = player4Score.ToString();
     }
 }
