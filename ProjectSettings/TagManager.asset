@@ -12,6 +12,8 @@ TagManager:
   - PlayerFour
   - Item
   - RotatingCamera
+  - MusicPlayer
+  - EffectPlayer
   layers:
   - Default
   - TransparentFX
