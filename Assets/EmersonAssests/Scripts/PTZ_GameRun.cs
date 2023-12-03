@@ -19,7 +19,7 @@ public class PTZ_GameRun : MonoBehaviour
     public bool gameBegun;
     public bool gameEnded;
 
-   // public GameObject hand;
+   
     public GameObject musicPlayer;
 
     public AudioClip[] pokeSound;
@@ -27,9 +27,14 @@ public class PTZ_GameRun : MonoBehaviour
 
     public GameObject mechArm;
     public Animator mechAnim;
+   private AudioSource mechAud;
+
+   public AudioClip mechIn;
+   public AudioClip mechOut;
 
     public string winnerText;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -46,10 +51,10 @@ public class PTZ_GameRun : MonoBehaviour
         gameBegun = false;
         gameEnded = false;
 
-        effectAud = this.GetComponent<AudioSource>();
+        
 
         mechAnim = mechArm.GetComponent<Animator>();    
-        
+        mechAud = mechArm.GetComponent<AudioSource>();
 
 
     }
@@ -61,48 +66,49 @@ public class PTZ_GameRun : MonoBehaviour
         _activePlayer = playerList[x]; // constantly checks who the active player is
         activePlayer = _activePlayer.GetComponent<PTZ_Players>(); // makes a player the active player
 
-        if (Input.GetKeyDown(KeyCode.Space) && !gameBegun && !gameEnded) // starts game and timer
-        {
-            gameBegun = true;
-            //timer.timerText.GetComponent<AudioSource>().Play();
+             if (Input.GetKeyDown(KeyCode.Space) && !gameBegun && !gameEnded) // starts game and timer
+             {
+                 gameBegun = true;
+                 timer.timerText.GetComponent<AudioSource>().Play();
 
-        }
+             }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !gameEnded)
-        {
-            
-            if (timer.targetTime >= 0.5f)
-
+            if (Input.GetKeyDown(KeyCode.Space) && !gameEnded)
             {
-                mechAnim.SetTrigger("pokein");
-                //effectAud.clip = pokeSound[UnityEngine.Random.Range(0, pokeSound.Length)];
-                // effectAud.Play();
+
+                if (timer.targetTime >= 0.5f)
+                {
+                    mechAnim.SetTrigger("pokein");
+
+                   mechAud.clip = mechIn;
+                   mechAud.Play();
+                }
             }
-       }
+        
 
 
+            if (Input.GetKeyUp(KeyCode.Space) && gameBegun && timer.targetTime >= 0.5f) // Poke mechanic once game has started
+            {
+                activePlayer.pokePoints += 1; // adds points to player who is active
+                zombie.totalPokes += 1; // zombie's total pokes go up by 1
+                zombie.zomThreshold -= 1; // reduces zombie's threshold by 1
 
-        if (Input.GetKeyUp(KeyCode.Space) && gameBegun && timer.targetTime >= 0.5f) // Poke mechanic once game has started
-        {
-            activePlayer.pokePoints += 1; // adds points to player who is active
-            zombie.totalPokes += 1; // lions total pokes go up by 1
-            zombie.zomThreshold -= 1; // reduces lion's threshold by 1
+                activePlayer.scoreText.text = activePlayer.pokePoints.ToString();
 
-            activePlayer.scoreText.text = activePlayer.pokePoints.ToString();
+               mechAnim.SetTrigger("pokeout");
+               mechAud.clip = mechOut;
+               mechAud.Play();
+            }
 
-            mechAnim.SetTrigger("pokeout");
+            if (gameEnded && Input.GetKeyUp(KeyCode.Return))
+            {
 
-        }
-
-        if (gameEnded && Input.GetKeyUp(KeyCode.Return))
-        {
-
-            SceneManager.LoadScene("GamePick");
-            
-
-        }
+                SceneManager.LoadScene("GamePick");
 
 
+            }
+
+        
     }
 
 

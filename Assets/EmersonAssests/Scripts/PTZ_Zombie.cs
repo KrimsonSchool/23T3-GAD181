@@ -49,7 +49,7 @@ public class PTZ_Zombie : MonoBehaviour
         gr.gameBegun = false;
         gr.gameEnded = true;
 
-
+        tim.timerText.GetComponent<AudioSource>().Stop();
 
         gr.Scoring();
 

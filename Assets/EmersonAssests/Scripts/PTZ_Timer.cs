@@ -83,6 +83,6 @@ public class PTZ_Timer : MonoBehaviour
     {
         targetTime = 5.5f;
         gr.NextPlayer();
-        tickAud.Play();
+        
     }
 }
