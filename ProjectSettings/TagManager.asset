@@ -14,6 +14,7 @@ TagManager:
   - RotatingCamera
   - MusicPlayer
   - EffectPlayer
+  - Popup
   layers:
   - Default
   - TransparentFX
