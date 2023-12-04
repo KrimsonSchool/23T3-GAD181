@@ -12103,14 +12103,15 @@ MonoBehaviour:
   inputs: 'Reach the end of the course first!
 
 
-    Player 1 - W A S D
+    Player 1 - WASD <i>/</i> L.CTRL
 
     Player
-    2 - Arrow Keys
+    2 - Arrows <i>/</i> L.ALT
 
-    Player 3 - Y G H J
+    Player 3 - YGHJ <i>/</i> R.CTRL
 
-    Player 4 - P L ; '''
+    Player 4
+    - PL;'' <i>/</i> R.ALT'
   gamePreview: {fileID: 1545614207}
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
