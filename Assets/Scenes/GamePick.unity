@@ -4718,6 +4718,7 @@ GameObject:
   - component: {fileID: 1055000127}
   - component: {fileID: 1055000129}
   - component: {fileID: 1055000128}
+  - component: {fileID: 1055000130}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -4843,6 +4844,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055000126}
   m_CullTransparentMesh: 1
+--- !u!114 &1055000130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055000126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8a5ff515884b4448a219448cfd0fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditsText: {fileID: 1055000128}
+  names:
+  - Kieran Nap'bleidick
+  - Jai Vanderark
+  - Josh Wojtowicz-Marshall
+  - Emerson Webber
+  colours:
+  - {r: 0.2859354, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.83267355, a: 0}
+  - {r: 1, g: 0.7864886, b: 0, a: 0}
+  - {r: 0, g: 0.10007739, b: 1, a: 0}
+  coloursB:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  changePeriod: 0.33
 --- !u!1 &1060912157
 GameObject:
   m_ObjectHideFlags: 0
