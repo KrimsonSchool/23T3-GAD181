@@ -191,27 +191,29 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerAnimate.Stop();
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             PlayerAnimate.Play();
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             PlayerAnimate.Stop();
         }
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J))
         {
             PlayerAnimate.Play();
         }
-        else if (Input.GetKeyUp(KeyCode.Y))
+        else if (Input.GetKeyUp(KeyCode.Y) || Input.GetKeyUp(KeyCode.G) || Input.GetKeyUp(KeyCode.H) || Input.GetKeyUp(KeyCode.J))
         {
+            
             PlayerAnimate.Stop();
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.Semicolon) || Input.GetKeyDown(KeyCode.Quote))
         {
+            
             PlayerAnimate.Play();
         }
-        else if (Input.GetKeyUp(KeyCode.P))
+        else if (Input.GetKeyUp(KeyCode.P) || Input.GetKeyUp(KeyCode.L) || Input.GetKeyUp(KeyCode.Semicolon) || Input.GetKeyUp(KeyCode.Quote))
         {
             PlayerAnimate.Stop();
         }
