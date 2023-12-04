@@ -6081,7 +6081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &847363260
 Transform:
   m_ObjectHideFlags: 0
@@ -12726,7 +12726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1724646975
 Transform:
   m_ObjectHideFlags: 0
@@ -14437,7 +14437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1942322172
 Transform:
   m_ObjectHideFlags: 0
@@ -14732,8 +14732,6 @@ MonoBehaviour:
   playerFoursScore: {fileID: 402360061}
   Winner: {fileID: 1085566918}
   controlsUI: {fileID: 1555709127}
-  goalText: {fileID: 0}
-  timerText: {fileID: 0}
   playerOneFood: {fileID: 6276657175085948373}
   playerTwoFood: {fileID: 6276657175580009209}
   playerThreeFood: {fileID: 6276657175787446420}
@@ -17863,7 +17861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4493914615056991930
 MonoBehaviour:
   m_ObjectHideFlags: 0
