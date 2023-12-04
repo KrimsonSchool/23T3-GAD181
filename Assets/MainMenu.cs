@@ -18,6 +18,8 @@ public class MainMenu : MonoBehaviour
     public AudioClip buttonOn;
     public AudioClip buttonSelect;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,10 +90,11 @@ public class MainMenu : MonoBehaviour
         effectAud.clip = buttonSelect;
         effectAud.Play();
 
+        animator.enabled = true;
+
         //set the number of rounds to be the selected amount
         PlayerPrefs.SetInt("NoOfRounds", Mathf.RoundToInt(roundsSlider.value));
         //loads the game pick menu
-        SceneManager.LoadScene("GamePick");
 
     }
 
@@ -104,5 +107,10 @@ public class MainMenu : MonoBehaviour
     {
         effectAud.clip = buttonSelect;
         effectAud.Play();
+    }
+
+    public void AnimDone()
+    {
+        SceneManager.LoadScene("GamePick");
     }
 }
