@@ -49,6 +49,8 @@ public class GlobalScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         player1Score = PlayerPrefs.GetInt("player1Score");
         player2Score = PlayerPrefs.GetInt("player2Score");
         player3Score = PlayerPrefs.GetInt("player3Score");

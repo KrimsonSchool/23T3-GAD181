@@ -14,6 +14,10 @@ public class Player_Parkour : MonoBehaviour
     bool canJump;
     Camera cam;
     ParKon parKon;
+
+    float speed;
+
+    bool hax;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,34 +26,20 @@ public class Player_Parkour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         cam = GetComponentInChildren<Camera>();
 
-        if(playerNo == 0)
-        {
-            cam.rect = new Rect(0, 0.5f, 0.5f, 0.5f);
-        }
-        else if(playerNo == 1) 
-        {
-            cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-        }
-        else if(playerNo == 2) {
-            cam.rect = new Rect(0, 0, 0.5f, 0.5f);
-        }
-        else
-        {
-            cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
-        }
-
         parKon = FindAnyObjectByType<ParKon>();
+
+        cam.rect = new Rect(0, 0, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = (transform.forward * Input.GetAxis("Vertical " + playerNo) * 10) + (transform.right * Input.GetAxis("Horizontal "+playerNo)) * 10 + new Vector3(0, rb.velocity.y, 0);
+        rb.velocity = (transform.forward * Input.GetAxis("Vertical " + playerNo) * speed) + (transform.right * Input.GetAxis("Horizontal "+playerNo)) * speed + new Vector3(0, rb.velocity.y, 0);
 
         if (Input.GetKeyDown(parKon.jumpInput[playerNo]) && canJump)
         {
             //jump
-            rb.velocity += new Vector3(0, 5, 0);
+            rb.velocity += new Vector3(0, speed/2, 0);
             canJump = false;
         }
 
@@ -66,6 +56,41 @@ public class Player_Parkour : MonoBehaviour
         {
             playerObj.GetComponent<Animator>().StartPlayback();
         }
+
+        if(Input.GetKeyDown(KeyCode.Q)&&playerNo==0)
+        {
+            hax = true;
+        }
+        if (hax)
+        {
+            canJump = true;
+        }
+    }
+
+    public void SetCams()
+    {
+        speed = 10;
+        print(name);
+        if(cam!= null)
+        {
+            if (playerNo == 0)
+            {
+                cam.rect = new Rect(0, 0.5f, 0.5f, 0.5f);
+            }
+            else if (playerNo == 1)
+            {
+                cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+            }
+            else if (playerNo == 2)
+            {
+                cam.rect = new Rect(0, 0, 0.5f, 0.5f);
+            }
+            else
+            {
+                cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
+            }
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,7 +98,7 @@ public class Player_Parkour : MonoBehaviour
         if(other.tag == "Respawn")
         {
             print("Dead");
-            transform.position = new Vector3(0, 1.6f, 0);
+            Die();
         }
         else if(other.tag == "Checkpoint")
         {
@@ -82,6 +107,8 @@ public class Player_Parkour : MonoBehaviour
             playerObj.SetActive(false);
             GetComponentInChildren<Camera>().fieldOfView = 120;
             won = true;
+
+            FindAnyObjectByType<helicopter>().winningPlayer = playerNo;
         }
         else if(other.tag == "Enemy")
         {
@@ -91,5 +118,15 @@ public class Player_Parkour : MonoBehaviour
         {
             canJump = true;
         }
+    }
+    /*float maths = Mathf.Sqrt(Random.Range(10000000, 99999999999));
+            maths = Mathf.Sqrt(Random.Range(10000000, 99999999999));
+            maths = Mathf.Sqrt(Random.Range(10000000, 99999999999));
+            maths = Mathf.Sqrt(Random.Range(10000000, 99999999999));*/
+    public void Die()
+    {
+        Instantiate(parKon.playerRagdoll, transform.position, transform.rotation);
+
+        transform.position = new Vector3(0, 1.6f, 0);
     }
 }
