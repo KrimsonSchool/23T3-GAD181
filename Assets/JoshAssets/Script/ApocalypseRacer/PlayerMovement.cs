@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float speedV = 2.0f;
     public float yaw = 0.0f;
     public float pitch = 0.0f;
+    public Animation PlayerAnimate;
 
     // This must be linked to the object that has the "Character Controller" in the inspector. You may need to add this component to the object
     public CharacterController controller;
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     }    
     private void Update()
     {
+        RunAnimation();
 
         if (gameObject.tag == "PlayerOne")
         {
@@ -176,6 +178,42 @@ public class PlayerMovement : MonoBehaviour
 
             // Finally, it applies that vector it just made to the character
             controller.Move(move * speed * Time.deltaTime + velocity * Time.deltaTime);
+        }
+    }
+    
+    void RunAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp (KeyCode.A) || Input.GetKeyUp (KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            PlayerAnimate.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            PlayerAnimate.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.Y))
+        {
+            PlayerAnimate.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.P))
+        {
+            PlayerAnimate.Stop();
         }
     }
 }
