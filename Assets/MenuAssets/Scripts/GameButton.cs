@@ -30,7 +30,11 @@ public class GameButton : MonoBehaviour
     void Start()
     {
         effectPlayer = GameObject.FindWithTag("EffectPlayer");
-        effectAud = effectPlayer.GetComponent<AudioSource>();
+        if (effectPlayer != null)
+        {
+            effectAud = effectPlayer.GetComponent<AudioSource>();
+        }
+        
 
         vp = gamePreview.GetComponent<VideoPlayer>();
 

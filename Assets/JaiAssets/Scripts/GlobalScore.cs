@@ -30,10 +30,15 @@ public class GlobalScore : MonoBehaviour
 
     [Header("Other")]
     public GameObject musicPlayer;
+    public GameObject effectsPlayer;
 
     private void Awake()
     {
-
+        if (GameObject.FindWithTag("EffectPlayer") == null)
+        {
+            GameObject fxp = Instantiate(effectsPlayer);
+            DontDestroyOnLoad(fxp);
+        }
         if (GameObject.FindGameObjectWithTag("MusicPlayer") == null)
         {
             Instantiate(musicPlayer, new Vector3(0f, 0f, 0f), Quaternion.identity);
