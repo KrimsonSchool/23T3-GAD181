@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 689.89435, g: 563.4204, b: 615.9881, a: 1}
+  m_IndirectSpecularColor: {r: 689.89386, g: 563.4204, b: 615.9893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3210,8 +3210,6 @@ MonoBehaviour:
   zombie: {fileID: 496266534}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  zombieHappyParticles: {fileID: 4033412786151888123, guid: 49057b33ea71fbb4da4e8f02a8db9f28, type: 3}
-  zombieParticles: {fileID: 197854956412382674, guid: ef1d976f749d53f45a550691b476e88b, type: 3}
   zombieSound: {fileID: 496266540}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
 --- !u!65 &496266538
@@ -3560,7 +3558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &550583771
 Transform:
   m_ObjectHideFlags: 0
@@ -4745,8 +4743,6 @@ MonoBehaviour:
   zombie: {fileID: 811279145}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  zombieHappyParticles: {fileID: 4033412786151888123, guid: 49057b33ea71fbb4da4e8f02a8db9f28, type: 3}
-  zombieParticles: {fileID: 960668603054752941, guid: 57c4dc7b0bbf4474ea60208437e90c02, type: 3}
   zombieSound: {fileID: 811279153}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
 --- !u!65 &811279151
@@ -7023,8 +7019,6 @@ MonoBehaviour:
   zombie: {fileID: 1346364935}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  zombieHappyParticles: {fileID: 4033412786151888123, guid: 49057b33ea71fbb4da4e8f02a8db9f28, type: 3}
-  zombieParticles: {fileID: 3657856132126291310, guid: 4fbe7bed9ff4dcb4e915a054faa83a26, type: 3}
   zombieSound: {fileID: 1346364941}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
 --- !u!65 &1346364939
@@ -8724,8 +8718,6 @@ MonoBehaviour:
   zombie: {fileID: 1615683672}
   zombieManager: {fileID: 1537179202}
   canPlayerMove: 0
-  zombieHappyParticles: {fileID: 4033412786151888123, guid: 49057b33ea71fbb4da4e8f02a8db9f28, type: 3}
-  zombieParticles: {fileID: 3694067667295602695, guid: 67b6dbe37a946b54da755e646a092222, type: 3}
   zombieSound: {fileID: 1615683678}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
 --- !u!65 &1615683676
@@ -10155,7 +10147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1901668994
 MonoBehaviour:
   m_ObjectHideFlags: 0
