@@ -17,8 +17,7 @@ public class CureMakerGameManager : MonoBehaviour
     public GameObject uiPlayerTwoWinPrompt;
     public GameObject uiPlayerThreeWinPrompt;
     public GameObject uiPlayerFourWinPrompt;
-    float timer;
-    bool win;
+    float timer;  
     public int dead;
     public int playersAlive;
     public GameObject gameOver;
@@ -42,7 +41,7 @@ public class CureMakerGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dead >= 4)
+        if(dead >= playersAlive)
         {
             gameOver.SetActive(true);
             timer += Time.deltaTime;
