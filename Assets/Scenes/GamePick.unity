@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdd3d81a499d7342aef877599f814f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameNameNoSpaces: ApocalypseRacerGame
+  gameNameNoSpaces: CureMaker
   staticImg: {fileID: 2800000, guid: 362c618bade88314eb0072d661103fa6, type: 3}
   dynamicImg: {fileID: 8400000, guid: d4b2b79592e6e30479d28ebc9fe7cf5a, type: 2}
   controlsText: {fileID: 1734484508}

@@ -61,15 +61,7 @@ public class CureMakerGameManager : MonoBehaviour
             uiWinPrompt.SetActive(true);
 
             CheckWinner();
-        }
-        if (win)
-        {
-            timer += Time.deltaTime;
-            if (timer > 5)
-            {
-                SceneManager.LoadScene("GamePick");
-            }
-        }
+        }       
         if (playersAlive == 0)
         {
             gameOver.SetActive(true);
@@ -102,19 +94,24 @@ public class CureMakerGameManager : MonoBehaviour
         {
             Debug.Log("Player One Wins");
             uiPlayerOneWinPrompt.SetActive(true);
-
-            PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
-            win = true;
-            
+            timer += Time.deltaTime;
+            if (timer > 5)
+            {
+                PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("player1Score") + 50);
+                SceneManager.LoadScene("GamePick");
+            }        
             
         }
         if (players[winningPlayer].tag == "PlayerTwo")
         {
             Debug.Log("Player Two Wins");
             uiPlayerTwoWinPrompt.SetActive(true);
-
-            PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
-            win = true;
+            timer += Time.deltaTime;
+            if (timer > 5)
+            {
+                PlayerPrefs.SetInt("player2Score", PlayerPrefs.GetInt("player2Score") + 50);
+                SceneManager.LoadScene("GamePick");
+            }
             
 
         }
@@ -122,9 +119,12 @@ public class CureMakerGameManager : MonoBehaviour
         {
             Debug.Log("Player Three Wins");
             uiPlayerThreeWinPrompt.SetActive(true);
-
-            PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
-            win = true;
+            timer += Time.deltaTime;
+            if (timer > 5)
+            {
+                PlayerPrefs.SetInt("player3Score", PlayerPrefs.GetInt("player3Score") + 50);
+                SceneManager.LoadScene("GamePick");
+            }
            
 
         }
@@ -132,9 +132,12 @@ public class CureMakerGameManager : MonoBehaviour
         {
             Debug.Log("Player Four Wins");
             uiPlayerFourWinPrompt.SetActive(true);
-
-            PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50);
-            win = true;
+            timer += Time.deltaTime;
+            if (timer > 5)
+            {
+                PlayerPrefs.SetInt("player4Score", PlayerPrefs.GetInt("player4Score") + 50);
+                SceneManager.LoadScene("GamePick");
+            }
 
         }
     }

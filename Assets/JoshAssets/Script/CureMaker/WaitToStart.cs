@@ -25,7 +25,7 @@ public class WaitToStart : MonoBehaviour
 
     public IEnumerator PlayerCanMove()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
         playerOneMovement.enabled = true;
         playerTwoMovement.enabled = true;
         playerThreeMovement.enabled = true;

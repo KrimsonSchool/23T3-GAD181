@@ -900,7 +900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &159736550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,10 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   playerMovement: {fileID: 159736553}
-  players: []
-  dead: 
-  playersAlive: 0
-  gameOver: {fileID: 1427632269}
+  id: 0
 --- !u!143 &159736552
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1410,55 +1407,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 96222654}
   m_LocalEulerAnglesHint: {x: 0, y: -137.978, z: 0}
---- !u!1 &227598699
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 227598701}
-  - component: {fileID: 227598700}
-  m_Layer: 0
-  m_Name: PlayerSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &227598700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227598699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 473bf8f4016e98b47a7e549e9c120e83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  players:
-  - {fileID: 429230071}
-  - {fileID: 1400924762}
-  - {fileID: 159736549}
-  - {fileID: 1983130493}
---- !u!4 &227598701
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227598699}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -112.221985, y: -20.27584, z: -50.456367}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250973442
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,10 +2477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   playerMovement: {fileID: 429230074}
-  players: []
-  dead: 
-  playersAlive: 0
-  gameOver: {fileID: 1427632269}
+  id: 0
 --- !u!143 &429230073
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3884,7 +3829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8612b7f0ca6f1e445b31a42314aada79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 15
+  timeRemaining: 10
   isTimerRunning: 1
   countdown: {fileID: 682343660}
 --- !u!114 &682343660
@@ -5203,6 +5148,9 @@ MonoBehaviour:
   uiPlayerTwoWinPrompt: {fileID: 1012703236}
   uiPlayerThreeWinPrompt: {fileID: 348755910}
   uiPlayerFourWinPrompt: {fileID: 575461528}
+  dead: 0
+  playersAlive: 0
+  gameOver: {fileID: 0}
 --- !u!4 &974769300
 Transform:
   m_ObjectHideFlags: 0
@@ -6603,7 +6551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1400924763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6632,10 +6580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   playerMovement: {fileID: 1400924766}
-  players: []
-  dead: 
-  playersAlive: 0
-  gameOver: {fileID: 1427632269}
+  id: 0
 --- !u!143 &1400924765
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8999,7 +8944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1983130494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9028,10 +8973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   playerMovement: {fileID: 1983130497}
-  players: []
-  dead: 
-  playersAlive: 0
-  gameOver: {fileID: 1427632269}
+  id: 0
 --- !u!143 &1983130496
 CharacterController:
   m_ObjectHideFlags: 0
@@ -9587,6 +9529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2082040409}
+  - component: {fileID: 2082040410}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -9613,6 +9556,23 @@ Transform:
   - {fileID: 1983130501}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2082040410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082040408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473bf8f4016e98b47a7e549e9c120e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 429230071}
+  - {fileID: 1400924762}
+  - {fileID: 159736549}
+  - {fileID: 1983130493}
 --- !u!1 &2106150331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9925,4 +9885,3 @@ SceneRoots:
   - {fileID: 573376422}
   - {fileID: 526348212}
   - {fileID: 974769300}
-  - {fileID: 227598701}
