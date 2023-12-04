@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.18533, g: 324.8582, b: 429.96686, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 169405211}
   - component: {fileID: 169405213}
   - component: {fileID: 169405212}
+  - component: {fileID: 169405214}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -350,8 +351,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Problematic Times \xA9 2023 | Created by Kieran Nap'bleidick, Jai Vanderark,
-    Joshua Wojtowicz-Marshall & Emerson Webber"
+  m_text: "<color=red>Problematic Times</color> \xA9 2023 | Created by <color=#40FF6C>Kieran
+    Nap'bleidick</color>, <color=#ff00ffff>Jai Vanderark</color>, <color=#FFFF00FF>Joshua
+    Wojtowicz-Marshall</color> & <color=#add8e6ff>Emerson Webber</color>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31951caf0cf1ca84faab291f4feff989, type: 2}
   m_sharedMaterial: {fileID: 759974739308657453, guid: 31951caf0cf1ca84faab291f4feff989, type: 2}
@@ -428,6 +430,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169405210}
   m_CullTransparentMesh: 1
+--- !u!114 &169405214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169405210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8a5ff515884b4448a219448cfd0fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditsText: {fileID: 169405212}
+  names:
+  - Kieran Nap'bleidick
+  - Jai Vanderark
+  - Josh Wojtowicz-Marshall
+  - Emerson Webber
+  colours:
+  - {r: 0, g: 1, b: 0.19432807, a: 0}
+  - {r: 1, g: 0, b: 0.8296585, a: 0}
+  - {r: 1, g: 0.84751457, b: 0, a: 0}
+  - {r: 0, g: 0.5635319, b: 1, a: 0}
 --- !u!1 &201357225
 GameObject:
   m_ObjectHideFlags: 0

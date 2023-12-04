@@ -4764,8 +4764,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Problematic Times \xA9 2023 | Created by Kieran Nap'bleidick, Jai Vanderark,
-    Joshua Wojtowicz-Marshall & Emerson Webber"
+  m_text: "<color=red>Problematic Times</color> \xA9 2023 | Created by <color=green>Kieran
+    Nap'bleidick</color>, <color=#ff00ffff>Jai Vanderark</color>, <color=#ffff00ff>Joshua
+    Wojtowicz-Marshall</color> & <color=#add8e6ff>Emerson Webber</color>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 31951caf0cf1ca84faab291f4feff989, type: 2}
   m_sharedMaterial: {fileID: 759974739308657453, guid: 31951caf0cf1ca84faab291f4feff989, type: 2}
