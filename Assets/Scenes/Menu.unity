@@ -449,10 +449,16 @@ MonoBehaviour:
   - Josh Wojtowicz-Marshall
   - Emerson Webber
   colours:
-  - {r: 0, g: 1, b: 0.19432807, a: 0}
-  - {r: 1, g: 0, b: 0.8296585, a: 0}
-  - {r: 1, g: 0.84751457, b: 0, a: 0}
-  - {r: 0, g: 0.5635319, b: 1, a: 0}
+  - {r: 0.2859354, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.83267355, a: 0}
+  - {r: 1, g: 0.7864886, b: 0, a: 0}
+  - {r: 0, g: 0.10007739, b: 1, a: 0}
+  coloursB:
+  - {r: 0, g: 1, b: 0.7880776, a: 0}
+  - {r: 1, g: 0, b: 0.29612732, a: 0}
+  - {r: 0.5754717, g: 0.31508943, b: 0, a: 0}
+  - {r: 0.5893229, g: 0.2588235, b: 1, a: 0}
+  changePeriod: 1
 --- !u!1 &201357225
 GameObject:
   m_ObjectHideFlags: 0
