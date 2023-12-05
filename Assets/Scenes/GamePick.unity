@@ -3069,7 +3069,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: 0.038234983, w: 0.9992688}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 843379437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.382}
@@ -4924,6 +4924,7 @@ GameObject:
   - component: {fileID: 843379435}
   - component: {fileID: 843379434}
   - component: {fileID: 843379438}
+  - component: {fileID: 843379439}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5046,6 +5047,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &843379439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843379433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02dd5b013bbe2241a416ebb159f470e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Menu
 --- !u!1 &844572080
 GameObject:
   m_ObjectHideFlags: 0
@@ -6080,6 +6094,8 @@ MonoBehaviour:
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
   restartCheck: {fileID: 2009034988}
+  canvasAnimator: {fileID: 843379438}
+  chooseAnimator: {fileID: 503861583}
 --- !u!114 &1207618939
 MonoBehaviour:
   m_ObjectHideFlags: 0

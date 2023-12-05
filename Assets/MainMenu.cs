@@ -90,7 +90,7 @@ public class MainMenu : MonoBehaviour
         effectAud.clip = buttonSelect;
         effectAud.Play();
 
-        animator.enabled = true;
+        animator.SetBool("Close", true);
 
         //set the number of rounds to be the selected amount
         PlayerPrefs.SetInt("NoOfRounds", Mathf.RoundToInt(roundsSlider.value));

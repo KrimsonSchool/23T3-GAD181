@@ -14,6 +14,9 @@ public class QuitGame : MonoBehaviour
 
     public GameObject restartCheck;
 
+    public Animator canvasAnimator;
+    public Animator chooseAnimator;
+
     private void Start()
     {
         
@@ -27,7 +30,10 @@ public class QuitGame : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("Menu");
+        //SceneManager.LoadScene("Menu");
+        restartCheck.SetActive(false);
+        canvasAnimator.SetBool("Close", true);
+        chooseAnimator.SetBool("Close", true);
         effectAud.clip = buttonSelect; effectAud.Play();
     }
 
