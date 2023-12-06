@@ -11717,8 +11717,8 @@ MonoBehaviour:
   staticImg: {fileID: 2800000, guid: f0fbd524ecd55e2408b51688de0c22df, type: 3}
   dynamicImg: {fileID: 8400000, guid: f1602bd033c55374f8336be5720372c1, type: 2}
   controlsText: {fileID: 1734484508}
-  inputs: "Poke the zombie the most, but don't anger it!\n\nPress 'Spacebar' on \nyour
-    turn to poke"
+  inputs: "Poke the zombie the most to win, but don't be the one to anger it!\n\nPress
+    'Spacebar' on \nyour turn to poke"
   gamePreview: {fileID: 1704278233}
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
