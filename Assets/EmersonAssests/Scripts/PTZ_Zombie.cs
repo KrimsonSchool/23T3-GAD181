@@ -53,9 +53,6 @@ public class PTZ_Zombie : MonoBehaviour
 
         gr.Scoring();
 
-       // Destroy(gr.hand);
-
-        //tim.timerText.GetComponent<AudioSource>().Stop();
 
         zombie.GetComponent<Animator>().SetTrigger("zomTrigger");
         zombie.GetComponent<AudioSource>().Play();
