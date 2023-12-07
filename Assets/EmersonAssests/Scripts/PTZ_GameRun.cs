@@ -33,6 +33,7 @@ public class PTZ_GameRun : MonoBehaviour
 
     public string winnerText;
 
+    public GameObject explanation;
     
 
     // Start is called before the first frame update
@@ -69,6 +70,7 @@ public class PTZ_GameRun : MonoBehaviour
              {
                  gameBegun = true;
                  timer.timerText.GetComponent<AudioSource>().Play();
+                 explanation.SetActive(false);
 
              }
 
@@ -92,7 +94,9 @@ public class PTZ_GameRun : MonoBehaviour
                 zombie.totalPokes += 1; // zombie's total pokes go up by 1
                 zombie.zomThreshold -= 1; // reduces zombie's threshold by 1
 
-                activePlayer.scoreText.text = activePlayer.pokePoints.ToString();
+                
+
+            activePlayer.scoreText.text = activePlayer.pokePoints.ToString();
 
                mechAnim.SetTrigger("pokeout");
                mechAud.clip = mechOut;
