@@ -19,8 +19,6 @@ public class QuitGame : MonoBehaviour
 
     private void Start()
     {
-        
-
         effectAud = GameObject.FindGameObjectWithTag("EffectPlayer").GetComponent<AudioSource>();
     }
     public void Quit()
@@ -30,11 +28,14 @@ public class QuitGame : MonoBehaviour
 
     public void PlayAgain()
     {
-        //SceneManager.LoadScene("Menu");
+        effectAud.clip = buttonSelect; effectAud.Play();
+        if (PlayerPrefs.GetInt("First") == 1)
+        {
+            SceneManager.LoadScene("Menu");
+        }
         restartCheck.SetActive(false);
         canvasAnimator.SetBool("Close", true);
         chooseAnimator.SetBool("Close", true);
-        effectAud.clip = buttonSelect; effectAud.Play();
     }
 
     public void ReturnCheck()

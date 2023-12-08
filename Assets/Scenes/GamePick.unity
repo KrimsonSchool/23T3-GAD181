@@ -5034,7 +5034,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843379433}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 394f642b63b50ed488d5ab7818e2bc79, type: 2}
   m_CullingMode: 0
@@ -5060,6 +5060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Menu
+  animator: {fileID: 843379438}
 --- !u!1 &844572080
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,8 +37,8 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        
 
+        PlayerPrefs.SetInt("First", 0);
         noOfRoundsSlider.Select();
 
         StartGame();
