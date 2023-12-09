@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float speedV = 2.0f;
     public float yaw = 0.0f;
     public float pitch = 0.0f;
+    public Animation PlayerAnimate;
 
     // This must be linked to the object that has the "Character Controller" in the inspector. You may need to add this component to the object
     public CharacterController controller;
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     }    
     private void Update()
     {
+        RunAnimation();
 
         if (gameObject.tag == "PlayerOne")
         {
@@ -176,6 +178,44 @@ public class PlayerMovement : MonoBehaviour
 
             // Finally, it applies that vector it just made to the character
             controller.Move(move * speed * Time.deltaTime + velocity * Time.deltaTime);
+        }
+    }
+    
+    void RunAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp (KeyCode.A) || Input.GetKeyUp (KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            PlayerAnimate.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            PlayerAnimate.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J))
+        {
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.Y) || Input.GetKeyUp(KeyCode.G) || Input.GetKeyUp(KeyCode.H) || Input.GetKeyUp(KeyCode.J))
+        {
+            
+            PlayerAnimate.Stop();
+        }
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.Semicolon) || Input.GetKeyDown(KeyCode.Quote))
+        {
+            
+            PlayerAnimate.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.P) || Input.GetKeyUp(KeyCode.L) || Input.GetKeyUp(KeyCode.Semicolon) || Input.GetKeyUp(KeyCode.Quote))
+        {
+            PlayerAnimate.Stop();
         }
     }
 }

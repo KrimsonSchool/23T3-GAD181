@@ -25,19 +25,37 @@ public class GlobalScore : MonoBehaviour
     public TextMeshProUGUI winNameText;
     public TextMeshProUGUI winScoresText;
 
-    public int currentRound;
+    public AudioClip winSound;
+    private AudioSource winAud;
+
+    [Header("Other")]
+    public GameObject musicPlayer;
+    public GameObject effectsPlayer;
 
     private void Awake()
     {
+        if (GameObject.FindWithTag("EffectPlayer") == null)
+        {
+            GameObject fxp = Instantiate(effectsPlayer);
+            DontDestroyOnLoad(fxp);
+        }
+        if (GameObject.FindGameObjectWithTag("MusicPlayer") == null)
+        {
+            Instantiate(musicPlayer, new Vector3(0f, 0f, 0f), Quaternion.identity);
+            DontDestroyOnLoad(GameObject.FindGameObjectWithTag("MusicPlayer"));
+        }
+        
         PlayerPrefs.SetInt("currentRound", PlayerPrefs.GetInt("currentRound") +1);
-        currentRound = PlayerPrefs.GetInt("currentRound");
-        Debug.Log(currentRound);
+        
+        winAud = GetComponent<AudioSource>();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         player1Score = PlayerPrefs.GetInt("player1Score");
         player2Score = PlayerPrefs.GetInt("player2Score");
         player3Score = PlayerPrefs.GetInt("player3Score");
@@ -54,6 +72,11 @@ public class GlobalScore : MonoBehaviour
 
         if (PlayerPrefs.GetInt("currentRound") > PlayerPrefs.GetInt("NoOfRounds"))
         {
+            roundsText.text = "Finish!";
+
+            winAud.clip = winSound;
+            winAud.Play();
+
             print("Game Over!");
             winnerMenu.SetActive(true);
 

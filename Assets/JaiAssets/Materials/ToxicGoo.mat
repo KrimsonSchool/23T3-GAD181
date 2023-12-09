@@ -37,8 +37,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
         m_Texture: {fileID: 0}
+<<<<<<< HEAD
         m_Scale: {x: 1000, y: 1000}
         m_Offset: {x: 0, y: -0.11346709}
+=======
+        m_Scale: {x: 15, y: 15}
+        m_Offset: {x: 0, y: -1.7794383}
+>>>>>>> 4b6f4df80675f56dd6f27e3b284f38cd3ab5c6a8
     - _BentNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -73,8 +78,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1000, y: 1000}
-        m_Offset: {x: 0, y: -0.42331555}
+        m_Scale: {x: 15, y: 15}
+        m_Offset: {x: 0, y: -0.14968206}
     - _MaskMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -179,7 +184,7 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
-    - _InvTilingScale: 0.001
+    - _InvTilingScale: 0.06666667
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
@@ -189,7 +194,7 @@ Material:
     - _MetallicRemapMax: 0
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
-    - _NormalScale: 1.09
+    - _NormalScale: 1
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
     - _OpaqueCullMode: 2

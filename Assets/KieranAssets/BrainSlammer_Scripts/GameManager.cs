@@ -21,8 +21,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerFoursScore; //This is a text reference to player fours score text.
     public TextMeshProUGUI Winner;
     public Image controlsUI;
-    public TextMeshProUGUI goalText;
-    public TextMeshProUGUI timerText;
+    
     
     public GameObject playerOneFood; // This is a reference to the gameObject in the scene of playerOnesfood
     public GameObject playerTwoFood; // This is a reference to the gameObject in the scene of playerTwosfood
@@ -96,8 +95,7 @@ public class GameManager : MonoBehaviour
         canPlayerMove = true; // A bool set to true
         timer.isTimerOn = true; // A bool set to true
         controlsUI.enabled = false; // A bool set to false
-        goalText.enabled = false; // A bool set to false
-        timerText.enabled = false; // A bool set to false
+        
 
 
     }

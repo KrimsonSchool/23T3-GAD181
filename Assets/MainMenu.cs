@@ -12,14 +12,19 @@ public class MainMenu : MonoBehaviour
 
     public Button playButt;
     public TextMeshProUGUI playText;
+
+    private AudioSource effectAud;
+    public GameObject effectPlayer;
+    public AudioClip buttonOn;
+    public AudioClip buttonSelect;
+
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("currentRound", 0);
-        PlayerPrefs.SetInt("player1Score", 0);
-        PlayerPrefs.SetInt("player2Score", 0);
-        PlayerPrefs.SetInt("player3Score", 0);
-        PlayerPrefs.SetInt("player4Score", 0);
+        effectPlayer = GameObject.FindWithTag("EffectPlayer");
+        effectAud = effectPlayer.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +41,9 @@ public class MainMenu : MonoBehaviour
 
         playButt.interactable = true;
         playText.color = Color.white;
+
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
     }
 
     //function called when player clicks 2 players
@@ -46,6 +54,9 @@ public class MainMenu : MonoBehaviour
 
         playButt.interactable = true;
         playText.color = Color.white;
+
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
     }
     //function called when player clicks 3 players
 
@@ -56,6 +67,9 @@ public class MainMenu : MonoBehaviour
 
         playButt.interactable = true;
         playText.color = Color.white;
+
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
     }
     //function called when player clicks 4 players
     public void FourPlayer()
@@ -65,14 +79,38 @@ public class MainMenu : MonoBehaviour
 
         playButt.interactable = true;
         playText.color = Color.white;
+
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
     }
 
     //function called when player clicks the Play button
     public void Play()
     {
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
+
+        animator.SetBool("Close", true);
+
         //set the number of rounds to be the selected amount
         PlayerPrefs.SetInt("NoOfRounds", Mathf.RoundToInt(roundsSlider.value));
         //loads the game pick menu
+
+    }
+
+    public void MouseRolloverSound()
+    {
+        effectAud.clip = buttonOn;
+        effectAud.Play();
+    }
+    public void MouseRelease()
+    {
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
+    }
+
+    public void AnimDone()
+    {
         SceneManager.LoadScene("GamePick");
     }
 }

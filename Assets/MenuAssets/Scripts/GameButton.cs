@@ -20,9 +20,22 @@ public class GameButton : MonoBehaviour
     public GameObject gamePreview;
     private VideoPlayer vp;
     private RawImage image;
+
+    private GameObject effectPlayer;
+    private AudioSource effectAud;
+    public AudioClip buttonOn;
+    public AudioClip buttonSelect;
+    
     // Start is called before the first frame update
     void Start()
     {
+        effectPlayer = GameObject.FindWithTag("EffectPlayer");
+        if (effectPlayer != null)
+        {
+            effectAud = effectPlayer.GetComponent<AudioSource>();
+        }
+        
+
         vp = gamePreview.GetComponent<VideoPlayer>();
 
         image = gamePreview.GetComponent<RawImage>();
@@ -39,6 +52,9 @@ public class GameButton : MonoBehaviour
         image.texture = dynamicImg;
         controlsText.text = inputs;
         vp.Play();
+
+        effectAud.clip = buttonOn;
+        effectAud.Play();
     }
 
     public void VStop()
@@ -51,6 +67,10 @@ public class GameButton : MonoBehaviour
 
     public void Play()
     {
+        effectAud.clip = buttonSelect;
+        effectAud.Play();
+
+        Destroy(GameObject.FindGameObjectWithTag("MusicPlayer"));
         SceneManager.LoadScene(gameNameNoSpaces);
     }
 }

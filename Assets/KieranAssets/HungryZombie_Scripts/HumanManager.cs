@@ -55,13 +55,13 @@ public class HumanManager : MonoBehaviour
         {
             Instantiate(humanGoPop, transform.position, Quaternion.identity);
             humanToDestroy.SetActive(false);
-            humanGoPop.SetActive(false);
+            
         }
        if (humanID == 2 && other.CompareTag("Player"))
         {
-            Instantiate(humanGoPop, transform.position, Quaternion.identity); 
+            Instantiate(humanGoPop, transform.position, Quaternion.identity);
             humanTwoToDestroy.SetActive(false);
-            humanGoPop.SetActive(false);
+            
             
         }
         

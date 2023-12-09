@@ -12,6 +12,9 @@ TagManager:
   - PlayerFour
   - Item
   - RotatingCamera
+  - MusicPlayer
+  - EffectPlayer
+  - Popup
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PTZ_Timer : MonoBehaviour
 {
@@ -83,6 +82,6 @@ public class PTZ_Timer : MonoBehaviour
     {
         targetTime = 5.5f;
         gr.NextPlayer();
-        tickAud.Play();
+        
     }
 }
