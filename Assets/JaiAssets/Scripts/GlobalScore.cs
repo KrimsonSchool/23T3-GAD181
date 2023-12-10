@@ -74,6 +74,7 @@ public class GlobalScore : MonoBehaviour
         {
             roundsText.text = "Finish!";
 
+
             winAud.clip = winSound;
             winAud.Play();
 
@@ -113,5 +114,11 @@ public class GlobalScore : MonoBehaviour
         player2ScoreText.text = player2Score.ToString();
         player3ScoreText.text = player3Score.ToString();
         player4ScoreText.text = player4Score.ToString();
+
+        if (PlayerPrefs.GetInt("currentRound") > PlayerPrefs.GetInt("NoOfRounds"))
+        {
+            GameObject.FindObjectOfType<QuitGame>().restartCheck.SetActive(false);
+                
+        }
     }
 }

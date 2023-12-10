@@ -14,8 +14,8 @@ public class QuitGame : MonoBehaviour
 
     public GameObject restartCheck;
 
-    public Animator canvasAnimator;
-    public Animator chooseAnimator;
+    //public Animator canvasAnimator;
+   // public Animator chooseAnimator;
 
     private void Start()
     {
@@ -24,18 +24,19 @@ public class QuitGame : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+        Debug.Log("Game Quit");
     }
 
     public void PlayAgain()
     {
         effectAud.clip = buttonSelect; effectAud.Play();
-        if (PlayerPrefs.GetInt("First") == 1)
-        {
+       // if (PlayerPrefs.GetInt("First") == 1)
+       // {
             SceneManager.LoadScene("Menu");
-        }
-        restartCheck.SetActive(false);
-        canvasAnimator.SetBool("Close", true);
-        chooseAnimator.SetBool("Close", true);
+       // }
+        //restartCheck.SetActive(false);
+       // canvasAnimator.SetBool("Close", true);
+        //chooseAnimator.SetBool("Close", true);
     }
 
     public void ReturnCheck()
