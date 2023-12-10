@@ -70,18 +70,21 @@ public class CureMakerGameManager : MonoBehaviour
             gameOver.SetActive(true);
             StartCoroutine(GameOver());
         }
+         
+    }
 
-         IEnumerator GameOver()
-         {
-            gameOverSound.Play();
-            yield return new WaitForSeconds(3f);
-            gameOver.SetActive(false);
-            SceneManager.LoadScene("GamePick");
-         }
+    IEnumerator GameOver()
+    {
+        gameOverSound.Play();
+        yield return new WaitForSeconds(3f);        
+        gameOver.SetActive(false);
+        SceneManager.LoadScene("GamePick");
     }
 
     public void CheckWinner()
     {
+        gameOverSound.Play();
+        levelCompleteSound.Play();
         int highest = 0;
         int winningPlayer = 0;
         for (int i = 0; i < PlayerPrefs.GetInt("Players"); i++)
@@ -96,8 +99,7 @@ public class CureMakerGameManager : MonoBehaviour
         Debug.Log(players[winningPlayer].name);
         if (players[winningPlayer].tag == "PlayerOne")
         {
-            Debug.Log("Player One Wins");
-            levelCompleteSound.Play();
+            Debug.Log("Player One Wins");            
             uiPlayerOneWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
@@ -110,7 +112,6 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerTwo")
         {
             Debug.Log("Player Two Wins");
-            levelCompleteSound.Play();
             uiPlayerTwoWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
@@ -124,7 +125,6 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerThree")
         {
             Debug.Log("Player Three Wins");
-            levelCompleteSound.Play();
             uiPlayerThreeWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
@@ -138,7 +138,6 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerFour")
         {
             Debug.Log("Player Four Wins");
-            levelCompleteSound.Play();
             uiPlayerFourWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
