@@ -6,7 +6,8 @@ public class CollectingItems : MonoBehaviour
 {
     public int itemsCollected;
     public TMPro.TextMeshProUGUI scoreText;
-
+    public AudioSource itemPickUpSound;
+    public AudioClip clipToPlay;
 
     private void Update()
     {
@@ -16,6 +17,7 @@ public class CollectingItems : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
+            itemPickUpSound.Play();
             itemsCollected += 1;
             other.gameObject.SetActive(false);
             FindAnyObjectByType<CureMakerGameManager>().noCollected++;

@@ -21,6 +21,9 @@ public class CureMakerGameManager : MonoBehaviour
     public int dead;
     public int playersAlive;
     public GameObject gameOver;
+    public AudioSource levelCompleteSound;
+    public AudioSource gameOverSound;
+    public AudioClip clipToPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +56,7 @@ public class CureMakerGameManager : MonoBehaviour
 
         if (noCollected >= 9)
         {
+            
             playerOneMovement.enabled = false;
             playerTwoMovement.enabled = false;
             playerThreeMovement.enabled = false;
@@ -62,13 +66,14 @@ public class CureMakerGameManager : MonoBehaviour
             CheckWinner();
         }       
         if (playersAlive == 0)
-        {
+        {            
             gameOver.SetActive(true);
             StartCoroutine(GameOver());
         }
 
          IEnumerator GameOver()
          {
+            gameOverSound.Play();
             yield return new WaitForSeconds(3f);
             gameOver.SetActive(false);
             SceneManager.LoadScene("GamePick");
@@ -92,6 +97,7 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerOne")
         {
             Debug.Log("Player One Wins");
+            levelCompleteSound.Play();
             uiPlayerOneWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
@@ -104,6 +110,7 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerTwo")
         {
             Debug.Log("Player Two Wins");
+            levelCompleteSound.Play();
             uiPlayerTwoWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
@@ -117,6 +124,7 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerThree")
         {
             Debug.Log("Player Three Wins");
+            levelCompleteSound.Play();
             uiPlayerThreeWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
@@ -130,6 +138,7 @@ public class CureMakerGameManager : MonoBehaviour
         if (players[winningPlayer].tag == "PlayerFour")
         {
             Debug.Log("Player Four Wins");
+            levelCompleteSound.Play();
             uiPlayerFourWinPrompt.SetActive(true);
             timer += Time.deltaTime;
             if (timer > 5)
