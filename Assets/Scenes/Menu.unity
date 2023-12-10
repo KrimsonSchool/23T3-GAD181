@@ -650,7 +650,6 @@ GameObject:
   - component: {fileID: 342168659}
   - component: {fileID: 342168658}
   - component: {fileID: 342168662}
-  - component: {fileID: 342168663}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -771,28 +770,7 @@ MonoBehaviour:
   effectPlayer: {fileID: 0}
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
-  animator: {fileID: 342168663}
---- !u!95 &342168663
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342168657}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 294e44368b6641a438e079c4ed3b78fb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  animator: {fileID: 0}
 --- !u!1 &605662943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,6 +2979,8 @@ MonoBehaviour:
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
   restartCheck: {fileID: 0}
+  canvasAnimator: {fileID: 0}
+  chooseAnimator: {fileID: 0}
 --- !u!114 &1549340599
 MonoBehaviour:
   m_ObjectHideFlags: 0

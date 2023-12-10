@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 362c618bade88314eb0072d661103fa6, type: 3}
+  m_Texture: {fileID: 2800000, guid: cfdb385a656526b40aa05452891eb29f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2039,8 +2039,8 @@ MonoBehaviour:
   staticImg: {fileID: 2800000, guid: 41f72eefa1c5c4d41b91220ffa129b5e, type: 3}
   dynamicImg: {fileID: 8400000, guid: 96a51c6eaf17731419816c7e026165b0, type: 2}
   controlsText: {fileID: 1734484508}
-  inputs: "Get to the end first, but \ndon't get hit by zombies!\n\nPlayer 1 - W
-    A S D\nPlayer 2 - Arrow Keys\nPlayer 3 - Y G H J\nPlayer 4 - P L ; '"
+  inputs: "Get to the end first, but \ndon't get hit by zombies!\n\nPlayer 1 - WASD\nPlayer
+    2 - Arrow Keys\nPlayer 3 - YGHJ\nPlayer 4 - PL;'"
   gamePreview: {fileID: 1647803812}
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
@@ -3595,11 +3595,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameNameNoSpaces: CureMaker
-  staticImg: {fileID: 2800000, guid: 362c618bade88314eb0072d661103fa6, type: 3}
+  staticImg: {fileID: 2800000, guid: cfdb385a656526b40aa05452891eb29f, type: 3}
   dynamicImg: {fileID: 8400000, guid: d4b2b79592e6e30479d28ebc9fe7cf5a, type: 2}
   controlsText: {fileID: 1734484508}
-  inputs: "Collect the most items \nto win, but don't get hit!\n\nPlayer 1 - W A
-    S D\nPlayer 2 - Arrow Keys\nPlayer 3 - Y G H J\nPlayer 4 - P L ; '"
+  inputs: "Collect the most items \nto win, but don't get hit!\n\nPlayer 1 - WASD\nPlayer
+    2 - Arrow Keys\nPlayer 3 - YGHJ\nPlayer 4 - PL;'"
   gamePreview: {fileID: 258383172}
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
@@ -4923,8 +4923,6 @@ GameObject:
   - component: {fileID: 843379436}
   - component: {fileID: 843379435}
   - component: {fileID: 843379434}
-  - component: {fileID: 843379438}
-  - component: {fileID: 843379439}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5026,41 +5024,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!95 &843379438
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843379433}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 394f642b63b50ed488d5ab7818e2bc79, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &843379439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843379433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02dd5b013bbe2241a416ebb159f470e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Menu
-  animator: {fileID: 843379438}
 --- !u!1 &844572080
 GameObject:
   m_ObjectHideFlags: 0
@@ -6095,7 +6058,7 @@ MonoBehaviour:
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
   restartCheck: {fileID: 2009034988}
-  canvasAnimator: {fileID: 843379438}
+  canvasAnimator: {fileID: 0}
   chooseAnimator: {fileID: 503861583}
 --- !u!114 &1207618939
 MonoBehaviour:
@@ -6914,7 +6877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.668}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.942017, y: 132}
+  m_AnchoredPosition: {x: -9.942139, y: 132}
   m_SizeDelta: {x: -282.116, y: -850.6763}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1454641853
@@ -13114,8 +13077,8 @@ MonoBehaviour:
   staticImg: {fileID: 2800000, guid: ff0639b484a2da44bafbac4b2c068fc4, type: 3}
   dynamicImg: {fileID: 8400000, guid: a3069398c9bebad4895f97e238aed17c, type: 2}
   controlsText: {fileID: 1734484508}
-  inputs: "Race to the end and \navoid the zombies!\n\nPlayer 1 - W A S D\nPlayer
-    2 - Arrow Keys\nPlayer 3 - Y G H J\nPlayer 4 - P L ; "
+  inputs: "Race to the end and \navoid the zombies!\n\nPlayer 1 - WASD\nPlayer 2
+    - Arrow Keys\nPlayer 3 - YGHJ\nPlayer 4 - PL;'"
   gamePreview: {fileID: 844572080}
   buttonOn: {fileID: 8300000, guid: dcdd7c0a84bc97549ac3b8cacb30292a, type: 3}
   buttonSelect: {fileID: 8300000, guid: dd3c74077a550b94ba874f1571a3650d, type: 3}
