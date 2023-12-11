@@ -18,6 +18,8 @@ public class MiniGameTwoPlayerController : MonoBehaviour
 
     [SerializeField] private AudioSource zombieSound;
     [SerializeField] private AudioClip zombieEating;
+
+    
     
 
     #endregion
@@ -25,7 +27,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -113,7 +115,8 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 1 && Input.GetKey(KeyCode.LeftControl)) // checks to see if 1 has been assigned to zombieID and the Left control has been pressed.
                     {
                         
-                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)     
+                        transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player One)
+                       
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftControl))
                     {  
@@ -131,7 +134,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 2 && Input.GetKey(KeyCode.LeftAlt)) // checks to see if 2 has been assigned to zombieID and the Left Alt has been pressed.
                     {
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Two)
-                                                                        
+                        
                     }
                     else if (Input.GetKeyUp(KeyCode.LeftAlt))
                     {
@@ -149,7 +152,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 3 && Input.GetKey(KeyCode.RightAlt)) // checks to see if 3 has been assigned to zombieID and the Rigth Alt has been pressed.
                     {
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Three)
-                                                                        
+                       
                     }
                     else if (Input.GetKeyUp(KeyCode.RightAlt))
                     {
@@ -166,7 +169,7 @@ public class MiniGameTwoPlayerController : MonoBehaviour
                     if (zombieID == 4 && Input.GetKey(KeyCode.RightControl)) // checks to see if 4 has been assigned to zombieID and the Right control has been pressed.
                     {
                         transform.Translate(0, 0, 5f * Time.deltaTime); // This changes the position of the GameObject to a new vector (Player Four)
-                                                                        
+                        
                     }
                     else if (Input.GetKeyUp(KeyCode.RightControl))
                     {

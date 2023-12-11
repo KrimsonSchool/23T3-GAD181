@@ -3212,6 +3212,7 @@ MonoBehaviour:
   canPlayerMove: 0
   zombieSound: {fileID: 496266540}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
+  zombieWalk: {fileID: 496266542}
 --- !u!65 &496266538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4769,6 +4770,7 @@ MonoBehaviour:
   canPlayerMove: 0
   zombieSound: {fileID: 811279153}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
+  zombieWalk: {fileID: 811279154}
 --- !u!65 &811279151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7097,6 +7099,7 @@ MonoBehaviour:
   canPlayerMove: 0
   zombieSound: {fileID: 1346364941}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
+  zombieWalk: {fileID: 1346364943}
 --- !u!65 &1346364939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8817,6 +8820,7 @@ MonoBehaviour:
   canPlayerMove: 0
   zombieSound: {fileID: 1615683678}
   zombieEating: {fileID: 8300000, guid: 54fcddac9ff4dcf49892f39b1679db6f, type: 3}
+  zombieWalk: {fileID: 1615683680}
 --- !u!65 &1615683676
 BoxCollider:
   m_ObjectHideFlags: 0
