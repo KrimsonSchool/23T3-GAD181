@@ -21,9 +21,9 @@ public class CureMakerGameManager : MonoBehaviour
     public int dead;
     public int playersAlive;
     public GameObject gameOver;
-    //public AudioSource levelCompleteSound;
     public AudioSource gameOverSound;
     public AudioClip clipToPlay;
+    
 
 
     // Start is called before the first frame update
@@ -64,7 +64,7 @@ public class CureMakerGameManager : MonoBehaviour
             playerThreeMovement.enabled = false;
             playerFourMovement.enabled = false;
             uiWinPrompt.SetActive(true);
-            gameOverSound.PlayOneShot(clipToPlay);
+            gameOverSound.PlayOneShot(clipToPlay);  
             CheckWinner();
 
         }       
@@ -88,7 +88,7 @@ public class CureMakerGameManager : MonoBehaviour
     {
        
         Debug.Log("is gameover sound playing");
-        //levelCompleteSound.Play();
+        
         int highest = 0;
         int winningPlayer = 0;
         for (int i = 0; i < PlayerPrefs.GetInt("Players"); i++)
